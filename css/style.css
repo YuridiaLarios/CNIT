@@ -6,6 +6,7 @@ GENERAL
 ******************/
 body{
   margin: 0;
+  font-family: 'Spectral SC', serif;
 }
 
 /******************
@@ -21,10 +22,21 @@ HEADER
 
 .inner-header{
   width: 40%;
-  background: blue;
   text-align: center;
   position: absolute;
   top: 15%;
   right: 50%;
   transform: translate(50%, -15%);
+}
+
+.header-name{
+  color: white;
+  font-weight: 600;
+  font-size: 2.6em;
+  letter-spacing: 0.2em;
+}
+
+.social-icons {
+  width: 55px;
+  margin: 1%;
 }
