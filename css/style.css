@@ -14,9 +14,11 @@ HEADER
 ******************/
 
 .main-header{
-  width: 100%;
+  width: 98%;
   height: 300px;
-  background: #4ec38f;
+  background: linear-gradient(#4ec38f, transparent 95%),
+              linear-gradient(#fff, transparent),
+              #4ec38f url('../img/green-header-pattern.png');
   padding: 1%;
 }
 
@@ -30,10 +32,10 @@ HEADER
 }
 
 .header-name{
-  color: white;
   font-weight: 600;
   font-size: 2.6em;
   letter-spacing: 0.2em;
+  margin-bottom: 1%;
 }
 
 .social-icons {
