@@ -1,12 +1,62 @@
 /*******************************
+CSS ACROSS THE WEBSITE
+********************************/
+/******************
+FOOTER
+******************/
+.footer{
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  overflow: hidden;
+  text-align: center;
+  color: gray;
+}
+
+
+/******************
+NAVIGATION
+******************/
+.navigation{
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  padding: 20px 0 0;
+  color: white;
+  font-size: 1.6em;
+}
+
+.nav-menu{
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 5px;
+}
+
+.menu-btn{
+  display: inline-block;
+  margin-right: 40px;
+}
+
+
+
+
+
+/*******************************
 ABOUT PAGE
 ********************************/
 /******************
 GENERAL
 ******************/
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
 body{
   margin: 0;
+}
+
+h1, h2, h3 {
   font-family: 'Spectral SC', serif;
+  text-align: center;
 }
 
 /******************
@@ -14,8 +64,9 @@ HEADER
 ******************/
 
 .main-header{
+  position: relative;
   width: 98%;
-  height: 300px;
+  height: 380px;
   background: linear-gradient(#4ec38f, transparent 95%),
               linear-gradient(#fff, transparent),
               #4ec38f url('../img/green-header-pattern.png');
@@ -26,14 +77,14 @@ HEADER
   width: 40%;
   text-align: center;
   position: absolute;
-  top: 15%;
+  top: 50%;
   right: 50%;
-  transform: translate(50%, -15%);
+  transform: translate(50%, -50%);
 }
 
 .header-name{
   font-weight: 600;
-  font-size: 2.6em;
+  font-size: 3em;
   letter-spacing: 0.2em;
   margin-bottom: 1%;
 }
@@ -41,4 +92,25 @@ HEADER
 .social-icons {
   width: 55px;
   margin: 1%;
+}
+
+/******************
+SECTION:
+OBJECTIVE-AND-HOBBIES
+******************/
+
+.objective-and-hobbies {
+  margin: 0 auto;
+  width: 100%;
+  height: 700px;
+  padding: 0 5%;
+}
+
+.objective, .hobbies{
+  float: left;
+  width: 40%;
+  padding: 2%;
+  text-align: center;
+  font-size: 1.6em;
+  font-family:'Questrial', sans-serif;
 }
