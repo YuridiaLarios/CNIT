@@ -1,11 +1,30 @@
 /*******************************
 ABOUT PAGE
 ********************************/
+/******************
+GENERAL
+******************/
+body{
+  margin: 0;
+}
 
 /******************
 HEADER
 ******************/
+
 .main-header{
   width: 100%;
+  height: 300px;
   background: #4ec38f;
+  padding: 1%;
+}
+
+.inner-header{
+  width: 40%;
+  background: blue;
+  text-align: center;
+  position: absolute;
+  top: 15%;
+  right: 50%;
+  transform: translate(50%, -15%);
 }
