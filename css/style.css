@@ -1,24 +1,11 @@
 /*******************************
 CSS ACROSS THE WEBSITE
 ********************************/
-/******************
-FOOTER
-******************/
-.footer{
-  width: 100%;
-  height: 200px;
-  background-color: black;
-  overflow: hidden;
-  text-align: center;
-  color: gray;
-}
-
 
 /******************
 NAVIGATION
 ******************/
 .navigation{
-  width: 100%;
   height: 60px;
   background-color: black;
   padding: 20px 0 0;
@@ -39,12 +26,36 @@ NAVIGATION
 }
 
 
+/******************
+FOOTER
+******************/
+footer{
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  overflow: hidden;
+}
+
+.footer-content{
+  position: absolute;
+  bottom: 40%;
+  right: 50%;
+  transform: translate(50%, -1%);
+  color: gray;
+
+}
 
 
 
-/*******************************
-ABOUT PAGE
-********************************/
+/******************
+DIVS
+******************/
+
+.full-width-div {
+  width: 100%;
+}
+
 /******************
 GENERAL
 ******************/
@@ -59,18 +70,24 @@ h1, h2, h3 {
   text-align: center;
 }
 
+
+
+/*******************************
+ABOUT PAGE
+********************************/
+
+
 /******************
 HEADER
 ******************/
 
 .main-header{
   position: relative;
-  width: 98%;
-  height: 380px;
+  height: 350px;
   background: linear-gradient(#4ec38f, transparent 95%),
               linear-gradient(#fff, transparent),
               #4ec38f url('../img/green-header-pattern.png');
-  padding: 1%;
+  padding: 1% 0;
 }
 
 .inner-header{
@@ -94,23 +111,52 @@ HEADER
   margin: 1%;
 }
 
+
+/******************
+SECTION:
+PROFILE-IMAGE-AND QUOTE
+******************/
+.profile-picture-and-quote{
+  margin: 50px auto;
+}
+
+.profile-picture-inner-div{
+  width: 20%;
+  margin: 0 auto;
+}
+.profile-img{
+  width: 80%;
+  border-radius: 50%;
+}
+
+
 /******************
 SECTION:
 OBJECTIVE-AND-HOBBIES
 ******************/
 
-.objective-and-hobbies {
-  margin: 0 auto;
-  width: 100%;
-  height: 700px;
-  padding: 0 5%;
-}
-
 .objective, .hobbies{
   float: left;
   width: 40%;
   padding: 2%;
-  text-align: center;
   font-size: 1.6em;
   font-family:'Questrial', sans-serif;
+}
+
+.objective {
+  margin-left: 5%;
+}
+
+.hobbies-list{
+  list-style: none;
+  margin: 1% 0;
+}
+
+.hobbies-list li {
+  margin: 25px 0;
+}
+
+.bold-word{
+  font-weight: bold;
+  color:#41a076;
 }
