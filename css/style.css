@@ -19,6 +19,8 @@ h1, h2, h3 {
 
 p{
   font-family:'Questrial', sans-serif;
+  word-spacing: 4px;
+  line-height: 30px;
 }
 
 .bold-word{
@@ -111,6 +113,10 @@ HEADER
 .social-icons {
   width: 55px;
   margin: 1%;
+}
+
+.social-icons:hover{
+  opacity: .6;
 }
 
 
