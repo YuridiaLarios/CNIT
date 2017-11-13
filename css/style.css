@@ -17,6 +17,16 @@ h1, h2, h3 {
   text-align: center;
 }
 
+p{
+  font-family:'Questrial', sans-serif;
+}
+
+.bold-word{
+  font-weight: bold;
+  color:#41a076;
+}
+
+
 
 /******************
 DIVS
@@ -26,6 +36,12 @@ DIVS
   width: 100%;
 }
 
+.content-descriptive-div {
+  width: 80%;
+  margin: 100px auto;
+  text-align: center;
+  font-size: 1.3em;
+}
 
 
 
@@ -152,7 +168,6 @@ OBJECTIVE-AND-HOBBIES
   width: 40%;
   padding: 2%;
   font-size: 1.3em;
-  font-family:'Questrial', sans-serif;
 }
 
 .objective {
@@ -167,13 +182,3 @@ OBJECTIVE-AND-HOBBIES
 .hobbies-list li {
   margin: 25px 0;
 }
-
-.bold-word{
-  font-weight: bold;
-  color:#41a076;
-}
-
-
-/*******************************
-PROJECTS PAGE
-********************************/
