@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="working with flexbox in CNIT 132A">
+  <title>hw2part2</title>
+  <style>
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+
+  .header {
+    background: #ef5f44;
+  }
+
+  .footer {
+    background: lightgreen;
+  }
+
+  .main {
+    text-align: left;
+    background: #0c258b;
+    color: white;
+  }
+
+  .extra{
+    background: #ed82ee;
+    color: #2e4bfa;
+  }
+
+  .aside-1 {
+    background: #fdf734;
+  }
+
+  .aside-2 {
+    background: #f6bfcb;
+  }
+
+  @media all and (min-width: 600px) {
+    .aside { flex: 1 auto; }
+  }
+
+  @media all and (min-width: 750px) {
+    .main    { flex: 2 0px; }
+    .aside-1 { order: 1; }
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+    .extra   { order: 4; }
+    .footer  { order: 5; }
+  }
+
+  @media all and (min-width: 950px) {
+    .main    { flex: 2 0px; }
+    .extra   { flex: 2 0px; }
+    .aside-1 { order: 1; }
+    .main    { order: 2; }
+    .extra   { order: 3; }
+    .aside-2 { order: 4; }
+    .footer  { order: 5; }
+  }
+
+  body {
+    padding: 2em;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">Name of Company</header>
+    <article class="main">
+      <h4>
+        This is the main article of my page! This is the main content of the page. In a 3-column layout,
+        it should be shown in the middle between aside 1 and aside 2!
+      </h4>
+    </article>
+    <article class="extra">
+      <h4>
+        This column was created to have some content as a challenge to adapt to old 3 column-layout to a 4-column layout.
+      </h4>
+    </article>
+    <aside class="aside aside-1">This is aside 1</aside>
+    <aside class="aside aside-2">This is aside 2</aside>
+    <footer class="footer">This is the footer <br> Copyright &copy; 2017 </footer>
+  </div>
+
+</body>
+</html>

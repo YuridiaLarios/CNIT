@@ -152,6 +152,18 @@ footer {
 
 }
 
+@media screen and (max-width: 1000px){
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 .project-container {
   display: flex;
   background-color: #52af50;

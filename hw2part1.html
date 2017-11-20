@@ -9,8 +9,16 @@
     .grid {
        display: grid;
        grid-template-columns: 50% 50%;
-       grid-template-rows: 50vh 50vh; 
+       grid-template-rows: 50vh 50vh;
     }
+
+    @media screen and (max-width: 800px){
+      .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 25vh 25vh 25vh 25vh;
+      }
+    }
+
 	  .news, .links, .search, .messages {
 	     text-align: center;
 		   font-weight: bold;
