@@ -21,10 +21,16 @@ a[href$=".pdf"] {
   background: url(../img/pdf.png) right center no-repeat;
   padding-right: 50px;
 }
+a[href$=".html"] {
+  background: url(../img/browser.png) right center no-repeat;
+  padding-right: 50px;
+}
+
 a[href$=".htm"] {
   background: url(../img/browser.png) right center no-repeat;
   padding-right: 50px;
 }
+
 a {
   background: url(../img/intmark.png) right center no-repeat;
   padding-right: 50px;
@@ -138,35 +144,22 @@ footer {
   margin: 25px 0;
 }
 
-
-
-
-.wrapper {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
 
-  @media screen and (min-width: 500px){
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  @media screen and (min-width: 800px){
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
-.letter {
-  background-color: #0069b3;
+.project-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  font-size: 70px;
+  background-color: #52af50;
+  padding: 15px;
   color: white;
-  line-height: 1;
-  font-family: 'hobeaux-rococeaux-background', Helvetica;
-  font-weight: 200;
-  cursor: pointer;
-  transition: all .3s ease;
+}
+
+.project-container a {
+  color: white;
+  text-decoration: none;
 }
