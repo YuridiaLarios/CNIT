@@ -1,0 +1,67 @@
+<!--
+1) include Microdata related to the list of movies - itemscope, itemprop,etc. DONE
+2) include some role attributes wherever necessary according to WAI ARIA topic we have studied
+3) check by using the validator.w3.org to validate your HTML at the end of this assignment.
+4) Test your page in the browser
+5) check your page using the Web Accessibility Tool at http://wave.webaim.org/ (Links to an external site.
+6) create the link to your movies.html changed page in the Assignments page of your Homework 1 and then post the URL of the Homework 1 page here and I should find the link to the Homework 3 there!
+7) Remember to click on the button to SAVE and SUBMIT your assignment after you write the URL in the box provided.
+-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Great movie titles</title>
+   <meta name="description" content="a list of great movie titles, name of director and trailer">
+   <meta charset="utf-8">
+   <style>
+     body { background-color: #DEB887; color: #A52A2A; }
+     header {width: 60%; background-image: url(banner.png); margin: 0 auto; text-align: center; border-shadow: 5px 5px 5px gray; font-size: 1.5rem; color: black;}
+	 div { width: 80%; margin: 0 auto; border: 2px solid #D2691E; padding: 0 10px;}
+     footer {width: 60%; margin: 10px auto; padding: 3px 0; text-align:center; background-color: #A52A2A; color:white; font-size: 0.9rem;}
+	 footer img {float:left; margin: 0 5px 5px 0;}
+   </style>
+</head>
+<body>
+<header>
+<h1>Great Movies</h1>
+<h2>Great Directors</h2>
+</header>
+<div itemscope="http://schema.org/Movie">
+  <h1 itemprop="name">Avatar</h1>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director: <span itemprop="name">James Cameron</span>  (born <span itemprop="birthDate">August 16, 1954)</p>
+  <p itemprop="genre">Type: Science fiction</p>
+  <p itemprop="datePublished">Release Date: December 18, 2009</p>
+</div>
+
+<div itemscope="http://schema.org/Movie">
+  <h1 itemprop="name">Star Wars: Episode VII</h1>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> J. J. Abrams</span> (born <span itemprop="birthDate">June 27, 1966)</p>
+  <p itemprop="genre">Type: Science fiction</p>
+  <p itemprop="datePublished">Release Date: December 18, 2015</p>
+</div>
+
+<div itemscope="http://schema.org/Movie">
+  <h1 itemprop="name">Titanic</h1>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> James Cameron </span> (born <span itemprop="birthDate">August 16, 1954)</p>
+  <p itemprop="genre">Type: Drama</p>
+  <p itemprop="datePublished">Release Date: December 19, 1997</p>
+</div>
+
+<div itemscope="http://schema.org/Movie">
+  <h1 itemprop="name">Schindler's List</h1>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> Steven Spielberg</span> (born <span itemprop="birthDate"> December 18, 1946)</p>
+  <p itemprop="genre">Type: Drama</p>
+  <p itemprop="datePublished">Release Date: December 15, 1993</p>
+</div>
+
+<footer>
+  <img src="movielogo.png">
+  <p>List made by CNIT 132A class at CCSF</p>
+  <p>Copyright &copy; 2017</p>
+</footer>
+</body>
+</html>
