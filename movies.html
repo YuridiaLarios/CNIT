@@ -1,6 +1,6 @@
 <!--
 1) include Microdata related to the list of movies - itemscope, itemprop,etc. DONE
-2) include some role attributes wherever necessary according to WAI ARIA topic we have studied
+2) include some role attributes wherever necessary according to WAI ARIA topic we have studied DONE
 3) check by using the validator.w3.org to validate your HTML at the end of this assignment.
 4) Test your page in the browser
 5) check your page using the Web Accessibility Tool at http://wave.webaim.org/ (Links to an external site.
@@ -26,41 +26,41 @@
    </style>
 </head>
 <body>
-<header role="banner">
+<header>
 <h1>Great Movies</h1>
 <h2>Great Directors</h2>
 </header>
 <section role="main">
 <div itemscope="http://schema.org/Movie">
   <h1 itemprop="name">Avatar</h1>
-  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director: <span itemprop="name">James Cameron</span>  (born <span itemprop="birthDate">August 16, 1954)</p>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director: <span itemprop="name">James Cameron</span>  (born <span itemprop="birthDate">August 16, 1954)</span></p>
   <p itemprop="genre">Type: Science fiction</p>
   <p itemprop="datePublished">Release Date: December 18, 2009</p>
 </div>
 
 <div itemscope="http://schema.org/Movie">
   <h1 itemprop="name">Star Wars: Episode VII</h1>
-  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> J. J. Abrams</span> (born <span itemprop="birthDate">June 27, 1966)</p>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> J. J. Abrams</span> (born <span itemprop="birthDate">June 27, 1966)</span></p>
   <p itemprop="genre">Type: Science fiction</p>
   <p itemprop="datePublished">Release Date: December 18, 2015</p>
 </div>
 
 <div itemscope="http://schema.org/Movie">
   <h1 itemprop="name">Titanic</h1>
-  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> James Cameron </span> (born <span itemprop="birthDate">August 16, 1954)</p>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> James Cameron </span> (born <span itemprop="birthDate">August 16, 1954)</span></p>
   <p itemprop="genre">Type: Drama</p>
   <p itemprop="datePublished">Release Date: December 19, 1997</p>
 </div>
 
 <div itemscope="http://schema.org/Movie">
   <h1 itemprop="name">Schindler's List</h1>
-  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> Steven Spielberg</span> (born <span itemprop="birthDate"> December 18, 1946)</p>
+  <p itemprop="director" itemscope itemtype="http://schema.org/Person">Director:<span itemprop="name"> Steven Spielberg</span> (born <span itemprop="birthDate"> December 18, 1946)</span></p>
   <p itemprop="genre">Type: Drama</p>
   <p itemprop="datePublished">Release Date: December 15, 1993</p>
 </div>
 </section>
 
-<footer role="contentinfo">
+<footer>
   <img src="img/movielogo.png" alt="old fashioned movie camera clip art">
   <p>List made by CNIT 132A class at CCSF</p>
   <p>Copyright &copy; 2017</p>
