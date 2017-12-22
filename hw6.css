@@ -1,0 +1,37 @@
+* { background-color:#C0DEED;}
+
+@keyframes slideLeft {
+	from { background-position: 0% 0% }
+	to { background-position: 100% 0%; }
+}
+
+#sky {
+position:relative;
+top:0;
+left:0;
+width:100%;
+text-align:center;
+margin:0px;
+background-color:#C0DEED;
+background: url(img/clouds.png) center top repeat-x;
+padding-top:300px;
+animation: slideLeft 8s linear infinite;
+}
+
+
+@keyframes bannerFlyIn {
+	0% { left: 0; }
+  50% { left: 80%; }
+  100% { left: 40%; }
+	0% { transform: scale(1.2);}
+  20%{ transform: scale(2);}
+  80%{ transform: scale(1.2);}
+}
+
+#banner {
+        animation: bannerFlyIn 10s forwards;
+        font-size: 2em;
+				width: 250px;
+				position: absolute;
+				font-weight:bold;
+}
