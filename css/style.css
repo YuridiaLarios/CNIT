@@ -171,7 +171,19 @@ footer {
   color: white;
 }
 
-.project-container a {
+.project-container2 {
+  display: flex;
+  background-color: #a5af9c;
+  padding: 15px;
+  color: white;
+}
+
+.project-container a{
+  color: white;
+  text-decoration: none;
+}
+
+.project-container2 a{
   color: white;
   text-decoration: none;
 }
