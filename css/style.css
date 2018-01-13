@@ -178,12 +178,7 @@ footer {
   color: white;
 }
 
-.project-container a{
-  color: white;
-  text-decoration: none;
-}
-
-.project-container2 a{
+.project-container a, .project-container2 a{
   color: white;
   text-decoration: none;
 }
