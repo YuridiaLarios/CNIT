@@ -38,6 +38,7 @@
       /* Safari transitionend event.propertyName === flex */
       /* Chrome + FF transitionend event.propertyName === flex-grow */
       transition:
+      /* making text bigger and picture bigger */
         font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
         flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
         background 0.2s;
@@ -130,21 +131,24 @@
   </div>
 
   <script>
+  // grabing all the panels class
     const panels = document.querySelectorAll('.panel');
 
+  // function to toggle that class and make image bigger on open and smaller on close on click
     function toggleOpen() {
-      console.log('Hello');
       this.classList.toggle('open');
     }
 
+  // function to toggle text to come down or up the document;
     function toggleActive(e) {
-      console.log(e.propertyName);
-      if (e.propertyName.includes('flex')) {
+      if (e.propertyName.includes('flex')) { // we care about flex-grow only not about the text-grow
         this.classList.toggle('open-active');
       }
     }
 
+  // calling toggleOpen function on click to make image bigger
     panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+  // calling toggleActive function to activate animation and let text slide down;
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
   </script>
 
