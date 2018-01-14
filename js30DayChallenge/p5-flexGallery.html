@@ -25,6 +25,7 @@
     .panels {
       min-height:100vh;
       overflow: hidden;
+      /* get panels side by side horizontally */
       display: flex;
     }
 
@@ -43,9 +44,12 @@
       font-size: 20px;
       background-size:cover;
       background-position:center;
+      /* make each panel to evenly distribute accross the available space */
       flex: 1;
+      /* nesting flexbox to make text inside to be treated as flex too*/
       justify-content: center;
       display: flex;
+      /* need this line to set flex vertically instead of horizontally */
       flex-direction: column;
     }
 
@@ -61,15 +65,21 @@
       margin:0;
       width: 100%;
       transition:transform 0.5s;
+      /* divides the space into 15 squares */
       flex: 1 0 auto;
       display:flex;
       justify-content: center;
       align-items: center;
     }
 
+    /* each of each children on top will translate up and be hidden */
     .panel > *:first-child { transform: translateY(-100%); }
+    /* Once class gets activated the text will get animated and show on the page */
     .panel.open-active > *:first-child { transform: translateY(0); }
+
+    /* each of each children on bottom will translate up and be hidden */
     .panel > *:last-child { transform: translateY(100%); }
+    /* Once class gets activated the text will get animated and show on the page */
     .panel.open-active > *:last-child { transform: translateY(0); }
 
     .panel p {
@@ -83,6 +93,7 @@
     }
 
     .panel.open {
+      /* when it has the clase active, its going to take 5 time the amount of extraroom as the rest of the panels. */
       flex: 5;
       font-size:40px;
     }
