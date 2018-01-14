@@ -16,46 +16,84 @@
     </ul>
   </form>
 
-    
+
   <script>
+  // The “endpoint” of an API is simply a unique URL that represents an object or collection of objects, typically expressed in JSON or XML.
   const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
+  // need an empty array to put in info
   const cities = [];
+
+  /*
+  The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses.
+  It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+
+  This kind of functionality was previously achieved using XMLHttpRequest. Fetch provides a better alternative that can be easily used by other technologies
+  Note that the fetch specification differs from jQuery.ajax() in mainly two ways that bear keeping in mind:
+
+  The Promise returned from fetch() won’t reject on HTTP error status even if the response is an HTTP 404 or 500. Instead, it will resolve normally (with ok status set to false), and it will only reject on network failure or if anything prevented the request from completing.
+  By default, fetch won't send or receive any cookies from the server, resulting in unauthenticated requests if the site relies on maintaining a user session (to send cookies, the credentials init option must be set).
+  */
   fetch(endpoint)
+  // fetch returns a promise, we need to use then to handle data type from raw to json data.
     .then(blob => blob.json())
+  // need to push data into our initially empty array
+  // ... means spreading so we dont end up with nested arrays
     .then(data => cities.push(...data));
 
+
+
+
+
+  // function to findMatches of cities within our array of cities
   function findMatches(wordToMatch, cities) {
+    // here we need to figure out if the city or state matches what was searched
     return cities.filter(place => {
-      // here we need to figure out if the city or state matches what was searched
+      // need to create a new regex including the variable we are looking for.
       const regex = new RegExp(wordToMatch, 'gi');
+      // now we can use our regex without worrying about how to input our variable.
       return place.city.match(regex) || place.state.match(regex)
     });
   }
 
+
+
+
+
+  // formating numbers by adding commas
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
+
+
+
+
+
 
   function displayMatches() {
     const matchArray = findMatches(this.value, cities);
     const html = matchArray.map(place => {
       const regex = new RegExp(this.value, 'gi');
+      // when it finds a match it uses the regex  to add a span and highlight those
+      // citiers and/or states tht matches in yellow.
       const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
       const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+      // string interpolation II and calling method witing it too.
       return `
         <li>
           <span class="name">${cityName}, ${stateName}</span>
           <span class="population">${numberWithCommas(place.population)}</span>
         </li>
       `;
-    }).join('');
+    }).join(''); // need to return a string instead of a big array
     suggestions.innerHTML = html;
   }
 
   const searchInput = document.querySelector('.search');
   const suggestions = document.querySelector('.suggestions');
 
+
+  // fire on click outside the box or en key up
   searchInput.addEventListener('change', displayMatches);
   searchInput.addEventListener('keyup', displayMatches);
 
