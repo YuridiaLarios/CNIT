@@ -164,6 +164,65 @@ a.social-links {
   margin: 25px 0;
 }
 
+@media screen and (max-width: 800px){
+
+  .profile-picture-inner-div {
+    width: 30%;
+    margin-left: 38.5%;
+  }
+
+  .hobbies,
+  .objective {
+    float: none;
+    width: 90%;
+    text-align: justify;
+    margin-left: 2%;
+  }
+
+  .hobbies-list {
+    text-align: center;
+    list-style: none;
+    margin: 1% 0;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;a
+  }
+  .hobbies-list li {
+    margin: 25px 0;
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  .inner-header {
+    width: 250px;
+  }
+  .header-name {
+    margin: 0 auto;
+    font-size: 2.3em;
+  }
+  .social-icons {
+    text-align: center;
+    width: 30px;
+    margin: 0 auto;
+  }
+
+  .profile-picture-inner-div {
+    width: 35%;
+    margin-left: 38.5%;
+  }
+
+  .hobbies,
+  .objective {
+    float: none;
+    width: 95%;
+    text-align: justify;
+    margin-left: 0%;
+  }
+}
+
 /**************************
 PROJECTS PAGE
 **************************/
@@ -187,6 +246,7 @@ PROJECTS PAGE
 }
 
 .project-container {
+  text-align: center;
   display: flex;
   background-color: #52af50;
   padding: 15px;
@@ -194,6 +254,7 @@ PROJECTS PAGE
 }
 
 .project-container2 {
+  text-align: center;
   display: flex;
   background-color: #a5af9c;
   padding: 15px;
@@ -203,4 +264,5 @@ PROJECTS PAGE
 .project-container a, .project-container2 a{
   color: white;
   text-decoration: none;
+  text-align: center;
 }
