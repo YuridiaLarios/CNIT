@@ -1,3 +1,6 @@
+/**************************
+GENERAL
+**************************/
 @import url(https://fonts.googleapis.com/css?family=Questrial);
 body {
   margin: 0;
@@ -44,6 +47,10 @@ a {
   text-align: center;
   font-size: 1.3em;
 }
+
+/**************************
+NAVIGATION
+**************************/
 .nav-menu {
   list-style-type: none;
   margin: 0;
@@ -69,6 +76,31 @@ a {
 .active {
   background-color: #4caf50;
 }
+
+/**************************
+FOOTER
+**************************/
+
+
+.footer-content {
+  position: absolute;
+  bottom: 40%;
+  right: 50%;
+  transform: translate(50%, -1%);
+  color: gray;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/**************************
+ABOUT PAGE
+**************************/
 .main-header {
   position: relative;
   height: 350px;
@@ -103,20 +135,6 @@ a {
 a.social-links {
   background: 0 0;
 }
-footer {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  background-color: #000;
-  overflow: hidden;
-}
-.footer-content {
-  position: absolute;
-  bottom: 40%;
-  right: 50%;
-  transform: translate(50%, -1%);
-  color: gray;
-}
 .profile-picture-and-quote {
   margin: 50px auto;
 }
@@ -146,12 +164,14 @@ footer {
   margin: 25px 0;
 }
 
+/**************************
+PROJECTS PAGE
+**************************/
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-
 }
 
 @media screen and (max-width: 1000px){
