@@ -229,6 +229,9 @@ PROJECTS PAGE
 .project-container {
   text-align: center;
   display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   background-color: #52af50;
   padding: 15px;
   color: white;
@@ -240,6 +243,9 @@ PROJECTS PAGE
   background-color: #a5af9c;
   padding: 15px;
   color: white;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
 .project-container a, .project-container2 a{
