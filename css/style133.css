@@ -1,3 +1,129 @@
-body{
-  background: red;
+/**************************
+GENERAL
+**************************/
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+body {
+  margin: 0;
+  font-family: "Questrial", serif;
+  text-align: center;
+}
+p {
+  margin-bottom: 8%;
+}
+
+
+.content-descriptive-div {
+  width: 80%;
+  margin: 100px auto;
+  font-size: 1.3em;
+}
+
+/**************************
+NAVIGATION
+**************************/
+.top-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  height: 45px;
+}
+
+
+/**************************
+HEADER
+**************************/
+.main-header {
+  position: relative;
+  height: 600px;
+  background: url(../img/coding.jpg) #4ec38f;
+  padding: 0;
+}
+
+.header-name {
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  margin-bottom: 1%;
+}
+
+
+
+@media screen and (max-width: 600px){
+  .inner-header {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header-name {
+    margin: 0 auto;
+    font-size: 2.3em;
+  }
+}
+
+/**************************
+PROJECTS SECTION
+**************************/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+
+@media screen and (max-width: 1000px){
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-container {
+  border-radius: 3%;
+  text-align: center;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background-color: #742f23;
+  padding: 15px;
+  color: white;
+}
+
+.project-container:hover {
+  opacity: .7;
+}
+
+
+.project-container a{
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+/**************************
+FOOTER
+**************************/
+
+
+.footer-content {
+  position: absolute;
+  bottom: 40%;
+  right: 50%;
+  transform: translate(50%, -1%);
+  color: gray;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
 }
