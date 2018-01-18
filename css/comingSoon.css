@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+
+html{
+  background-image: -webkit-linear-gradient(180deg, #1f222b 52%, #e55d51 53%);
+}
+
+body{
+  font-family: 'Special Elite', cursive;
+  color: white;
+  font-size: 2.5em;
+}
+
+.right{
+  width: 45%;
+  display: block;
+  text-align: center;
+  float:left;
+  margin-top: 10%;
+}
+
+.left{
+  width: 45%;
+  float: right;
+  margin-top: 10%;
+}
