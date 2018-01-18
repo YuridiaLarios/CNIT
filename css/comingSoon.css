@@ -28,3 +28,37 @@ body{
 .coding-img{
   width: 60%;
 }
+
+@media screen and (max-width: 780px){
+  html{
+    background-image: none;
+    background-color: #e55d51;
+  }
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .right{
+    width: 100%;
+    text-align: center;
+    float: none;
+    margin-top: 0%;
+  }
+
+  .left{
+    width: 100%;
+    height: 400px;
+    padding-top: 20px;
+    float: none;
+    margin-top: 10%;
+    text-align: center;
+    background-color: #1f222b;
+    font-size: .8em;
+  }
+
+  .coding-img{
+    width: 60%;
+  }
+
+}
