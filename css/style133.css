@@ -47,6 +47,11 @@ HEADER
 
 
 @media screen and (max-width: 600px){
+  .main-header {
+    height: 0px;
+    background: none;
+  }
+
   .inner-header {
     width: 250px;
     margin: 0 auto;
