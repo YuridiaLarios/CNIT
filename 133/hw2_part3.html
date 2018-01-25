@@ -24,21 +24,21 @@
 
       for(var i=0; i<=4; i++){
         if (nums[i] > 0){
-          sumPos += nums[i];
+          sumPos++;
         }
         else if(nums[i] < 0){
-          sumNeg += nums[i];
+          sumNeg++;
         }
         else {
-          sumZeros = 0;
+          sumZeros++;
         }
       }
 
 
       document.getElementById("form-results").innerHTML +=
-                                                           `<p><br>Sum of Positive Numbers = ${sumPos}
-                                                            <br>Sum of Negative Numbers = ${sumNeg}
-                                                            <br>Sum of Zeros = ${sumZeros}</p>`;
+                                                           `<p><br>Count of Positive Numbers = ${sumPos}
+                                                            <br>Count of Negative Numbers = ${sumNeg}
+                                                            <br>Count of Zeros = ${sumZeros}</p>`;
       document.getElementById("submitButton").disabled = true;
     }
     function resetCalculations(){
