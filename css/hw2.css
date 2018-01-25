@@ -28,7 +28,8 @@ a{
 }
 
 a:hover {
-  background-color: black;
+  background: #487dad;
+  font-size: 1.12em;
 }
 
 .inner-wrapper{
