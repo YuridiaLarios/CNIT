@@ -60,3 +60,25 @@ ol li{
   font-size: 1.1em;
   margin-bottom: 25px;
 }
+
+
+#content{
+  color: black;
+  text-align: center;
+}
+
+.red{
+  font-family: "Times New Roman";
+  color: red;
+}
+
+.blue{
+  font-family: "Arial";
+  color: blue;
+}
+
+.green{
+  font-family: "Impact";
+  color:green;
+  font-style: italic;
+}
