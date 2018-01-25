@@ -6,6 +6,35 @@
     <title>Hw#2 Part 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw2.css">
+    <script>
+    function calculate(){
+      var num1, num2, num3, n1, n2, n3, sum, average, product, minNum, maxNum;
+      number1 = document.forms["myform"].elements["num1"].value;
+      number2 = document.forms["myform"].elements["num2"].value;
+      number3 = document.forms["myform"].elements["num3"].value;
+
+      n1 = parseInt(number1);
+      n2 = parseInt(number2);
+      n3 = parseInt(number3);
+      sum = n1 + n2 + n3;
+      average = parseInt(sum/3);
+      product = n1 * n2 * n3;
+      minNum = Math.min(n1,n2,n3);
+      maxNum = Math.max(n1,n2,n3);
+
+      document.getElementById("form-results").innerHTML +=
+                                                           `<p><br>Sum = ${sum}
+                                                            <br>Average = ${average}
+                                                            <br>Prodruct = ${product}
+                                                            <br>Largest number = ${maxNum}
+                                                            <br>Smallest number = ${minNum}</p>`;
+      document.getElementById("submitButton").disabled = true;
+    }
+    function resetCalculations(){
+      document.getElementById("form-results").innerHTML = '';
+      document.getElementById("submitButton").disabled = false;
+    }
+    </script>
 </head>
 <body>
   <div class="wrapper">
@@ -21,7 +50,28 @@
     </nav>
     <h1>Hw #2 Part 2</h1>
     <div class="inner-wrapper">
+      <form name="myform">
+        <table>
+          <tr>
+            <td>First Number:</td>
+            <td><input type="text" name="num1" size="10"></td>
+          </tr>
+          <tr>
+            <td>Second Number:</td>
+            <td><input type="text" name="num2" size="10"></td>
+          </tr>
+          <tr>
+            <td>Third Number:</td>
+            <td><input type="text" name="num3" size="10"></td>
+          </tr>
+        </table>
+        <br>
+        <input type="button" onclick="calculate()" value="SUBMIT" id="submitButton">
+        <input type="reset" onclick="resetCalculations()" value="RESET" id="resetButton">
+      </form>
+      <div id="form-results">
+      </div>
+      </div>
     </div>
-  </div>
 </body>
 </html>
