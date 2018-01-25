@@ -15,9 +15,9 @@ body{
 
 nav{
   font-weight: bold;
-	margin: 0px auto;
 	padding: 1px;
-	width: 420px;
+	width: 100%;
+  text-align: center;
 }
 
 a{
@@ -31,6 +31,11 @@ a:hover {
   background: #487dad;
   font-size: 1.12em;
 }
+
+.active{
+    background: #487dad;
+}
+
 
 .inner-wrapper{
   margin: 0 auto;
