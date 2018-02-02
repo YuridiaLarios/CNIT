@@ -60,11 +60,10 @@
 
     <script>
     $(document).ready(function(){
-      var countPos = 0;
-      var countNeg = 0;
-      var countZeros = 0;
-
       function calculate(){
+        var countPos = 0;
+        var countNeg = 0;
+        var countZeros = 0;
           $('.numField').each(function() {
            var temp = parseInt($(this).val(), 10);
            if(temp > 0){
@@ -73,27 +72,27 @@
            else if (temp < 0) {
              countNeg++;
            }
-           else{
+           else if (temp == 0){
              countZeros++;
            }
        });
+       display(countPos, countNeg, countZeros);
      };
 
-     function display(){
+     function display(countPos, countNeg, countZeros){
        $("#form-results").html(`<p><br>Count of Positive Numbers = ${countPos}
                                 <br>Count of Negative Numbers = ${countNeg}
-                                <br>Count of Zeros = ${countZeros}</p>`);
+                                <br>Count of Zeros = ${countZeros}</p>`).fadeTo("slow",1);
      };
 
       $("#submitButton").click(function(){
           calculate();
-          display();
           $(this).prop("disabled", true);
         });
       });
 
       $("#resetButton").click(function(){
-        $("#form-results").fadeTo();
+        $("#form-results").fadeTo("slow",0);
         $("#submitButton").prop("disabled", false);
       });
     </script>
