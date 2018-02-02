@@ -64,13 +64,9 @@
       var countNeg = 0;
       var countZeros = 0;
 
-      function calculate()
-       {
-         console.log("current value = ");
-
+      function calculate(){
           $('.numField').each(function() {
            var temp = parseInt($(this).val(), 10);
-           console.log("current value = ");
            if(temp > 0){
              countPos++;
            }
@@ -92,7 +88,13 @@
       $("#submitButton").click(function(){
           calculate();
           display();
+          $(this).prop("disabled", true);
         });
+      });
+
+      $("#resetButton").click(function(){
+        $("#form-results").fadeTo();
+        $("#submitButton").prop("disabled", false);
       });
     </script>
 </body>
