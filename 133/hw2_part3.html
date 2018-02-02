@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw2.css">
 
-    <!-- need to use jquery for fading effect -->
-    <!-- waiting for that update to be made -->
-    <!-- I keep waiting for myself -->
+    <!-- need to use jquery for fading effect as requested-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
@@ -58,6 +56,7 @@
       </div>
     </div>
 
+
     <script>
     $(document).ready(function(){
       function calculate(){
@@ -98,47 +97,3 @@
     </script>
 </body>
 </html>
-
-<!--
-// $(document).ready(function(){
-// function calculate(){
-//     var nums = [];
-//     var num1, num2, num3, num4, num5, n1, n2, n3, n4, n5, sumNeg = 0, sumPos = 0, sumZeros = 0;
-//     number1 = document.forms["myform"].elements["num1"].value;
-//     number2 = document.forms["myform"].elements["num2"].value;
-//     number3 = document.forms["myform"].elements["num3"].value;
-//     number4 = document.forms["myform"].elements["num4"].value;
-//     number5 = document.forms["myform"].elements["num5"].value;
-//     n1 = parseInt(number1);
-//     n2 = parseInt(number2);
-//     n3 = parseInt(number3);
-//     n4 = parseInt(number4);
-//     n5 = parseInt(number5);
-//     nums.push(n1,n2,n3,n4,n5);
-//
-//     for(var i=0; i<=4; i++){
-//       if (nums[i] > 0){
-//         sumPos++;
-//       }
-//       else if(nums[i] < 0){
-//         sumNeg++;
-//       }
-//       else {
-//         sumZeros++;
-//       }
-//     }
-//     document.getElementById("form-results").innerHTML +=
-//                                                          `<p><br>Count of Positive Numbers = ${sumPos}
-//                                                           <br>Count of Negative Numbers = ${sumNeg}
-//                                                           <br>Count of Zeros = ${sumZeros}</p>`;
-//     document.getElementById("submitButton").disabled = true;
-//   }
-//
-//     function resetCalculations(){
-//     document.getElementById("form-results").innerHTML = '';
-//     document.getElementById("submitButton").disabled = false;
-//   }
-// $(#form-results).click(function(){
-//     $(this).fadeTo("slow", 0.15);
-//   });
-// }); -->

@@ -1,6 +1,6 @@
 
 /*****************************************************
-HW2 Landing page and general layout
+HW 2 Landing page and general layout
 ******************************************************/
 body{
   background-color: white;
@@ -100,3 +100,18 @@ form{
 #form-results p{
   text-align: center;
 }
+
+#submitButton {
+  margin-right: 2%;
+}
+
+  input[type=button], input[type=reset] {
+  border: solid 7px transparent;
+  box-shadow: 3px 3px 3px #555;
+  font-size: .7em;
+  cursor: pointer;
+}
+
+/*****************************************************
+hw part4
+******************************************************/
