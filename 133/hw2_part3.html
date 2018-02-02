@@ -30,27 +30,27 @@
         <table>
           <tr>
             <td>First Number:</td>
-            <td><input type="text" name="num1" size="10"></td>
+            <td><input type="text" id="num1" name="num" size="10" value=""></td>
           </tr>
           <tr>
             <td>Second Number:</td>
-            <td><input type="text" name="num2" size="10"></td>
+            <td><input type="text" id="num2" name="num" size="10" value=""></td>
           </tr>
           <tr>
             <td>Third Number:</td>
-            <td><input type="text" name="num3" size="10"></td>
+            <td><input type="text" id="num3" name="num" size="10" value=""></td>
           </tr>
           <tr>
             <td>Fourth Number:</td>
-            <td><input type="text" name="num4" size="10"></td>
+            <td><input type="text" id="num4" name="num" size="10" value=""></td>
           </tr>
           <tr>
             <td>Fifth Number:</td>
-            <td><input type="text" name="num5" size="10"></td>
+            <td><input type="text" id="num5" name="num" size="10" value=""></td>
           </tr>
         </table>
         <br>
-        <input type="button" onclick="calculate()" value="SUBMIT" id="submitButton">
+        <input type="button" value="SUBMIT" id="submitButton">
         <input type="reset" value="Click to Fade Results" id="resetButton">
       </form>
       <div id="form-results">
@@ -59,7 +59,38 @@
     </div>
 
     <script>
+    $(document).ready(function(){
+      var countPos = 0;
+      var countNeg = 0;
+      var countZeros = 0;
 
+      function calculate()
+       {
+         $('num').each(function() {
+           var temp = $(this).val();
+           if(temp > 0){
+             countPos++;
+           }
+           else if (temp < 0) {
+             countNeg++;
+           }
+           else{
+             countZeros++;
+           }
+       });
+     };
+
+       $("#form-results").html(`<p><br>Count of Positive Numbers = ${countPos}
+                                <br>Count of Negative Numbers = ${countNeg}
+                                <br>Count of Zeros = ${countZeros}</p>`);
+
+
+      $("#submitButton").click(function(){
+          calculate();
+          display();
+
+        });
+      });
     </script>
 </body>
 </html>
