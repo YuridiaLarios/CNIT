@@ -23,60 +23,33 @@
     </nav>
     <h1>Hw #2 Part 4</h1>
     <div class="inner-wrapper">
-      <table id="squaresCubes">
-        <thead>
-          <tr>
-            <th scope="col">Number</th>
-            <th scope="col">Square</th>
-            <th scope="col">Cube</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="number" scope="row">1</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <th class="number" scope="row">2</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <th class="number" scope="row">3</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <th class="number" scope="row">4</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <th class="number" scope="row">5</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-          <tr>
-            <th class="number" scope="row">6</th>
-            <td>#</td>
-            <td>#</td>
-          </tr>
-        </tbody>
-      </table>
+      <script>
+      var table = '';
+      var rows = 6;
+      var cols = 3;
+      table += '<thead>';
+      table += '<tr><th scope="col">Number</th>';
+      table += '<th scope="col">Square</th>';
+      table += '<th scope="col">Cube</th>';
+      table += '</tr></thead>';
+      table += '<tbody>';
+
+        for(var r = 1; r <= rows; r++)
+        {
+          table += '<tr class="number">';
+          for(var c = 1; c <= cols-2; c++){
+            table += '<th scope="row">' + r + '</th>';
+          }
+          table += '<td>' + Math.pow(r,2) + '</td>';
+          table += '<td>' + Math.pow(r,3) + '</td>';
+          table += '</tr>';
+        }
+      table += '</tbody>';
+        document.write('<table id="squaresCubes"' + table + '</table>');
+
+      </script>
     </div>
   </div>
-  <script>
-    $(document).ready(function(){
-      var table = document.getElementById('squaresCubes');
-      $('.number').each(function() {
-        var temp = parseInt($(this).val(), 10);
-        var square = (Math.pow(temp, 2));
-        var cube =  (Math.pow(temp, 3));
-        console.log(square);
-        console.log(cube);
-      });
-    });
-  </script>
+
 </body>
 </html>
