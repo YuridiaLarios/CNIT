@@ -63,7 +63,7 @@ ol li{
   list-style-type: none;
   font-size: 1.1em;
   color:#4c93d0;
-  
+
 }
 
 /*****************************************************
@@ -93,7 +93,6 @@ hw part2
 /*****************************************************
 hw part3
 ******************************************************/
-
 form{
   text-align: center;
   margin: 0 auto;
@@ -142,7 +141,6 @@ hw part4
 /*****************************************************
 hw extra credit
 ******************************************************/
-
 .wrapper-monetaryExchange{
   width: 55%;
   height: 690px;
@@ -152,7 +150,6 @@ hw extra credit
   margin-top: 7%;
   box-shadow: 0 2px 4px 0 gray,0 2px 10px 0 gray !important;
 }
-
 
 #monetaryExchange {
   margin: 0 auto;
@@ -190,18 +187,17 @@ hw extra credit
 }
 
 
-div.panel,p.flip
-{
-margin:0 auto;
-padding:5px;
-text-align:center;
-background:gray;
-color: white;
-width: 91%;
-border:solid 1px #c3c3c3;
+div.panel,p.flip {
+  margin:0 auto;
+  padding:5px;
+  text-align:center;
+  background:gray;
+  color: white;
+  width: 91%;
+  border:solid 1px #c3c3c3;
 }
-div.panel
-{
-height:100px;
-display:none;
+
+div.panel{
+  height:100px;
+  display:none;
 }
