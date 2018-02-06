@@ -9,7 +9,7 @@ body{
 
 .wrapper{
   width: 55%;
-  height: 530px;
+  height: 600px;
   background-image: -webkit-linear-gradient(90deg, #4c93d0 89%, #2f71ac 12%);
   margin: 0 auto;
   margin-top: 7%;
@@ -134,4 +134,38 @@ hw part4
 
 #squaresCubes tr:nth-child(even){
   background-color: #f2f2f2;
+}
+
+/*****************************************************
+hw extra credit
+******************************************************/
+
+#monetaryExchange {
+  margin: 0 auto;
+}
+
+#monetaryExchange thead {
+    background-color: black;
+    color: white;
+}
+
+#monetaryExchange td, #monetaryExchange th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#monetaryExchange tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#dollars{
+  background-color: black;
+  color: white;
+}
+
+#textfield {
+  width: 80%;
+  padding: 10px;
+  margin: 0px;
+  text-align: right;
 }

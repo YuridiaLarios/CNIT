@@ -6,6 +6,8 @@
     <title>Hw#2 Extra Credit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw2.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -21,6 +23,77 @@
     </nav>
     <h1>Hw #2 Extra Credit</h1>
     <div class="inner-wrapper">
+      <script>
+
+      function drawTable(){
+      var table = '';
+      var rows = 5;
+      var cols = 3;
+      var britishPound, caseanadianDollar, euro, japaneseYen, mexicanPeso;
+      table += '<caption>' + "Monetary Exchange Rates" + '</caption>';
+
+      table += '<thead>';
+      table += '<tr><th scope="col">Currency</th>';
+      table += '<th scope="col">Rate</th>';
+      table += '<th scope="col">Value</th>';
+      table += '</tr></thead>';
+
+      table += '<tbody>';
+
+      table += '<tr><th scope="row">'+ "British Pound" + '</th>';
+      table += '<td>'+ "0.77521" +'</td>';
+      table += '<td>';
+      if(britishPound){
+        table += britishPound;
+      }
+      table += '</td></tr>'
+
+      table += '<tr><th scope="row">'+ "Canadian Dollar" + '</th>';
+      table += '<td>'+ "1.34461" +'</td>';
+      table += '<td>';
+      if(caseanadianDollar){
+        table += britishPound;
+      }
+      table += '</td></tr>'
+
+      table += '<tr><th scope="row">'+ "Euro" + '</th>';
+      table += '<td>'+ "0.88754" +'</td></td>';
+      table += '<td>';
+      if(euro){
+        table += britishPound;
+      }
+      table += '</td></tr>'
+
+      table += '<tr><th scope="row">'+ "Japanese Yen" + '</th>';
+      table += '<td>'+ "109.350" +'</td></td>';
+      table += '<td>';
+      if(japaneseYen){
+        table += britishPound;
+      }
+      table += '</td></tr>'
+
+      table += '<tr><th scope="row">'+ "Mexican Peso" + '</th>';
+      table += '<td>'+ "18.2806" +'</td></td>';
+      table += '<td>';
+      if(mexicanPeso){
+        table += britishPound;
+      }
+      table += '</td></tr>'
+
+      table += '<tr><th scope="row" colspan="2" id="dollars">'+ "Enter Amount of U.S Dollars: " + '</th>';
+      table += '<td><input name="textfield" id="textfield" type="text"/></td></tr>'
+
+      table += '</tbody>';
+        document.write('<table id="monetaryExchange"' + table + '</table>');
+      }
+
+      drawTable();
+
+      $("#textfield").click(function(){
+        $(this).css("background-color","yellow");
+      });
+
+      </script>
     </div>
   </div>
 </body>
