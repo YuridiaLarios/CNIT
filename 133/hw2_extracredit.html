@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="wrapper-monetaryExchange">
     <nav>
       <ul>
         <a href="hw2.html">Home</a> -
@@ -22,79 +22,110 @@
       </ul>
     </nav>
     <h1>Hw #2 Extra Credit</h1>
+    <div class="panel">
+    <p>Input an amount in U.S. dollars and press enter. <br>Table will display its equivalent in each of the foreign currencies</p>
+    <p>Refresh page to try a different U.S dollar amount.</p>
+    </div>
+    <p class="flip">Click to Show/Hide Instructions</p>
+
     <div class="inner-wrapper">
-      <script>
-
-      function drawTable(){
-      var table = '';
-      var rows = 5;
-      var cols = 3;
-      var britishPound, caseanadianDollar, euro, japaneseYen, mexicanPeso;
-      table += '<caption>' + "Monetary Exchange Rates" + '</caption>';
-
-      table += '<thead>';
-      table += '<tr><th scope="col">Currency</th>';
-      table += '<th scope="col">Rate</th>';
-      table += '<th scope="col">Value</th>';
-      table += '</tr></thead>';
-
-      table += '<tbody>';
-
-      table += '<tr><th scope="row">'+ "British Pound" + '</th>';
-      table += '<td>'+ "0.77521" +'</td>';
-      table += '<td>';
-      if(britishPound){
-        table += britishPound;
-      }
-      table += '</td></tr>'
-
-      table += '<tr><th scope="row">'+ "Canadian Dollar" + '</th>';
-      table += '<td>'+ "1.34461" +'</td>';
-      table += '<td>';
-      if(caseanadianDollar){
-        table += britishPound;
-      }
-      table += '</td></tr>'
-
-      table += '<tr><th scope="row">'+ "Euro" + '</th>';
-      table += '<td>'+ "0.88754" +'</td></td>';
-      table += '<td>';
-      if(euro){
-        table += britishPound;
-      }
-      table += '</td></tr>'
-
-      table += '<tr><th scope="row">'+ "Japanese Yen" + '</th>';
-      table += '<td>'+ "109.350" +'</td></td>';
-      table += '<td>';
-      if(japaneseYen){
-        table += britishPound;
-      }
-      table += '</td></tr>'
-
-      table += '<tr><th scope="row">'+ "Mexican Peso" + '</th>';
-      table += '<td>'+ "18.2806" +'</td></td>';
-      table += '<td>';
-      if(mexicanPeso){
-        table += britishPound;
-      }
-      table += '</td></tr>'
-
-      table += '<tr><th scope="row" colspan="2" id="dollars">'+ "Enter Amount of U.S Dollars: " + '</th>';
-      table += '<td><input name="textfield" id="textfield" type="text"/></td></tr>'
-
-      table += '</tbody>';
-        document.write('<table id="monetaryExchange"' + table + '</table>');
-      }
-
-      drawTable();
-
-      $("#textfield").click(function(){
-        $(this).css("background-color","yellow");
-      });
-
-      </script>
     </div>
   </div>
+  <script>
+  $(document).ready(function(){
+
+  var textfieldInput, britishPound, canadianDollar, euro, japaneseYen, mexicanPeso;
+
+  function drawTable(){
+  var table = '';
+  var rows = 5;
+  var cols = 3;
+  table += '<caption>' + "Monetary Exchange Rates" + '</caption>';
+
+  table += '<thead>';
+  table += '<tr><th scope="col">Currency</th>';
+  table += '<th scope="col">Rate</th>';
+  table += '<th scope="col">Value</th>';
+  table += '</tr></thead>';
+
+  table += '<tbody>';
+
+  table += '<tr><th scope="row">'+ "British Pound" + '</th>';
+  table += '<td>'+ "0.77521" +'</td>';
+  table += '<td class="conversion">';
+  if(britishPound){
+    table += britishPound;
+  }
+  table += '</td></tr>'
+
+  table += '<tr><th scope="row">'+ "Canadian Dollar" + '</th>';
+  table += '<td>'+ "1.34461" +'</td>';
+  table += '<td class="conversion">';
+  if(canadianDollar){
+    table += canadianDollar;
+  }
+  table += '</td></tr>'
+
+  table += '<tr><th scope="row">'+ "Euro" + '</th>';
+  table += '<td>'+ "0.88754" +'</td></td>';
+  table += '<td class="conversion">';
+  if(euro){
+    table += euro;
+  }
+  table += '</td></tr>'
+
+  table += '<tr><th scope="row">'+ "Japanese Yen" + '</th>';
+  table += '<td>'+ "109.350" +'</td></td>';
+  table += '<td class="conversion">';
+  if(japaneseYen){
+    table += japaneseYen;
+  }
+  table += '</td></tr>'
+
+  table += '<tr><th scope="row">'+ "Mexican Peso" + '</th>';
+  table += '<td>'+ "18.2806" +'</td></td>';
+  table += '<td class="conversion">';
+  if(mexicanPeso){
+    table += mexicanPeso;
+  }
+  table += '</td></tr>'
+
+  table += '<tr><th scope="row" colspan="2" id="dollars">'+ "Enter Amount of U.S Dollars: " + '</th>';
+  if(textfieldInput){
+    table += '<td><input name="textfield" id="textfield" type="text" disabled placeholder="'+ textfieldInput +'"/>';
+  } else {
+    table += '<td><input name="textfield" id="textfield" type="text"/>';
+  }
+  table += '</td></tr>'
+
+  table += '</tbody>';
+    $(".inner-wrapper").html('<table id="monetaryExchange"' + table + '</table>');
+  }
+
+  drawTable();
+
+  $(".flip").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+
+  $("#textfield").click(function(){
+    $(this).css("background-color","yellow");
+  });
+
+  $('#textfield').keypress(function(e){
+   if(e.which == 13){//Enter key pressed
+     var textfield = $("#textfield");
+     textfieldInput = textfield.val();
+     britishPound = (0.77521 * textfieldInput).toFixed(2);
+     canadianDollar = (1.34461 * textfieldInput).toFixed(2);
+     euro = (0.88754 * textfieldInput).toFixed(2);
+     japaneseYen = (109.350 * textfieldInput).toFixed(2);
+     mexicanPeso = (18.2806 * textfieldInput).toFixed(2);
+     drawTable();
+   }
+  });
+});
+
+  </script>
 </body>
 </html>
