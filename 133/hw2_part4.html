@@ -6,6 +6,8 @@
     <title>Hw#2 Part 4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw2.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -21,7 +23,56 @@
     </nav>
     <h1>Hw #2 Part 4</h1>
     <div class="inner-wrapper">
+      <table id="squaresCubes">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Square</th>
+            <th scope="col">Cube</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="number" scope="row">1</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th class="number" scope="row">2</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th class="number" scope="row">3</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th class="number" scope="row">4</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th class="number" scope="row">5</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th class="number" scope="row">6</th>
+            <td>#</td>
+            <td>#</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  <script>
+    $(document).ready(function(){
+      var table = document.getElementById('squaresCubes');
+      $('.number').each(function() {
+       var temp = parseInt($(this).val(), 10);
+       });
+    });
+  </script>
 </body>
 </html>

@@ -115,3 +115,23 @@ form{
 /*****************************************************
 hw part4
 ******************************************************/
+.inner-wrapper{
+  text-align: center;
+}
+#squaresCubes {
+  margin: 0 auto;
+}
+
+#squaresCubes th {
+    background-color: #3071ac;
+    color: white;
+}
+
+#squaresCubes td, #squaresCubes th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#squaresCubes tr:nth-child(even){
+  background-color: #f2f2f2;
+}
