@@ -70,8 +70,12 @@
     $(document).ready(function(){
       var table = document.getElementById('squaresCubes');
       $('.number').each(function() {
-       var temp = parseInt($(this).val(), 10);
-       });
+        var temp = parseInt($(this).val(), 10);
+        var square = (Math.pow(temp, 2));
+        var cube =  (Math.pow(temp, 3));
+        console.log(square);
+        console.log(cube);
+      });
     });
   </script>
 </body>
