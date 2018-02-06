@@ -56,7 +56,6 @@
       </div>
     </div>
 
-
     <script>
     $(document).ready(function(){
       function calculate(){
@@ -64,25 +63,25 @@
         var countNeg = 0;
         var countZeros = 0;
           $('.numField').each(function() {
-           var temp = parseInt($(this).val(), 10);
-           if(temp > 0){
-             countPos++;
-           }
-           else if (temp < 0) {
-             countNeg++;
-           }
-           else if (temp == 0){
-             countZeros++;
-           }
-       });
-       display(countPos, countNeg, countZeros);
-     };
+            var temp = parseInt($(this).val(), 10);
+            if(temp > 0){
+              countPos++;
+            }
+            else if (temp < 0) {
+              countNeg++;
+            }
+            else if (temp == 0){
+              countZeros++;
+            }
+          });
+        display(countPos, countNeg, countZeros);
+      };
 
-     function display(countPos, countNeg, countZeros){
+      function display(countPos, countNeg, countZeros){
        $("#form-results").html(`<p><br>Count of Positive Numbers = ${countPos}
                                 <br>Count of Negative Numbers = ${countNeg}
                                 <br>Count of Zeros = ${countZeros}</p>`).fadeTo("slow",1);
-     };
+      };
 
       $("#submitButton").click(function(){
           calculate();
@@ -95,5 +94,5 @@
         $("#submitButton").prop("disabled", false);
       });
     </script>
-</body>
+  </body>
 </html>
