@@ -1,0 +1,203 @@
+
+/*****************************************************
+HW 2 Landing page and general layout
+******************************************************/
+body{
+  background-color: white;
+  margin: 0 auto;
+}
+
+.wrapper{
+  width: 55%;
+  height: 600px;
+  background-image: -webkit-linear-gradient(90deg, #4c93d0 89%, #2f71ac 12%);
+  margin: 0 auto;
+  margin-top: 7%;
+  box-shadow: 0 2px 4px 0 gray,0 2px 10px 0 gray !important;
+}
+
+nav{
+  font-weight: bold;
+	padding: 1px;
+	width: 100%;
+  text-align: center;
+}
+
+li, a{
+  display: inline;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: white;
+  padding: 16px 4px;
+}
+
+a:hover {
+  background: #487dad;
+  font-size: 1.12em;
+}
+
+.active{
+    background: #487dad;
+}
+
+.inner-wrapper{
+  margin: 0 auto;
+  width: 90%;
+  background-color: white;
+  padding: 10px;
+  border-radius: .5%;
+  color: #4c93d0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+h1{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  margin: 40px;
+}
+
+ol li{
+  display: block;
+  list-style-type: none;
+  font-size: 1.1em;
+  color:#4c93d0;
+
+}
+
+/*****************************************************
+hw part2
+******************************************************/
+#content{
+  color: black;
+  text-align: center;
+}
+
+.red{
+  font-family: "Times New Roman";
+  color: red;
+}
+
+.blue{
+  font-family: "Arial";
+  color: blue;
+}
+
+.green{
+  font-family: "Impact";
+  color:green;
+  font-style: italic;
+}
+
+/*****************************************************
+hw part3
+******************************************************/
+form{
+  text-align: center;
+  margin: 0 auto;
+  width:250px;
+}
+
+#form-results p{
+  text-align: center;
+}
+
+#submitButton {
+  margin-right: 2%;
+}
+
+  input[type=button], input[type=reset] {
+  border: solid 7px transparent;
+  box-shadow: 3px 3px 3px #555;
+  font-size: .7em;
+  cursor: pointer;
+}
+
+/*****************************************************
+hw part4
+******************************************************/
+.inner-wrapper{
+  text-align: center;
+}
+#squaresCubes {
+  margin: 0 auto;
+}
+
+#squaresCubes th {
+    background-color: #3071ac;
+    color: white;
+}
+
+#squaresCubes td, #squaresCubes th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#squaresCubes tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+/*****************************************************
+hw extra credit
+******************************************************/
+.wrapper-monetaryExchange{
+  width: 55%;
+  height: 690px;
+  background-image: -webkit-linear-gradient(90deg, #4c93d0 89%, #2f71ac 12%);
+  margin: 0 auto;
+  margin-bottom: 5%;
+  margin-top: 7%;
+  box-shadow: 0 2px 4px 0 gray,0 2px 10px 0 gray !important;
+}
+
+#monetaryExchange {
+  margin: 0 auto;
+}
+
+#monetaryExchange thead {
+    background-color: black;
+    color: white;
+}
+
+#monetaryExchange td, #monetaryExchange th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#monetaryExchange tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#dollars{
+  background-color: black;
+  color: white;
+}
+
+#textfield {
+  width: 80%;
+  padding: 10px;
+  margin: 0px;
+  text-align: right;
+}
+
+.conversion {
+  text-align: right;
+  color: black;
+}
+
+
+div.panel,p.flip {
+  margin:0 auto;
+  padding:5px;
+  text-align:center;
+  background:gray;
+  color: white;
+  width: 91%;
+  border:solid 1px #c3c3c3;
+}
+
+div.panel{
+  height:100px;
+  display:none;
+}
