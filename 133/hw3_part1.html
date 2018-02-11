@@ -19,7 +19,34 @@
       </ul>
     </nav>
     <h1>Hw #3 Part 1</h1>
+    <div class="panel">
+      <p> Input grades for homework average, mid-term exam score, final exam score, and ACR (all as integers), and press either
+          submit or enter to calculate your final average grade rounded to an integer and final letter grade. <p>
+    </div>
+    <p class="flip"> Click to Show/Hide Instructions</p>
     <div class="inner-wrapper">
+      <h2>Student Grades</h2>
+      <form class="gradesForm">
+        <table>
+          <tr>
+            <td>Homework Average: </td>
+            <td><input type="number" class="numField" name="hwAverage" maxlength="3" value=""</td>
+          </tr>
+          <tr>
+            <td>Midterm Exam: </td>
+            <td class="gradeInput"><input type="number" class="numField" name="midterm" maxlength="3"  value=""</td>
+          </tr>
+          <tr>
+            <td>Final Exam: </td>
+            <td class="gradeInput"><input type="number" class="numField" name="finalExam" maxlength="3"  value=""</td>
+          </tr>
+          <tr>
+            <td>ACR: </td>
+            <td class="gradeInput"><input type="number" class="numField" name="acr" maxlength="3" value=""</td>
+          </tr>
+        </table>
+      </form>
+
     </div>
   </div>
 </body>
