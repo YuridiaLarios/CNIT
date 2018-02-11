@@ -94,6 +94,10 @@ div.panel,p.flip {
   border:solid 1px #c3c3c3;
 }
 
+p.flip{
+  cursor: pointer;
+}
+
 div.panel{
   height:100px;
   display:none;

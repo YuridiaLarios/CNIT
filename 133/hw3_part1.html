@@ -6,6 +6,8 @@
     <title>Hw#3 part 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw3.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -20,8 +22,8 @@
     </nav>
     <h1>Hw #3 Part 1</h1>
     <div class="panel">
-      <p> Input grades for homework average, mid-term exam score, final exam score, and ACR (all as integers), and press either
-          submit or enter to calculate your final average grade rounded to an integer and final letter grade. <p>
+      <p> Input grades for homework average, mid-term exam score, final exam score, and ACR (all as integers). <br><br> Click
+          "submit" or press enter to calculate your final average grade rounded to an integer and final letter grade. <p>
     </div>
     <p class="flip"> Click to Show/Hide Instructions</p>
     <div class="inner-wrapper">
@@ -30,24 +32,36 @@
         <table>
           <tr>
             <td>Homework Average: </td>
-            <td><input type="number" class="numField" name="hwAverage" maxlength="3" value=""</td>
+            <td><input type="number" class="numField hwAverage" name="hwAverage" maxlength="3" value="1"</td>
           </tr>
           <tr>
             <td>Midterm Exam: </td>
-            <td class="gradeInput"><input type="number" class="numField" name="midterm" maxlength="3"  value=""</td>
+            <td class="gradeInput"><input type="number midterm" class="numField" name="midterm" maxlength="3"  value=""</td>
           </tr>
           <tr>
             <td>Final Exam: </td>
-            <td class="gradeInput"><input type="number" class="numField" name="finalExam" maxlength="3"  value=""</td>
+            <td class="gradeInput"><input type="number finalExam" class="numField" name="finalExam" maxlength="3"  value=""</td>
           </tr>
           <tr>
             <td>ACR: </td>
-            <td class="gradeInput"><input type="number" class="numField" name="acr" maxlength="3" value=""</td>
+            <td class="gradeInput"><input type="number acr" class="numField" name="acr" maxlength="3" value=""</td>
           </tr>
         </table>
       </form>
 
     </div>
   </div>
+  <script>
+  $(document).ready(function(){
+    var hwAverage = parseInt($(".hwAverage").val());
+    var midterm = parseInt($(".midterm").val());
+    var finalExam = parseInt($(".finalExam").val());
+    var acr = parseInt($(".acr").val());
+    $(".flip").click(function(){
+      $(".panel").slideToggle("slow");
+    });
+
+  });
+  </script>
 </body>
 </html>
