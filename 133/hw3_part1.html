@@ -32,19 +32,19 @@
         <table>
           <tr>
             <td>Homework Average: </td>
-            <td><input type="number" class="numField hwAverage" name="hwAverage" maxlength="3" value="1"</td>
+            <td><input type="number" class="numField hwAverage" name="hwAverage" maxlength="3" value="5"</td>
           </tr>
           <tr>
             <td>Midterm Exam: </td>
-            <td class="gradeInput"><input type="number midterm" class="numField" name="midterm" maxlength="3"  value=""</td>
+            <td><input type="number" class="numField midterm" name="midterm" maxlength="3"  value="5"</td>
           </tr>
           <tr>
             <td>Final Exam: </td>
-            <td class="gradeInput"><input type="number finalExam" class="numField" name="finalExam" maxlength="3"  value=""</td>
+            <td><input type="number" class="numField finalExam" name="finalExam" maxlength="3"  value="5"</td>
           </tr>
           <tr>
             <td>ACR: </td>
-            <td class="gradeInput"><input type="number acr" class="numField" name="acr" maxlength="3" value=""</td>
+            <td><input type="number" class="numField acr" name="acr" maxlength="3" value="4"</td>
           </tr>
         </table>
       </form>
@@ -53,14 +53,16 @@
   </div>
   <script>
   $(document).ready(function(){
-    var hwAverage = parseInt($(".hwAverage").val());
-    var midterm = parseInt($(".midterm").val());
+    var hwAvg = parseInt($(".hwAverage").val());
+    var midExam = parseInt($(".midterm").val());
     var finalExam = parseInt($(".finalExam").val());
     var acr = parseInt($(".acr").val());
+    var finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * acr));
+    console.log(finalAverage);
+
     $(".flip").click(function(){
       $(".panel").slideToggle("slow");
     });
-
   });
   </script>
 </body>
