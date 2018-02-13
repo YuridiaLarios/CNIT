@@ -30,7 +30,7 @@
     <div class="inner-wrapper">
       <h2>Student Grades</h2>
       <form class="gradesForm">
-        <table id="myTable">
+        <table id="gradesTable">
           <tr>
             <td>Homework Average: </td>
             <td><input type="number" class="numField hwAverage" maxlength="3" value=""</td>
@@ -56,17 +56,24 @@
     </div>
   </div>
   <script>
-    var hwAvg = parseInt($(".hwAverage").val());
-    var midExam = parseInt($(".midterm").val());
-    var finalExam = parseInt($(".finalExam").val());
-    var acr = parseInt($(".acr").val());
+    // Global Variables
+    var hwAvg;
+    var midExam;
+    var finalExam;
+    var acr;
     var letterGrade;
     var finalAverage;
-    var retake = false;
-    var invalidInput = false;
+    var retake;
+    var invalidInput;
 
+
+
+
+    /*
+    This function gets the user's input values
+    and checks for valid input numbers between 0 and 100.
+    */
     function getValues(){
-
       hwAvg = parseInt($(".hwAverage").val());
       midExam = parseInt($(".midterm").val());
       finalExam = parseInt($(".finalExam").val());
@@ -79,6 +86,14 @@
       });
     }
 
+
+
+
+
+    /*
+    This function calculates the final average using the given formula
+    and also calculates its corresponding letter grade.
+    */
     function calculateFinalGrades(){
       finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * acr));
 
@@ -97,8 +112,16 @@
       }
     }
 
+
+
+
+    /*
+    This function appends 2 new rows to our gradesTable to show the Final Average
+    and its corresponding letter grade. It also displays a message if the student
+    needs to retake the course. And it disables the submit button.
+    */
     function display(){
-      $('#myTable > tbody:last-child').append(`<tr class="output"><td>Final Average: </td>
+      $('#gradesTable > tbody:last-child').append(`<tr class="output"><td>Final Average: </td>
                                               <td><input type="number" class="numField FinalAvg" disabled maxlength="3"
                                               value="${finalAverage}"</td></tr><tr class="output"><td>Final Letter Grade: </td><td><input type="text"
                                               class="numField FinalAvg" disabled maxlength="3" value="${letterGrade}"</td></tr>`);
@@ -108,6 +131,14 @@
       $("#submitButton").prop("disabled",true);
     }
 
+
+
+
+    /*
+    This function is called when clicking the submit button.
+    It initializes both boolean variables as false, to set them ready for
+    further testing, and removes any output values (if any) from previous submissions.
+    */
     function clear(){
       retake = false;
       invalidInput = false;
@@ -115,6 +146,25 @@
     }
 
 
+
+
+
+    /*
+    This function removes any output values (if any) from previous submissions,
+    and enables the submit button to be clickable again to allow to try new grades.
+    */
+    $("#resetButton").click(function(){
+      $("#submitButton").prop("disabled",false);
+      $(".output").remove();
+    });
+
+
+
+
+
+    /*
+      MAIN FUNCTION
+    */
     $("#submitButton").click(function(){
       clear();
       getValues();
@@ -126,19 +176,16 @@
       }
     });
 
-    $("#resetButton").click(function(){
-      $("#submitButton").prop("disabled",false);
-      $(".output").remove();
-      retake = false;
-      invalidInput = false;
-    });
 
 
 
+
+    /*
+      This function allows to show or hide panel of instructions.
+    */
     $(".flip").click(function(){
       $(".panel").slideToggle("slow");
     });
-
   </script>
 </body>
 </html>
