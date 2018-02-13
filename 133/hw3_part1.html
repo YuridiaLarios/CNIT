@@ -51,6 +51,8 @@
         <input type="button" value="SUBMIT" id="submitButton">
         <input type="reset" value="RESET" id="resetButton">
       </form>
+      <div id="messageOutput">
+      </div>
     </div>
   </div>
   <script>
@@ -61,12 +63,20 @@
     var letterGrade;
     var finalAverage;
     var retake = false;
+    var invalidInput = false;
 
     function getValues(){
+
       hwAvg = parseInt($(".hwAverage").val());
       midExam = parseInt($(".midterm").val());
       finalExam = parseInt($(".finalExam").val());
       acr = parseInt($(".acr").val());
+      var values = [hwAvg, midExam, finalExam, acr];
+      values.forEach(function(val){
+        if (!Number.isInteger(val) || val < 0 || val > 100 ){
+          invalidInput = true;
+        }
+      });
     }
 
     function calculateFinalGrades(){
@@ -93,25 +103,42 @@
                                               value="${finalAverage}"</td></tr><tr class="output"><td>Final Letter Grade: </td><td><input type="text"
                                               class="numField FinalAvg" disabled maxlength="3" value="${letterGrade}"</td></tr>`);
       if(retake){
-        $(".inner-wrapper").append("<p class='output retake-msg'>Student must retake the course</p>");
+        $("#messageOutput").append("<p class='output retake-msg'>Student must retake the course</p>");
       }
+      $("#submitButton").prop("disabled",true);
     }
 
+    function clear(){
+      retake = false;
+      invalidInput = false;
+      $(".output").remove();
+    }
+
+
     $("#submitButton").click(function(){
-      $(this).prop("disabled",true);
+      clear();
       getValues();
-      calculateFinalGrades();
-      display();
+      if(invalidInput){
+        $("#messageOutput").html("<p class='output retake-msg'>Values must be between 0 and 100</p>");
+      } else{
+        calculateFinalGrades();
+        display();
+      }
     });
 
     $("#resetButton").click(function(){
       $("#submitButton").prop("disabled",false);
       $(".output").remove();
+      retake = false;
+      invalidInput = false;
     });
+
+
 
     $(".flip").click(function(){
       $(".panel").slideToggle("slow");
     });
+
   </script>
 </body>
 </html>
