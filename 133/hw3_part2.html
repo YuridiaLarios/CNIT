@@ -6,6 +6,8 @@
     <title>Hw#3 part 2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw3.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="wrapper wrapper2">
@@ -27,20 +29,20 @@
             <br>
             <h4>Input the number of each item sold:<h4>
             <label for="item1">Item 1: </label>
-            <td><input type="number" id="item1" class="inputField" value="">
+            <td><input type="number" id="item1" class="inputField" value="2">
             <br>
             <label for="item2">Item 2: </label>
-            <input type="number" id="item2" class="inputField" value="">
+            <input type="number" id="item2" class="inputField" value="8">
             <br>
             <label for="item3">Item 3: </label>
-            <input type="number" id="item3" class="inputField" value="">
+            <input type="number" id="item3" class="inputField" value="9">
             <br>
             <label for="item4">Item 4: </label>
-            <input type="number" id="item4" class="inputField" value="">
+            <input type="number" id="item4" class="inputField" value="10">
             <br>
             <br>
-            <input type="submit" id="submitButton">
-            <input type="reset" id="resetButton">
+            <input type="button" value="SUBMIT" id="submitButton">
+            <input type="reset" value="RESET" id="resetButton">
 
             <table id="outputTable">
               <tr>
@@ -49,32 +51,7 @@
                 <td>Number Sold:</td>
                 <td>Total:</td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>$239.99</td>
-                <td><input type="number"  value=""></td>
-                <td><input type="number"  value=""></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>$129.75</td>
-                <td><input type="number"  value=""></td>
-                <td><input type="number"  value=""></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>$99.95</td>
-                <td><input type="number"  value=""></td>
-                <td><input type="number"  value=""></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>$350.89</td>
-                <td><input type="number" value=""></td>
-                <td><input type="number"  value=""></td>
-              </tr>
             </table>
-            <div id="totalOutput"></div>
             <label for="totalAmountSold">Total Amount Sold: </label>
             <input type="number" id="totalAmountSold" class="inputField" value="">
             <br>
@@ -83,5 +60,31 @@
       </form>
     </div>
   </div>
+  <script>
+    function Item(itemNum, price, numberSold) {
+    this.itemNum = itemNum;
+    this.price = price;
+    this.numberSold = numberSold;
+    this.revenue = price * numberSold;
+  }
+  var item = [];
+  var prices = [239.99, 129.75, 99.95, 350.89];
+  for(var i = 1;  i<=4; i++){
+    item[i-1] = new Item(i, prices[i-1], parseFloat($("#item"+ i).val()));
+  }
+
+  item.forEach(function(item){
+  $('tbody').append(`<tr><td>${item.itemNum}</td>
+                         <td>${item.price}</td>
+                         <td><input type="number" value="${item.numberSold}"></td>
+                         <td><input type="number"  value="${item.revenue}"></td>
+                    </tr>`);
+  });
+
+  console.log(item[0]);
+  console.log(item[1]);
+  console.log(item[2]);
+  console.log(item[3]);
+  </script>
 </body>
 </html>
