@@ -32,20 +32,20 @@
       <form class="gradesForm">
         <table id="gradesTable">
           <tr>
-            <td>Homework Average: </td>
-            <td><input type="number" class="numField hwAverage" maxlength="3" value=""</td>
+            <td><label for="hwAverage">Homework Average: </label></td>
+            <td><input type="number" id="hwAverage" class="numField" maxlength="3" value=""</td>
           </tr>
           <tr>
-            <td>Midterm Exam: </td>
-            <td><input type="number" class="numField midterm" maxlength="3"  value=""</td>
+            <td><label for="midtermExam">Midterm Exam: </label></td>
+            <td><input type="number" id="midtermExam" class="numField" maxlength="3"  value=""</td>
           </tr>
           <tr>
-            <td>Final Exam: </td>
-            <td><input type="number" class="numField finalExam" maxlength="3"  value=""</td>
+            <td><label for="finalExam">Final Exam: </label></td>
+            <td><input type="number" id="finalExam" class="numField" maxlength="3"  value=""</td>
           </tr>
           <tr>
-            <td>ACR: </td>
-            <td><input type="number" class="numField acr"  maxlength="3" value=""</td>
+            <td><label for="acr">ACR: </label></td>
+            <td><input type="number" id="acr" class="numField"  maxlength="3" value=""</td>
           </tr>
         </table>
         <input type="button" value="SUBMIT" id="submitButton">
@@ -74,10 +74,10 @@
     and checks for valid input numbers between 0 and 100.
     */
     function getValues(){
-      hwAvg = parseInt($(".hwAverage").val());
-      midExam = parseInt($(".midterm").val());
-      finalExam = parseInt($(".finalExam").val());
-      acr = parseInt($(".acr").val());
+      hwAvg = parseInt($("#hwAverage").val());
+      midExam = parseInt($("#midtermExam").val());
+      finalExam = parseInt($("#finalExam").val());
+      acr = parseInt($("#acr").val());
       var values = [hwAvg, midExam, finalExam, acr];
       values.forEach(function(val){
         if (isNaN(val) || val < 0 || val > 100 ){
