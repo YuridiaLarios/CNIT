@@ -97,20 +97,26 @@
     function calculateFinalGrades(){
       finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * acr));
 
-      if(finalAverage <= 59){
-        letterGrade = "F";
-        retake = true;
-      } else  if(finalAverage <= 69){
-        letterGrade = "D";
-        retake = true;
-      } else  if(finalAverage <= 79){
-        letterGrade = "C";
-      } else  if(finalAverage <= 89){
-        letterGrade = "B";
-      } else {
-        letterGrade = "A";
+      switch(true) {
+        case (finalAverage >= 90):
+          letterGrade = "A";
+          break;
+        case (finalAverage >= 80):
+          letterGrade = "B";
+          break;
+        case (finalAverage >= 70):
+          letterGrade = "C";
+          break;
+        case (finalAverage >= 60):
+          letterGrade = "D";
+          retake = true;
+          break;
+        default:
+          letterGrade = "F";
+          retake = true;
       }
     }
+
 
 
 
