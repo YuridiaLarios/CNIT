@@ -80,7 +80,7 @@
       acr = parseInt($(".acr").val());
       var values = [hwAvg, midExam, finalExam, acr];
       values.forEach(function(val){
-        if (!Number.isInteger(val) || val < 0 || val > 100 ){
+        if (isNaN(val) || val < 0 || val > 100 ){
           invalidInput = true;
         }
       });
