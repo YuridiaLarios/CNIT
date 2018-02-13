@@ -29,41 +29,83 @@
     <div class="inner-wrapper">
       <h2>Student Grades</h2>
       <form class="gradesForm">
-        <table>
+        <table id="myTable">
           <tr>
             <td>Homework Average: </td>
-            <td><input type="number" class="numField hwAverage" name="hwAverage" maxlength="3" value="5"</td>
+            <td><input type="number" class="numField hwAverage" maxlength="3" value=""</td>
           </tr>
           <tr>
             <td>Midterm Exam: </td>
-            <td><input type="number" class="numField midterm" name="midterm" maxlength="3"  value="5"</td>
+            <td><input type="number" class="numField midterm" maxlength="3"  value=""</td>
           </tr>
           <tr>
             <td>Final Exam: </td>
-            <td><input type="number" class="numField finalExam" name="finalExam" maxlength="3"  value="5"</td>
+            <td><input type="number" class="numField finalExam" maxlength="3"  value=""</td>
           </tr>
           <tr>
             <td>ACR: </td>
-            <td><input type="number" class="numField acr" name="acr" maxlength="3" value="4"</td>
+            <td><input type="number" class="numField acr"  maxlength="3" value=""</td>
           </tr>
         </table>
+        <input type="button" value="SUBMIT" id="submitButton">
+        <input type="reset" value="RESET" id="resetButton">
       </form>
-
     </div>
   </div>
   <script>
-  $(document).ready(function(){
     var hwAvg = parseInt($(".hwAverage").val());
     var midExam = parseInt($(".midterm").val());
     var finalExam = parseInt($(".finalExam").val());
     var acr = parseInt($(".acr").val());
-    var finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * acr));
-    console.log(finalAverage);
+    var letterGrade;
+    var finalAverage;
+    var retake = false;
+
+    function getValues(){
+      hwAvg = parseInt($(".hwAverage").val());
+      midExam = parseInt($(".midterm").val());
+      finalExam = parseInt($(".finalExam").val());
+      acr = parseInt($(".acr").val());
+    }
+
+    function calculateFinalGrades(){
+      finalAverage = Math.round((.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * acr));
+
+      if(finalAverage <= 59){
+        letterGrade = "F";
+      } else  if(finalAverage <= 69){
+        letterGrade = "D";
+      } else  if(finalAverage <= 79){
+        letterGrade = "C";
+      } else  if(finalAverage <= 89){
+        letterGrade = "B";
+      } else {
+        letterGrade = "A";
+      }
+    }
+
+    function display(){
+      $('#myTable > tbody:last-child').append(`<tr class="output"><td>Final Average: </td>
+                                              <td><input type="number" class="numField FinalAvg" disabled maxlength="3"
+                                              value="${finalAverage}"</td></tr><tr class="output"><td>Final Letter Grade: </td><td><input type="text"
+                                              class="numField FinalAvg" disabled maxlength="3" value="${letterGrade}"</td></tr>`);
+    }
+
+    $("#submitButton").click(function(){
+      $(this).prop("disabled",true);
+      getValues();
+      calculateFinalGrades();
+      display();
+    });
+
+    $("#resetButton").click(function(){
+      $("#submitButton").prop("disabled",false);
+      $(".output").remove();
+    });
 
     $(".flip").click(function(){
       $(".panel").slideToggle("slow");
     });
-  });
   </script>
 </body>
 </html>
