@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/hw3.css">
 </head>
 <body>
-  <div class="wrapper">
+  <div class="wrapper wrapper2">
     <nav>
       <ul>
         <li><a href="hw3.html">Home</a> -</li>
@@ -22,7 +22,6 @@
     <div class="inner-wrapper">
       <h2>Sales Commissions</h2>
       <form>
-
             <label for="salesPerson">Sales Person: </label>
             <input type="text" id="salesPerson" class="nameinputField" value="">
             <br>
@@ -43,6 +42,44 @@
             <input type="submit" id="submitButton">
             <input type="reset" id="resetButton">
 
+            <table id="outputTable">
+              <tr>
+                <td>Item #:</td>
+                <td>Price:</td>
+                <td>Number Sold:</td>
+                <td>Total:</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>$239.99</td>
+                <td><input type="number"  value=""></td>
+                <td><input type="number"  value=""></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>$129.75</td>
+                <td><input type="number"  value=""></td>
+                <td><input type="number"  value=""></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>$99.95</td>
+                <td><input type="number"  value=""></td>
+                <td><input type="number"  value=""></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>$350.89</td>
+                <td><input type="number" value=""></td>
+                <td><input type="number"  value=""></td>
+              </tr>
+            </table>
+            <div id="totalOutput"></div>
+            <label for="totalAmountSold">Total Amount Sold: </label>
+            <input type="number" id="totalAmountSold" class="inputField" value="">
+            <br>
+            <label for="totalWeekEarns">Total Weekly Earnings: </label>
+            <input type="number" id="totalWeekEarns" class="inputField" value="">
       </form>
     </div>
   </div>

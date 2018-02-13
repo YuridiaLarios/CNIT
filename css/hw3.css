@@ -141,3 +141,15 @@ input.nameinputField{
 input.inputField {
   width: 50px;
 }
+
+#outputTable {
+  margin: 15px auto;
+}
+
+#outputTable td{
+  padding-right: 20px;
+}
+
+.wrapper2 {
+  height: 800px;
+}
