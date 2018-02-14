@@ -29,16 +29,16 @@
             <br>
             <h4>Input the number of each item sold:<h4>
             <label for="item1">Item 1: </label>
-            <td><input type="number" id="item1" class="inputField" value="2">
+            <td><input type="number" id="item1" class="inputField" value="50">
             <br>
             <label for="item2">Item 2: </label>
-            <input type="number" id="item2" class="inputField" value="8">
+            <input type="number" id="item2" class="inputField" value="50">
             <br>
             <label for="item3">Item 3: </label>
-            <input type="number" id="item3" class="inputField" value="9">
+            <input type="number" id="item3" class="inputField" value="50">
             <br>
             <label for="item4">Item 4: </label>
-            <input type="number" id="item4" class="inputField" value="10">
+            <input type="number" id="item4" class="inputField" value="50">
             <br>
             <br>
             <input type="button" value="SUBMIT" id="submitButton">
@@ -61,30 +61,43 @@
     </div>
   </div>
   <script>
+
+  var item = [];
+  var prices = [239.99, 129.75, 99.95, 350.89];
+  var totalAmountSold;
+  var totalrevenue;
+  var totalWeeklyEarnings;
+
     function Item(itemNum, price, numberSold) {
     this.itemNum = itemNum;
     this.price = price;
     this.numberSold = numberSold;
-    this.revenue = price * numberSold;
+    this.revenue = (price*numberSold);
   }
-  var item = [];
-  var prices = [239.99, 129.75, 99.95, 350.89];
+
   for(var i = 1;  i<=4; i++){
     item[i-1] = new Item(i, prices[i-1], parseFloat($("#item"+ i).val()));
   }
 
   item.forEach(function(item){
-  $('tbody').append(`<tr><td>${item.itemNum}</td>
-                         <td>${item.price}</td>
-                         <td><input type="number" value="${item.numberSold}"></td>
-                         <td><input type="number"  value="${item.revenue}"></td>
-                    </tr>`);
+    $('tbody').append(`<tr><td>${item.itemNum}</td>
+                           <td>$${item.price}</td>
+                           <td><input type="number" value="${item.numberSold}"></td>
+                           <td><input type="number"  value="${item.revenue.toFixed(2)}"></td>
+                      </tr>`);
   });
+  totalAmountSold = item[0].numberSold + item[1].numberSold + item[2].numberSold + item[3].numberSold;
+  totalRevenue = (item[0].revenue + item[1].revenue + item[2].revenue + item[3].revenue);
+  totalWeeklyEarnings = (200 + (totalRevenue*0.09)).toFixed(2);
 
+  $("#totalAmountSold").val(totalAmountSold);
+  $("#totalWeekEarns").val(totalWeeklyEarnings);
   console.log(item[0]);
   console.log(item[1]);
   console.log(item[2]);
   console.log(item[3]);
+  console.log(totalAmountSold);
+  console.log(totalWeeklyEarnings);
   </script>
 </body>
 </html>
