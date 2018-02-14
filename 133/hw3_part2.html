@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../css/hw3.css">
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--jQuery UI Tooltip -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- jQuery to validate input -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
 </head>
 <body>
   <div class="wrapper wrapper2">
@@ -23,26 +28,27 @@
     <h1>Hw #3 Part 2</h1>
     <div class="inner-wrapper">
       <h2>Sales Commissions</h2>
-      <form>
+      <form id="salesForm">
             <label for="salesPerson">Sales Person: </label>
-            <input type="text" id="salesPerson" class="nameinputField" value="">
+            <input type="text" id="salesPerson" class="nameinputField" title="Please make sure that the salesperson's name is spelled correctly." value="">
             <br>
             <h4>Input the number of each item sold:<h4>
             <label for="item1">Item 1: </label>
-            <td><input type="number" id="item1" class="inputField" value="50">
+            <td><input type="number" id="item1" class="inputField" value="">
             <br>
             <label for="item2">Item 2: </label>
-            <input type="number" id="item2" class="inputField" value="50">
+            <input type="number" id="item2" class="inputField" value="">
             <br>
             <label for="item3">Item 3: </label>
-            <input type="number" id="item3" class="inputField" value="50">
+            <input type="number" id="item3" class="inputField" value="">
             <br>
             <label for="item4">Item 4: </label>
-            <input type="number" id="item4" class="inputField" value="50">
+            <input type="number" id="item4" class="inputField" value="">
             <br>
             <br>
             <input type="button" value="SUBMIT" id="submitButton">
             <input type="reset" value="RESET" id="resetButton">
+            <div id="messages"></div>
 
             <table id="outputTable">
               <tr>
@@ -51,7 +57,30 @@
                 <td>Number Sold:</td>
                 <td>Total:</td>
               </tr>
-
+              <tr>
+                <td>1</td>
+                <td>$239.99</td>
+                <td><input type="number" id="numSold1" value=""></td>
+                <td><input type="number" id="total1" value=""></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>$129.75</td>
+                <td><input type="number" id="numSold2" value=""></td>
+                <td><input type="number" id="total2" value=""></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>$99.95</td>
+                <td><input type="number" id="numSold3" value=""></td>
+                <td><input type="number" id="total3" value=""></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>$350.89</td>
+                <td><input type="number" id="numSold4" value=""></td>
+                <td><input type="number" id="total4"  value=""></td>
+              </tr>
             </table>
             <label for="totalAmountSold">Total Amount Sold: </label>
             <input type="number" id="totalAmountSold" class="inputField" value="">
@@ -61,45 +90,75 @@
       </form>
     </div>
   </div>
-  <script>
-
+<script>
   var item = [];
   var prices = [239.99, 129.75, 99.95, 350.89];
   var totalAmountSold = 0;
   var totalRevenue = 0;
   var totalWeeklyEarnings = 0;
 
-    function Item(itemNum, price, numberSold) {
+  function Item(itemNum, price, numberSold) {
     this.itemNum = itemNum;
     this.price = price;
     this.numberSold = numberSold;
     this.revenue = (price*numberSold);
   }
 
-  for(var i = 1;  i<=4; i++){
-    item[i-1] = new Item(i, prices[i-1], parseFloat($("#item"+ i).val()));
-  }
+  $( function() {
+      $( document ).tooltip({
+        track: true
+      });
+    } );
 
-  item.forEach(function(item){
-    totalAmountSold += item.numberSold;
-    totalRevenue += item.revenue;
-    $('tbody').append(`<tr><td>${item.itemNum}</td>
-                           <td>$${item.price}</td>
-                           <td><input type="number" value="${item.numberSold}"></td>
-                           <td><input type="number"  value="${item.revenue.toFixed(2)}"></td>
-                      </tr>`);
+    function evaluateInput(){
+      var salesPerson = $("#salesPerson").val();
+      var letters = /^[A-Za-z]+$/;
+      return(salesPerson.match(letters));
+    }
+
+    function setItemObjects(){
+      for(var i = 1; i<=4; i++){
+        item[i-1] = new Item(i, prices[i-1], parseFloat($("#item"+ i).val()));
+      }
+    }
+
+    function outputTable(){
+      var i=1;
+      item.forEach(function(item){
+        totalAmountSold += item.numberSold;
+        totalRevenue += item.revenue;
+        $("#numSold" + i).val(item.numberSold);
+        $("#total" + i).val(item.revenue.toFixed(2));
+         i++;
+      });
+    }
+
+    function displayFinalResults(){
+      totalWeeklyEarnings = parseFloat((200 + (totalRevenue*0.09)).toFixed(2));
+      $("#totalAmountSold").val(totalAmountSold);
+      $("#totalWeekEarns").val(totalWeeklyEarnings);
+    }
+    function clear(){
+      $("#messages").html("");
+    }
+
+    $("#resetButton").click(function(){
+      clear();
+    });
+
+
+
+  $("#submitButton").click(function(){
+    clear();
+    if(evaluateInput()){
+      setItemObjects();
+      outputTable();
+      displayFinalResults();
+    } else {
+      $("#messages").html("<p class='invalidInput'>Illegal name input, use only letters!</p>");
+   }
   });
 
-  totalWeeklyEarnings = parseFloat((200 + (totalRevenue*0.09)).toFixed(2));
-
-  $("#totalAmountSold").val(totalAmountSold);
-  $("#totalWeekEarns").val(totalWeeklyEarnings);
-  console.log(item[0]);
-  console.log(item[1]);
-  console.log(item[2]);
-  console.log(item[3]);
-  console.log(totalAmountSold);
-  console.log(totalWeeklyEarnings);
   </script>
 </body>
 </html>

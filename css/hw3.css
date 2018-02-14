@@ -124,14 +124,14 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: yellow;
 }
 
-.retake-msg{
+.retake-msg, .invalidInput{
   color: red;
   font-size: 1.3em;
 }
 
 
 /*****************************************************
-HW 3: Part 1
+HW 3: Part 2
 ******************************************************/
 
 input.nameinputField{
@@ -151,5 +151,11 @@ input.inputField {
 }
 
 .wrapper2 {
-  height: 800px;
+  height: 850px;
 }
+
+
+ .ui-tooltip {
+   width: 420px;
+   background: yellow;
+ }
