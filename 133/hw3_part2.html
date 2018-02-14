@@ -112,7 +112,7 @@
 
     function evaluateInput(){
       var salesPerson = $("#salesPerson").val();
-      var letters = /^[A-Za-z]+$/;
+      var letters = /^[a-zA-Z\s]*$/;
       return(salesPerson.match(letters));
     }
 
@@ -145,8 +145,6 @@
     $("#resetButton").click(function(){
       clear();
     });
-
-
 
   $("#submitButton").click(function(){
     clear();
