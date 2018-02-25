@@ -37,21 +37,28 @@
     </div>
   </div>
   <script>
+
   // a) contains the function celsius, that returns the Celsius equivalent of a Fahrenheit temperature,
   // using the calculation: C = 5/9 * (F - 32)
-  $("#FarenToCelciusButton").click(function(){
+  function celcius(){
     var temperature = $("#temperature").val();
     $("#conversion").val((5/9 * (temperature - 32)).toFixed(1)+ " Celsius");
-  });
+  }
 
-//b) contains the function fahrenheit that returns the Fahrenheit equivalent of a Celsius temperature,
-// using the calculation: F = (9/5 * C) + 32
-  $("#CelciusToFarenButton").click(function(){
+  //b) contains the function fahrenheit that returns the Fahrenheit equivalent of a Celsius temperature,
+  // using the calculation: F = (9/5 * C) + 32
+  function farenheit(){
     var temperature = $("#temperature").val();
     $("#conversion").val(((9/5  * temperature) + 32).toFixed(1)+ " Fahrenheit");
+  }
+
+  $("#FarenToCelciusButton").click(function(){
+    celcius();
   });
 
-
+  $("#CelciusToFarenButton").click(function(){
+    farenheit();
+  });
   </script>
 </body>
 </html>
