@@ -104,21 +104,25 @@
     this.revenue = (price*numberSold);
   }
 
-  $( function() {
+  $(function() {
       $(document).tooltip({
         track: true
       });
     } );
 
-    function evaluateInput(){
+    function evaluateName(){
       var salesPerson = $("#salesPerson").val();
-      var letters = /^[a-zA-Z\s]*$/;
-      return(salesPerson.match(letters));
+      return(salesPerson.length !== 0 && salesPerson.trim() !== '');
     }
 
     function setItemObjects(){
       for(var i = 1; i<=4; i++){
-        item[i-1] = new Item(i, prices[i-1], parseFloat($("#item"+ i).val()));
+        var tempItem = ($("#item"+ i).val());
+        if(tempItem >= 0){
+          item[i-1] = new Item(i, prices[i-1], parseFloat(tempItem));
+        } else {
+          $("#messages").html("<p class='invalidInput'># of items sold must be greater than zero!</p>");
+        }
       }
     }
 
@@ -151,12 +155,12 @@
 
   $("#submitButton").click(function(){
     clear();
-    if(evaluateInput()){
+    if(evaluateName()){
       setItemObjects();
       outputTable();
       displayFinalResults();
     } else {
-      $("#messages").html("<p class='invalidInput'>Illegal name input, use only letters!</p>");
+      $("#messages").html("<p class='invalidInput'>Empty name input, salesperson's name required!</p>");
    }
   });
 
