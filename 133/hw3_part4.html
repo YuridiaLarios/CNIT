@@ -26,6 +26,10 @@
       <input type="button" onclick="generateNumbers()" value="Generate 2 numbers">
       <div id="questionBox">
       </div>
+      <div id="rightAnswer">
+      </div>
+      <div id="wrongAnswer">
+      </div>
     </div>
   </div>
   <script>
@@ -36,11 +40,12 @@
 
     function generateNumbers(){
       $("#userAnswer").val("");
+      $("#rightAnswer").html("");
+      $("#wrongAnswer").html("");
       num1 = Math.floor(Math.random() * (10 - 0) ) + 0;
       num2 = Math.floor(Math.random() * (10 - 0) ) + 0;
       answer = num1 * num2;
-      console.log(num1);
-      console.log(num2);
+
       $("#questionBox").html(`How much is ${num1} times ${num2}? <br>`);
       $("#questionBox").append(`<br>
       <label for="userAnswer">Input your answer here: </label>
@@ -49,20 +54,24 @@
     }
 
     function checkAnswer(){
+      $("#rightAnswer").html("");
+      $("#wrongAnswer").html("");
       userAnswer = $("#userAnswer").val();
       if(userAnswer == answer){
-        $("#questionBox").append(`<br><br>Very Good!<br>Do you want to try again?<br>
+        $("#rightAnswer").append(`Very Good!<br>Do you want to try again?<br>
                                   <input type="button" onclick="generateNumbers()" value="Yes">
                                   <input type="button" onclick="endScript()" value="No">
                                 `);
 
       } else{
-        $("#questionBox").append(`<br><br><p>No. Please try again!<br></p>`);
+        $("#wrongAnswer").html(`No. Please try again!`);
       }
 
     }
 
     function endScript(){
+      $("#rightAnswer").html("");
+      $("#wrongAnswer").html("");
       $("#questionBox").html("");
     }
   </script>
