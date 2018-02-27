@@ -32,48 +32,48 @@
       </div>
     </div>
   </div>
+
   <script>
   var num1;
   var num2;
   var answer;
   var userAnswer;
 
-    function generateNumbers(){
-      $("#userAnswer").val("");
-      $("#rightAnswer").html("");
-      $("#wrongAnswer").html("");
-      num1 = Math.floor(Math.random() * (10 - 0) ) + 0;
-      num2 = Math.floor(Math.random() * (10 - 0) ) + 0;
-      answer = num1 * num2;
+  function clear(){
+    $("#rightAnswer").html("");
+    $("#wrongAnswer").html("");
+  }
 
-      $("#questionBox").html(`How much is ${num1} times ${num2}? <br>`);
-      $("#questionBox").append(`<br>
-      <label for="userAnswer">Input your answer here: </label>
-      <input type="text" id="userAnswer" name="userAnswer" size="10" autofocus>
-      <input type="button" onclick="checkAnswer()" value="Check Answer">`);
+  function endScript(){
+    clear();
+    $("#questionBox").html("");
+  }
+
+  function generateNumbers(){
+    clear();
+    num1 = Math.floor(Math.random() * (10 - 0) ) + 0;
+    num2 = Math.floor(Math.random() * (10 - 0) ) + 0;
+    answer = num1 * num2;
+
+    $("#questionBox").html(`How much is ${num1} times ${num2}? <br>`);
+    $("#questionBox").append(`<br>
+    <label for="userAnswer">Input your answer here: </label>
+    <input type="text" id="userAnswer" name="userAnswer" size="10" autofocus>
+    <input type="button" onclick="checkAnswer()" value="Check Answer">`);
+  }
+
+  function checkAnswer(){
+    clear();
+    userAnswer = $("#userAnswer").val();
+    if(userAnswer == answer){
+      $("#rightAnswer").append(`Very Good!<br>Do you want to try again?<br>
+                                <input type="button" onclick="generateNumbers()" value="Yes">
+                                <input type="button" onclick="endScript()" value="No">
+                              `);
+    } else{
+      $("#wrongAnswer").html(`No. Please try again!`);
     }
-
-    function checkAnswer(){
-      $("#rightAnswer").html("");
-      $("#wrongAnswer").html("");
-      userAnswer = $("#userAnswer").val();
-      if(userAnswer == answer){
-        $("#rightAnswer").append(`Very Good!<br>Do you want to try again?<br>
-                                  <input type="button" onclick="generateNumbers()" value="Yes">
-                                  <input type="button" onclick="endScript()" value="No">
-                                `);
-
-      } else{
-        $("#wrongAnswer").html(`No. Please try again!`);
-      }
-
-    }
-
-    function endScript(){
-      $("#rightAnswer").html("");
-      $("#wrongAnswer").html("");
-      $("#questionBox").html("");
-    }
+  }
   </script>
 </body>
 </html>
