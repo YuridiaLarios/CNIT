@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="homework #3 part3 Javascript CNIT133">
+<title>Hw#3 part 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="../css/hw3.css">
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--jquery validation plugin  -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+</head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li><a href="hw3.html">Home</a> -</li>
+          <li><a href="hw3_part1.html">Part 1</a> -</li>
+          <li><a href="hw3_part2.html">Part 2</a> -</li>
+          <li><a class="active" href="hw3_part3.html">Part 3</a> -</li>
+          <li><a href="hw3_part4.html">Part 4</a> </li>
+        </ul>
+      </nav>
+      <h1>Hw #3 Part 3</h1>
+      <div class="inner-wrapper">
+        <h2>Temperature Conversions</h2>
+        <form id="temperatureForm" name="temperatureForm">
+          <label for="temperature">Temperature: </label>
+          <input type="text" id="temperature" name="temperature" size="10" autofocus>
+          <br><br>
+          <input type="button"  onclick="celcius()" value="Farenheit To Celcius">
+          <input type="button"  onclick="farenheit()" value="Celcius To Farenheit">
+          <br><br>
+          <input type="text" name="output" readonly cols="60" rows="5">
+          <br><br>
+          <input type="reset" value="RESET" onClick="window.location.reload();"><br><br>
+        </form>
+      </div>
+    </div>
+<script>
+
+/* JQuery for validation
+displays error message if form input is not a number
+*/
+
+$(document).ready(function(){
+    $("#temperatureForm").validate({
+
+	  // Rules for each input item
+	  rules:
+            {
+		temperature: { required: true, number: true}
+            },
+
+messages: {
+
+ temperature:  "Please input a numeric value",
+         },
+
+errorPlacement: function(error, element) {
+if ( element.is(":text")) {
+error.appendTo( element.parent());
+} else {
+error.insertAfter(element);
+}
+}
+	});
+    });
+
+
+function celcius() {
+if ($("#temperatureForm").valid()) {
+
+  var numb;
+
+  // get input number value from form using getElementById
+     var temperature = document.getElementById("temperature").value;
+     document.forms["temperatureForm"].elements["output"].value =  ((5/9 * (temperature - 32)).toFixed(1)+ " Celsius");
+
+  }
+}
+
+function farenheit() {
+if ($("#temperatureForm").valid()) {
+  var numb;
+  // get input number value from form using getElementById
+     var temperature = document.getElementById("temperature").value;
+     document.forms["temperatureForm"].elements["output"].value =  (((9/5  * temperature) + 32).toFixed(1)+ " Farenheit");
+
+  }
+}
+</script>
+</body>
+</html>

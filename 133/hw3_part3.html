@@ -1,64 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="homework #3 part3 Javascript CNIT133">
-    <title>Hw#3 part 3</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../css/hw3.css">
-    <!--jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <nav>
-      <ul>
-        <li><a href="hw3.html">Home</a> -</li>
-        <li><a href="hw3_part1.html">Part 1</a> -</li>
-        <li><a href="hw3_part2.html">Part 2</a> -</li>
-        <li><a class="active" href="hw3_part3.html">Part 3</a> -</li>
-        <li><a href="hw3_part4.html">Part 4</a> </li>
-      </ul>
-    </nav>
-    <h1>Hw #3 Part 3</h1>
-    <div class="inner-wrapper">
-      <h2>Temperature Conversions</h2>
-      <form>
-      <label for="temperature">Temperature: </label>
-      <input type="number" id="temperature" class="inputTemperature" value="">
-      <br><br>
-      <input type="button" value="Farenheit to Celcius" id="FarenToCelciusButton">
-      <input type="button" value="Celcius to Farenheit" id="CelciusToFarenButton">
-      <br><br>
-      <input type="text" id="conversion" value="">
-      <br><br>
-      <input type="reset" value="RESET" id="resetButton">
-    </form>
-    </div>
-  </div>
-  <script>
+  <html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content="homework #3 part3 Javascript CNIT133">
+      <title>Hw#3 part 3</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" type="text/css" href="../css/hw3.css">
+      <!--jquery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!--jquery validation plugin  -->
+      <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+  </head>
+  <body>
+      <div class="wrapper">
+          <nav>
+              <ul>
+                  <li><a href="hw3.html">Home</a> -</li>
+                  <li><a href="hw3_part1.html">Part 1</a> -</li>
+                  <li><a href="hw3_part2.html">Part 2</a> -</li>
+                  <li><a class="active" href="hw3_part3.html">Part 3</a> -</li>
+                  <li><a href="hw3_part4.html">Part 4</a> </li>
+              </ul>
+          </nav>
+          <h1>Hw #3 Part 3</h1>
+          <div class="inner-wrapper">
+              <h2>Temperature Conversions</h2>
+              <form id="temperatureForm" name="temperatureForm">
+                  <label for="temperature">Temperature: </label>
+                  <input type="text" id="temperature" name="temperature" size="10" autofocus>
+                  <br><br>
+                  <input type="button" onclick="celcius()" value="Farenheit To Celcius">
+                  <input type="button" onclick="farenheit()" value="Celcius To Farenheit">
+                  <br><br>
+                  <input type="text" name="output" id="output" readonly cols="60" rows="5">
+                  <br><br>
+                  <input type="reset" value="RESET" onClick="window.location.reload();"><br><br>
+              </form>
+          </div>
+      </div>
+      <script>
+          /* JQuery for validation displays error message if form input is not a number */
+          $(document).ready(function() {
+              $("#temperatureForm").validate({
+                  // Rules for each input item
+                  rules: {
+                      temperature: {
+                          required: true,
+                          number: true
+                      }
+                  },
 
-  // a) contains the function celsius, that returns the Celsius equivalent of a Fahrenheit temperature,
-  // using the calculation: C = 5/9 * (F - 32)
-  function celcius(){
-    var temperature = $("#temperature").val();
-    $("#conversion").val((5/9 * (temperature - 32)).toFixed(1)+ " Celsius");
-  }
+                  messages: {
 
-  //b) contains the function fahrenheit that returns the Fahrenheit equivalent of a Celsius temperature,
-  // using the calculation: F = (9/5 * C) + 32
-  function farenheit(){
-    var temperature = $("#temperature").val();
-    $("#conversion").val(((9/5  * temperature) + 32).toFixed(1)+ " Fahrenheit");
-  }
+                      temperature: "Please input a numeric value",
+                  },
 
-  $("#FarenToCelciusButton").click(function(){
-    celcius();
-  });
+                  errorPlacement: function(error, element) {
 
-  $("#CelciusToFarenButton").click(function(){
-    farenheit();
-  });
-  </script>
-</body>
+                          error.insertAfter(element);
+
+                  }
+              });
+          });
+
+          // Returns the Celsius equivalent of a Fahrenheit temperature, using the calculation: C = 5/9 * (F - 32)
+          function celcius() {
+              if ($("#temperatureForm").valid()) {
+                  var temperature = $("#temperature").val();
+                    $("#output").val(((5 / 9 * (temperature - 32)).toFixed(1) + " Celsius"));
+              }
+          }
+
+          // Returns the Fahrenheit equivalent of a Celsius temperature, using the calculation: F = (9/5 * C) + 32
+          function farenheit() {
+              if ($("#temperatureForm").valid()) {
+                  var temperature = $("#temperature").val();
+                  $("#output").val(((((9 / 5 * temperature) + 32).toFixed(1) + " Farenheit")));
+              }
+          }
+      </script>
+  </body>
 </html>
