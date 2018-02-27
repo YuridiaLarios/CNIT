@@ -91,12 +91,18 @@
     </div>
   </div>
 <script>
+  // Global Variables
   var item = [];
   var prices = [239.99, 129.75, 99.95, 350.89];
   var totalAmountSold = 0;
   var totalRevenue = 0;
   var totalWeeklyEarnings = 0;
 
+
+
+
+
+  // constructor for item
   function Item(itemNum, price, numberSold) {
     this.itemNum = itemNum;
     this.price = price;
@@ -104,55 +110,95 @@
     this.revenue = (price*numberSold);
   }
 
+
+
+
+
+  // tooltip plugin
   $(function() {
       $(document).tooltip({
         track: true
       });
-    } );
+  });
 
-    function evaluateName(){
-      var salesPerson = $("#salesPerson").val();
-      return(salesPerson.length !== 0 && salesPerson.trim() !== '');
-    }
 
-    function setItemObjects(){
-      for(var i = 1; i<=4; i++){
-        var tempItem = ($("#item"+ i).val());
-        if(tempItem >= 0){
-          item[i-1] = new Item(i, prices[i-1], parseFloat(tempItem));
-        } else {
-          $("#messages").html("<p class='invalidInput'># of items sold must be greater than zero!</p>");
-        }
+
+
+
+  // Checking to see that the sales person field is not empty or fill with whitespace.
+  function evaluateName(){
+    var salesPerson = $("#salesPerson").val();
+    return(salesPerson.length !== 0 && salesPerson.trim() !== '');
+  }
+
+
+
+
+
+  // Getting the items numbers and checking for positive numbers.
+  function setItemObjects(){
+    for(var i = 1; i<=4; i++){
+      var tempItem = ($("#item"+ i).val());
+      if(tempItem >= 0){
+        item[i-1] = new Item(i, prices[i-1], parseFloat(tempItem));
+      } else {
+        $("#messages").html("<p class='invalidInput'># of items sold must be greater than zero!</p>");
       }
     }
+  }
 
-    function outputTable(){
-      var i=1;
-      item.forEach(function(item){
-        totalAmountSold += item.numberSold;
-        totalRevenue += item.revenue;
-        $("#numSold" + i).val(item.numberSold);
-        $("#total" + i).val(item.revenue.toFixed(2));
-         i++;
-      });
-    }
 
-    function displayFinalResults(){
-      totalWeeklyEarnings = parseFloat((200 + (totalRevenue*0.09)).toFixed(2));
-      $("#totalAmountSold").val(totalAmountSold);
-      $("#totalWeekEarns").val(totalWeeklyEarnings);
-    }
-    function clear(){
-      $("#messages").html("");
-      totalAmountSold = 0;
-      totalRevenue = 0;
-      totalWeeklyEarnings = 0;
-    }
 
-    $("#resetButton").click(function(){
-      clear();
+
+
+  // Foreach loop to calculate the totla amount sold and total revenue
+  // and Display table with results.
+  function outputTable(){
+    var i=1;
+    item.forEach(function(item){
+      totalAmountSold += item.numberSold;
+      totalRevenue += item.revenue;
+      $("#numSold" + i).val(item.numberSold);
+      $("#total" + i).val(item.revenue.toFixed(2));
+       i++;
     });
+  }
 
+
+
+
+
+  // Display the total amount sold and total weekly earned.
+  function displayFinalResults(){
+    totalWeeklyEarnings = parseFloat((200 + (totalRevenue*0.09)).toFixed(2));
+    $("#totalAmountSold").val(totalAmountSold);
+    $("#totalWeekEarns").val(totalWeeklyEarnings);
+  }
+
+
+
+
+  // Reset variables to zeros.
+  function clear(){
+    $("#messages").html("");
+    totalAmountSold = 0;
+    totalRevenue = 0;
+    totalWeeklyEarnings = 0;
+  }
+
+
+
+
+  // Reset variables when resetButton is clicked.
+  $("#resetButton").click(function(){
+    clear();
+  });
+
+
+
+
+
+  // Main Program
   $("#submitButton").click(function(){
     clear();
     if(evaluateName()){
