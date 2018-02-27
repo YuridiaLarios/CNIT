@@ -155,17 +155,26 @@ input.inputField {
 }
 
 
- .ui-tooltip {
+.ui-tooltip {
    width: 420px;
    background: yellow;
- }
+}
 
 
  /*****************************************************
  HW 3: Part 3
  ******************************************************/
- .error {
-          color: red;
-          background-color: #ffc;
-          margin-left: 10px;
-          }
+.error {
+  color: red;
+  background-color: #ffc;
+  margin-left: 10px;
+}
+
+
+/*****************************************************
+HW 3: Part 4
+******************************************************/
+#questionBox{
+  margin: 30px;
+  color: blue;
+}

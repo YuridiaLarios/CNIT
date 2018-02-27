@@ -6,6 +6,8 @@
     <title>Hw#3 part 4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../css/hw3.css">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -20,7 +22,49 @@
     </nav>
     <h1>Hw #3 Part 4</h1>
     <div class="inner-wrapper">
+      <h4>Let's practice multiplying!</h4>
+      <input type="button" onclick="generateNumbers()" value="Generate 2 numbers">
+      <div id="questionBox">
+      </div>
     </div>
   </div>
+  <script>
+  var num1;
+  var num2;
+  var answer;
+  var userAnswer;
+
+    function generateNumbers(){
+      $("#userAnswer").val("");
+      num1 = Math.floor(Math.random() * (10 - 0) ) + 0;
+      num2 = Math.floor(Math.random() * (10 - 0) ) + 0;
+      answer = num1 * num2;
+      console.log(num1);
+      console.log(num2);
+      $("#questionBox").html(`How much is ${num1} times ${num2}? <br>`);
+      $("#questionBox").append(`<br>
+      <label for="userAnswer">Input your answer here: </label>
+      <input type="text" id="userAnswer" name="userAnswer" size="10" autofocus>
+      <input type="button" onclick="checkAnswer()" value="Check Answer">`);
+    }
+
+    function checkAnswer(){
+      userAnswer = $("#userAnswer").val();
+      if(userAnswer == answer){
+        $("#questionBox").append(`<br><br>Very Good!<br>Do you want to try again?<br>
+                                  <input type="button" onclick="generateNumbers()" value="Yes">
+                                  <input type="button" onclick="endScript()" value="No">
+                                `);
+
+      } else{
+        $("#questionBox").append(`<br><br><p>No. Please try again!<br></p>`);
+      }
+
+    }
+
+    function endScript(){
+      $("#questionBox").html("");
+    }
+  </script>
 </body>
 </html>
