@@ -30,14 +30,9 @@
     <div id="partA">
       <h3>Part A: Using for loop</h3>
     </div>
-    <!-- <div class="partB">
-      <h3>Part B: Using while loop</h3>
-      <p class="black-font">The <span class="dark-yellow">sum</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">75</span>.</p>
-      <p class="black-font"> 5 + 8 + 11 + 14 + 17+ 20 = <span class="dark-yellow">75</span></p>
-      <br>
-      <p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">2,094,400</span>.</p>
-      <p class="black-font"> 5 * 8 * 11 * 14 * 17 * 20 = <span class="dark-yellow">2,094,400</span></p>
-    </div> -->
+    <div id="partB">
+      <h3><br>Part B: Using while loop</h3>
+    </div>
   </div>
 </div>
 <script>
@@ -46,18 +41,18 @@
   } );
 
   /*******************************************************************************************
-  function calculates the sum of every third integer from 5 to 20 inclusive.
+  function uses a for loop and calculates the sum of every third integer from 5 to 20 inclusive.
   then displays the results, along with some accompanying text.
   ********************************************************************************************/
-  function calculateUsingForLoop(){
+  function calculateUsingForLoop(startNum, endNum, increment){
     var sum = 0;
     var product = 1;
     var product_info = '<p class="black-font">';
     var sum_info = '<p class="black-font">';
-    for(var i = 5; i <= 20; i = i+3){
+    for(var i = startNum; i <= endNum; i = i+increment){
       sum += i;
       product *= i;
-      if(i != 20){
+      if(i != endNum){
         sum_info += (i + " + ");
         product_info += (i + " * ");
       } else {
@@ -67,18 +62,54 @@
     }
     // display product results
     product_info += ('<span class="dark-yellow">' + product + "</span></p>");
-    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${product}</span>.</p>`);
+    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${product}</span></p>`);
     $("#partA").append(`${product_info}`);
 
     // display sum results
     sum_info += ('<span class="dark-yellow">' + sum + "</span></p>");
-    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${sum}</span>.</p>`);
+    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${sum}</span></p>`);
     $("#partA").append(`${sum_info}`);
+  }
+
+
+  /*******************************************************************************************
+  function uses a while loop and calculates the sum of every third integer from 5 to 20 inclusive.
+  then displays the results, along with some accompanying text.
+  ********************************************************************************************/
+  function calculateUsingWhileLoop(startNum, endNum, increment){
+    var sum = 0;
+    var product = 1;
+    var product_info = '<p class="black-font">';
+    var sum_info = '<p class="black-font">';
+    var i = startNum;
+    while(i <= endNum){
+      sum += i;
+      product *= i;
+      if(i != endNum){
+        sum_info += (i + " + ");
+        product_info += (i + " * ");
+      } else {
+        sum_info += (i + " = ");
+        product_info += (i + " = ");
+      }
+      i += increment;
+    }
+    // display product results
+    product_info += ('<span class="dark-yellow">' + product + "</span></p>");
+    $("#partB").append(`<p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${product}</span></p>`);
+    $("#partB").append(`${product_info}`);
+
+    // display sum results
+    sum_info += ('<span class="dark-yellow">' + sum + "</span></p>");
+    $("#partB").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every fourth integer from <span class="dark-yellow">${startNum}</span> to <span class="dark-yellow">${endNum}</span> inclusive is <span class="dark-yellow">${sum}</span></p>`);
+    $("#partB").append(`${sum_info}`);
   }
 
   $( document ).ready(function() {
     console.log( "ready!" );
-    calculateUsingForLoop();
+    calculateUsingForLoop(5,20,3);
+    calculateUsingWhileLoop(3,31,4);
+
 });
 
 

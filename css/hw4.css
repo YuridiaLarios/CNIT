@@ -91,4 +91,10 @@ HW 4 Part1
 }
 .dark-yellow {
   color: #f5bb31;
+  font-weight: bolder;
+}
+
+p{
+  font-size: 18px;
+  font-weight: normal;
 }
