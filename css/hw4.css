@@ -86,15 +86,13 @@ HW 4 Part1
   position:absolute;
 }
 
-.black-font{
-  color: black;
-}
 .dark-yellow {
   color: #f5bb31;
   font-weight: bolder;
 }
 
 p{
+  color: black;
   font-size: 18px;
   font-weight: normal;
 }

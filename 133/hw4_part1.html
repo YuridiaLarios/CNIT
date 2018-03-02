@@ -47,8 +47,8 @@
   function calculateUsingForLoop(startNum, endNum, increment){
     var sum = 0;
     var product = 1;
-    var product_info = '<p class="black-font">';
-    var sum_info = '<p class="black-font">';
+    var product_info = '<p>';
+    var sum_info = '<p>';
     for(var i = startNum; i <= endNum; i = i+increment){
       sum += i;
       product *= i;
@@ -62,12 +62,16 @@
     }
     // display product results
     product_info += ('<span class="dark-yellow">' + product.toLocaleString() + "</span></p>");
-    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${product.toLocaleString()}</span></p>`);
+    $("#partA").append(`<p>The <span class="dark-yellow">product</span> of every third integer from
+                        <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive
+                        is <span class="dark-yellow">${product.toLocaleString()}</span></p>`);
     $("#partA").append(`${product_info}`);
 
     // display sum results
     sum_info += ('<span class="dark-yellow">' + sum.toLocaleString() + "</span></p>");
-    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${sum.toLocaleString()}</span></p>`);
+    $("#partA").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every third integer
+                        from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive
+                        is <span class="dark-yellow">${sum.toLocaleString()}</span></p>`);
     $("#partA").append(`${sum_info}`);
   }
 
@@ -82,8 +86,8 @@
   function calculateUsingWhileLoop(startNum, endNum, increment){
     var sum = 0;
     var product = 1;
-    var product_info = '<p class="black-font">';
-    var sum_info = '<p class="black-font">';
+    var product_info = '<p>';
+    var sum_info = '<p>';
     var i = startNum;
     while(i <= endNum){
       sum += i;
@@ -99,12 +103,16 @@
     }
     // display product results
     product_info += ('<span class="dark-yellow">' + product.toLocaleString() + "</span></p>");
-    $("#partB").append(`<p class="black-font">The <span class="dark-yellow">product</span> of every third integer from <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive is <span class="dark-yellow">${product.toLocaleString()}</span></p>`);
+    $("#partB").append(`<p>The <span class="dark-yellow">product</span> of every third integer from
+                        <span class="dark-yellow">5</span> to <span class="dark-yellow">20</span> inclusive
+                        is <span class="dark-yellow">${product.toLocaleString()}</span></p>`);
     $("#partB").append(`${product_info}`);
 
     // display sum results
     sum_info += ('<span class="dark-yellow">' + sum.toLocaleString() + "</span></p>");
-    $("#partB").append(`<p class="black-font">The <span class="dark-yellow">sum</span> of every fourth integer from <span class="dark-yellow">${startNum}</span> to <span class="dark-yellow">${endNum}</span> inclusive is <span class="dark-yellow">${sum.toLocaleString()}</span></p>`);
+    $("#partB").append(`<p>The <span class="dark-yellow">sum</span> of every fourth integer from
+                        <span class="dark-yellow">${startNum}</span> to <span class="dark-yellow">${endNum}</span>
+                        inclusive is <span class="dark-yellow">${sum.toLocaleString()}</span></p>`);
     $("#partB").append(`${sum_info}`);
   }
 
