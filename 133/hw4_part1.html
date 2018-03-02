@@ -41,8 +41,8 @@
   } );
 
   /*******************************************************************************************
-  function uses a for loop and calculates the sum of every third integer from 5 to 20 inclusive.
-  then displays the results, along with some accompanying text.
+  function uses a for loop and calculates the sum and product of every third integer
+  from 5 to 20 inclusive. then displays the results, along with some accompanying text.
   ********************************************************************************************/
   function calculateUsingForLoop(startNum, endNum, increment){
     var sum = 0;
@@ -72,9 +72,12 @@
   }
 
 
+
+
+
   /*******************************************************************************************
-  function uses a while loop and calculates the sum of every third integer from 5 to 20 inclusive.
-  then displays the results, along with some accompanying text.
+  function uses a while loop and calculates the sum and product of every third integer
+  from 5 to 20 inclusive. then displays the results, along with some accompanying text.
   ********************************************************************************************/
   function calculateUsingWhileLoop(startNum, endNum, increment){
     var sum = 0;
@@ -105,13 +108,17 @@
     $("#partB").append(`${sum_info}`);
   }
 
+
+
+
+
+  /*******************************************************************************************
+  Main Function
+  ********************************************************************************************/
   $( document ).ready(function() {
-    console.log( "ready!" );
     calculateUsingForLoop(5,20,3);
     calculateUsingWhileLoop(3,31,4);
-
-});
-
+  });
 
 </script>
 </body>
