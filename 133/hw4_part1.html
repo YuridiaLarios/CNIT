@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="hw #4 part 1 Javascript CNIT133">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hw#4 part 1</title>
+  <link rel="stylesheet" type="text/css" href="../css/hw4.css">
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<div id="draggable" class="draggable">
+  <img src="../img/for_vs_while.jpg">
+  <p>Drag me around</p>
+</div>
+<script>
+$( function() {
+  $( "#draggable" ).draggable();
+} );
+</script>
+</body>
+</html>
