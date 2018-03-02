@@ -11,7 +11,7 @@ body{
 .wrapper{
   width: 55%;
   height: 700px;
-  background-image: -webkit-linear-gradient(90deg, #ed4630 92%, #d73e2a 12%);
+  background-image: -webkit-linear-gradient(90deg, #fbd345 92%, #f5bb31 12%);
   margin: 0 auto;
   margin-top: 3%;
   margin-bottom: 7%;
@@ -34,12 +34,12 @@ li, a{
 }
 
 a:hover {
-  background: #ed4630;
+  background: #fbd345;
   font-size: 1.12em;
 }
 
 .active{
-    background: #ed4630;
+    background: #fbd345;
 }
 
 .inner-wrapper{
@@ -49,7 +49,7 @@ a:hover {
   background-color: white;
   padding: 10px;
   border-radius: .5%;
-  color: #ed4630;
+  color: #fbd345;
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@ ol li{
   display: block;
   list-style-type: none;
   font-size: 1.1em;
-  color:#ed4630;
+  color:#fbd345;
 }
 
 
@@ -82,4 +82,13 @@ HW 4 Part1
   border: 2px solid black;
   text-align: center;
   font-weight: bold;
+  background-color: white;
+  position:absolute;
+}
+
+.black-font{
+  color: black;
+}
+.dark-yellow {
+  color: #f5bb31;
 }
