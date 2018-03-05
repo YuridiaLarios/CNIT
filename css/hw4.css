@@ -100,3 +100,36 @@ p{
 /*****************************************************
 HW 4 Part2
 ******************************************************/
+.wrapper-tables{
+  background-image: -webkit-linear-gradient(90deg, #fbd345 95.7%, #f5bb31 12%);
+  width: 95%;
+  height: 1300px;
+}
+
+.inner-wrapper{
+  overflow: auto;
+}
+
+.compoundInterestTable{
+  display: inline;
+  float: left;
+  margin: 20px;
+}
+
+ th {
+    background-color: #812215;
+    color: white;
+}
+
+ td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+tr{
+  color: black;
+  background-color: #f17c4e;
+}
+
+ tr:nth-child(even){
+  background-color: #fdf734;
+}
