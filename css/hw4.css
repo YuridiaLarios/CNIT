@@ -101,9 +101,9 @@ p{
 HW 4 Part2
 ******************************************************/
 .wrapper-tables{
-  background-image: -webkit-linear-gradient(90deg, #fbd345 95.7%, #f5bb31 12%);
-  width: 95%;
-  height: 1300px;
+  background-image: -webkit-linear-gradient(90deg, #fbd345 95%, #f5bb31 12%);
+  width: 92%;
+  height: 1100px;
 }
 
 .inner-wrapper{
@@ -113,7 +113,8 @@ HW 4 Part2
 .compoundInterestTable{
   display: inline;
   float: left;
-  margin: 20px;
+  margin: 15px;
+  margin-left: 2.5%;
 }
 
  th {
@@ -123,7 +124,7 @@ HW 4 Part2
 
  td, th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 3px;
 }
 tr{
   color: black;
@@ -132,4 +133,14 @@ tr{
 
  tr:nth-child(even){
   background-color: #fdf734;
+}
+
+@media only screen and (max-width: 1407px)  {
+  .wrapper-tables{
+    background-image: -webkit-linear-gradient(90deg, #fbd345 96%, #f5bb31 12%);
+    height: 1400px;
+  }
+  .compoundInterestTable{
+    margin-left: 8%;
+  }
 }

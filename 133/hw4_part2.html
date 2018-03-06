@@ -23,9 +23,7 @@
   <h1>Hw #4 Part 2: Compound Interest</h1>
   <div class="inner-wrapper">
     <script>
-
       var initialAmount = 1000;
-
       function getCompoundInterest(annualInterest){
       //Formula totalMoneyWithInterest = initialAmount*(1 + annualInterest)^numYears
       var table = '';
@@ -47,17 +45,13 @@
       }
         table += '</tbody>';
         document.write(`<table class="compoundInterestTable">  ${table} </table>`);
-
-
     }
-
       getCompoundInterest(0.05);
       getCompoundInterest(0.06);
       getCompoundInterest(0.07);
       getCompoundInterest(0.08);
       getCompoundInterest(0.09);
       getCompoundInterest(0.10);
-
     </script>
   </div>
 </div>
