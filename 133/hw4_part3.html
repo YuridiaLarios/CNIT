@@ -17,13 +17,11 @@
       <li><a href="hw4_part1.html">Part 1</a> -</li>
       <li><a href="hw4_part2.html">Part 2</a> -</li>
       <li><a class="active" href="hw4_part3.html">Part 3</a> -</li>
-      <li><a href="hw4_part4.html">Extra Credit</a> </li>
     </ul>
   </nav>
   <h1>Hw #4 Part 3: Forms and switch statements</h1>
   <div class="inner-wrapper">
     <h3>Part 4: Product Order Information</h3>
-    <!-- create form for input of quantity sold -->
 
 			<form id="myform" name="myform" class="product-form">
 				<table>
@@ -33,73 +31,70 @@
 						<th>Price</th>
 						<th>Amount</th>
 					</tr>
-
-  					<tr>
-  						<td>
-  							<input type="text" id="prod1" name="prod1" size="15" class="center" value="1" disabled>
-  						</td>
-
-  						<td>
-  							<input type="text" id="qty1" name="qty1" size="15" class="right">
-  						</td>
-  						<td>$2.98</td>
-
-  						<td>
-  							<input type="text" id="totalNum1" name="totalNum1" size="15" class="right">
-  						</td>
-  					</tr>
-  					<tr>
-  						<td>
-  							<input type="text" id="prod2" name="prod2" size="15" class="center" value="2" disabled>
-  						</td>
-  						<td>
-  							<input type="text" id="qty2" name="qty2" size="15" class="right">
-  						</td>
-  						<td>$4.50</td>
-  						<td>
-  							<input type="text" id="totalNum2" name="totalNum2" size="15" class="right">
-  						</td>
-  					</tr>
-  					<tr>
-  						<td>
-  							<input type="text" id="prod3" name="prod3" size="15" class="center" value="3" disabled>
-  						</td>
-  						<td>
-  							<input type="text" id="qty3" name="qty3" size="15" class="right">
-  						</td>
-  						<td>$9.98</td>
-  						<td>
-  							<input type="text" id="totalNum3" name="totalNum3" size="15" class="right">
-  						</td>
-  					</tr>
-  					<tr>
-  						<td>
-  							<input type="text" id="prod4" name="prod4" size="15" class="center" value="4" disabled>
-  						</td>
-  						<td>
-  							<input type="text" id="qty4" name="qty4" size="15" class="right">
-  						</td>
-  						<td>$4.49</td>
-  						<td>
-  							<input type="text" id="totalNum4" name="totalNum4" size="15" class="right">
-  						</td>
-  					</tr>
-  					<tr>
-  						<td>
-  							<input type="text" id="prod5" name="prod5" size="15" class="center" value="5" disabled>
-  						</td>
-  						<td>
-  							<input type="text" id="qty5" name="qty5" size="15" class="right">
-  						</td>
-  						<td>$6.87</td>
-  						<td>
-  							<input type="text" id="totalNum5" name="totalNum5" size="15" class="right">
-  						</td>
-  					</tr>
+  			  <tr>
+  					<td>
+  						<input type="number" id="prod1" name="prod1" size="15" class="center" value="1" disabled>
+  					</td>
+  				  <td>
+							<input type="number" id="qty1" name="qty1" size="15" class="right">
+						</td>
+						<td>$2.98</td>
+						<td>
+							<input type="number" id="totalNum1" name="totalNum1" size="15" class="right">
+						</td>
+  				</tr>
+					<tr>
+						<td>
+							<input type="number" id="prod2" name="prod2" size="15" class="center" value="2" disabled>
+						</td>
+						<td>
+							<input type="number" id="qty2" name="qty2" size="15" class="right">
+						</td>
+						<td>$4.50</td>
+						<td>
+							<input type="number" id="totalNum2" name="totalNum2" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="number" id="prod3" name="prod3" size="15" class="center" value="3" disabled>
+						</td>
+						<td>
+							<input type="number" id="qty3" name="qty3" size="15" class="right">
+						</td>
+						<td>$9.98</td>
+						<td>
+							<input type="number" id="totalNum3" name="totalNum3" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="number" id="prod4" name="prod4" size="15" class="center" value="4" disabled>
+						</td>
+						<td>
+							<input type="number" id="qty4" name="qty4" size="15" class="right">
+						</td>
+						<td>$4.49</td>
+						<td>
+							<input type="number" id="totalNum4" name="totalNum4" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="number" id="prod5" name="prod5" size="15" class="center" value="5" disabled>
+						</td>
+						<td>
+							<input type="number" id="qty5" name="qty5" size="15" class="right">
+						</td>
+						<td>$6.87</td>
+						<td>
+							<input type="number" id="totalNum5" name="totalNum5" size="15" class="right">
+						</td>
+					</tr>
 					<tr>
 						<td colspan="3">Total Amount Sold</td>
 						<td>
-							<input type="text" id="totalSold" name="totalSold" size="15" class="right">
+							<input type="number" id="totalSold" name="totalSold" size="15" class="right">
 						</td>
 					</tr>
 				</table>
@@ -157,39 +152,6 @@ function calculateAmount() {
 	}
 
 }
-
-  /*
-  JQuery for validation
-	displays error message if form input is not a number or empty
-	*/
-$(document).ready(function () {
-	$("#myform").validate({
-		// Rules for each input item
-		rules: {
-			qty1: {
-				required: true,
-				number: true
-			},
-			qty2: {
-				required: true,
-				number: true
-			},
-			qty3: {
-				required: true,
-				number: true
-			},
-
-			qty4: {
-				required: true,
-				number: true
-			},
-			qty5: {
-				required: true,
-				number: true
-			},
-		}
-	});
-});
 </script>
 </body>
 </html>
