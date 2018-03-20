@@ -117,21 +117,21 @@ HW 4 Part2
   margin-left: 2.5%;
 }
 
- th {
+ .compoundInterestTable th {
     background-color: #812215;
     color: white;
 }
 
- td, th {
+.compoundInterestTable td, th {
     border: 1px solid #ddd;
     padding: 3px;
 }
-tr{
+.compoundInterestTable tr{
   color: black;
   background-color: #f17c4e;
 }
 
- tr:nth-child(even){
+.compoundInterestTable  tr:nth-child(even){
   background-color: #fdf734;
 }
 
@@ -143,4 +143,30 @@ tr{
   .compoundInterestTable{
     margin-left: 8%;
   }
+}
+
+
+
+/*****************************************************
+HW 4 Part3
+******************************************************/
+.product-form{
+  margin: 0 20%;
+  text-align: center;
+}
+
+.product-form td {
+    text-align: left;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
 }
