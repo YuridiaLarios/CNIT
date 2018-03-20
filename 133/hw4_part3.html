@@ -8,7 +8,6 @@
   <link rel="stylesheet" type="text/css" href="../css/hw4.css">
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -23,10 +22,176 @@
   </nav>
   <h1>Hw #4 Part 3: Forms and switch statements</h1>
   <div class="inner-wrapper">
+    <h3>Part 4: Product Order Information</h3>
+    <!-- create form for input of quantity sold -->
+
+			<form id="myform" name="myform" class="bump-space">
+				<table>
+					<tr>
+						<th>Product #</th>
+						<th>Qty </th>
+						<th>Price</th>
+						<th>Amount</th>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="prod1" name="prod1" size="15" class="center" value="1">
+						</td>
+						<td>
+							<input type="text" id="qty1" name="qty1" size="15" class="right">
+						</td>
+						<td>$2.98</td>
+						<td>
+							<input type="text" id="totalNum1" name="totalNum1" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="prod2" name="prod2" size="15" class="center" value="2">
+						</td>
+						<td>
+							<input type="text" id="qty2" name="qty2" size="15" class="right">
+						</td>
+						<td>$4.50</td>
+						<td>
+							<input type="text" id="totalNum2" name="totalNum2" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="prod3" name="prod3" size="15" class="center" value="3">
+						</td>
+						<td>
+							<input type="text" id="qty3" name="qty3" size="15" class="right">
+						</td>
+						<td>$9.98</td>
+						<td>
+							<input type="text" id="totalNum3" name="totalNum3" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="prod4" name="prod4" size="15" class="center" value="4">
+						</td>
+						<td>
+							<input type="text" id="qty4" name="qty4" size="15" class="right">
+						</td>
+						<td>$4.49</td>
+						<td>
+							<input type="text" id="totalNum4" name="totalNum4" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" id="prod5" name="prod5" size="15" class="center" value="5">
+						</td>
+						<td>
+							<input type="text" id="qty5" name="qty5" size="15" class="right">
+						</td>
+						<td>$6.87</td>
+						<td>
+							<input type="text" id="totalNum5" name="totalNum5" size="15" class="right">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="bold right">Total Amount Sold</td>
+						<td>
+							<input type="text" id="totalSold" name="totalSold" size="15" class="right">
+						</td>
+					</tr>
+				</table>
+
+				<p class="bump-space"></p>
+				<input type="button" onclick="calculateAmount()" value="Calculate Total Sold">
+				<input type="reset" value="Clear Form" onClick="window.location.reload();">
+				<p class="bump-space"></p>
+			</form>
+
+
   </div>
 </div>
 <script>
 
+function calculateAmount() {
+	var pNum;
+  var qProd;
+  var totalNum;
+  var totalSold = 0;
+	var	cost;
+  var i;
+
+	//cycle through for all 5 products
+	for (i = 1; i <= 5; i++) {
+		pNum = parseInt(document.getElementById("prod" + i).value); // Get values as it cycles through the product #
+		qProd = document.getElementById("qty" + i).value; // Get quantity as it cycles through each product
+
+
+		//Set cost of each product
+	switch (pNum) {
+		case 1:
+			cost = 2.98;
+			break;
+		case 2:
+			cost = 4.50;
+			break;
+		case 3:
+			cost = 9.98;
+			break;
+		case 4:
+			cost = 4.49;
+			break;
+		case 5:
+			cost = 6.87;
+			break;
+		}
+
+		//final total cost by multiplying by number of product
+		totalNum = parseFloat(cost * qProd);
+
+		//total costs is calculated by adding each iteration to total sold
+		totalSold = totalSold + totalNum;
+
+		//output to table by ID plus decimal number fixed to two places
+		document.getElementById("totalNum" + i).value = totalNum.toFixed(2);
+
+		//output to table by ID to totalSold
+		document.getElementById("totalSold").value = totalSold.toFixed(2);
+	}
+
+}
+
+  /*
+  JQuery for validation
+	displays error message if form input is not a number or empty
+	*/
+$(document).ready(function () {
+	$("#myform").validate({
+		// Rules for each input item
+		rules: {
+			qty1: {
+				required: true,
+				number: true
+			},
+			qty2: {
+				required: true,
+				number: true
+			},
+			qty3: {
+				required: true,
+				number: true
+			},
+
+			qty4: {
+				required: true,
+				number: true
+			},
+			qty5: {
+				required: true,
+				number: true
+			},
+		}
+	});
+}); //end of function
 
 
 </script>
