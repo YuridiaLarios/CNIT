@@ -61,9 +61,53 @@
         <option value="Projects">Projects</option>
         <option value="Community">Community</option>
         <option value="Open Source">Open Source</option>
-
       </select>
 
+      <!-- Checkboxed Menu for multiple selections of what can be inproved in fcc-->
+      <fieldset>
+        <legend for="improve-fcc">Things that should be improved in the future (Check all that apply):</legend>
+
+        <input type="checkbox" id="front-end-projects" name="interest" value="Front End Projects">
+        <label for="front-end-projects">Front-end Projects</label>
+
+        <input type="checkbox" id="back-end-projects" name="interest" value="Back End Projects">
+        <label for="back-end-projects">Back End Projects</label>
+
+        <input type="checkbox" id="data-visualization" name="interest" value="Data Visualization">
+        <label for="data-visualization">Data Visualization</label>
+
+        <input type="checkbox" id="challenges" name="interest" value="Challenges">
+        <label for="challenges">Challenges</label>
+
+        <input type="checkbox" id="open-source-community" name="interest" value="Open Source Community">
+        <label for="open-source-community">Open Source Community</label>
+
+        <input type="checkbox" id="gitter-help-rooms" name="interest" value="Gitter Help Rooms">
+        <label for="gitter-help-rooms">Gitter Help Rooms</label>
+
+        <input type="checkbox" id="videos" name="interest" value="Videos">
+        <label for="videos">Videos</label>
+
+        <input type="checkbox" id="city-meetups" name="interest" value="City Meetups">
+        <label for="city-meetups">City Meetups</label>
+
+        <input type="checkbox" id="wiki" name="interest" value="Wiki">
+        <label for="wiki">Wiki</label>
+
+        <input type="checkbox" id="forums" name="interest" value="Forums">
+        <label for="forums">Forums</label>
+
+        <input type="checkbox" id="additional-course" name="interest" value="Additional Course">
+        <label for="additional-course">Additional Course</label>
+      </fieldset>
+
+      <!-- Text area for comments/suggestions -->
+      <label for="comments-suggestions">Any Comments or Suggestions?</label>
+      <textarea id="comments-suggestions" name="comments-suggestions" rows="5" cols="33" placeholder="Enter your comments here..."></textarea>
+
+      <!-- Submit Button -->
+      <br>
+      <input type="submit" value="Submit">
 
 
     </form>
