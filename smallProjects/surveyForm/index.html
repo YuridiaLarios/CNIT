@@ -18,24 +18,52 @@
   <div class="survey-form-wrapper">
     <p>Let us know how we can improve freeCodeCamp</p>
     <form id="surveyForm">
-      <label for="name">Name: </label>
-      <input type="text" id="name" class="inputField" value="">
+      <label for="name">* Name: </label>
+      <input type="text" id="name" class="inputField" value="" required>
       <br>
-      <label for="email">Email: </label>
-      <input type="email" id="email" class="inputField" value="">
+      <label for="email">* Email: </label>
+      <input type="email" id="email" class="inputField" value="" required>
       <br>
-      <label for="age">Age: </label>
-      <input type="number" id="age" class="inputField" value="">
+      <label for="age">* Age: </label>
+      <input type="number" id="age" class="inputField" value="" required>
       <br>
+
+      <!-- Dropdownd Menu for current role selection -->
       <label for="current-role">Which option best describes your current role?</label>
       <select name="current-role" id="current-role" class="inputField">
+        <option value="" disabled> Select an option </option>
         <option value="Student" selected>Student</option>
         <option value="Full time job">Full Time Job</option>
         <option value="Full time learner">Full Time Learner</option>
         <option value="Prefer not to say">Prefer not to say</option>
       </select>
-      <br><br>
       <br>
+
+      <!-- Radio buttons options for recommendation of fcc selection -->
+      <fieldset>
+        <legend for="recommend-fcc">* How likely is that you would recommend freeCodeCamp to a friend?</legend>
+
+        <input type="radio" id="recommendChoice1" name="recommend" value="Definitely" required>
+        <label class="radio-buttons" for="recommendChoice1">Definitely</label>
+
+        <input type="radio" id="recommendChoice2" name="recommend" value="Maybe">
+        <label for="recommendChoice2">Maybe</label>
+
+        <input type="radio" id="recommendChoice3" name="recommend" value="Not Sure">
+        <label for="recommendChoice3">Not Sure</label>
+      </fieldset>
+
+      <!-- Dropdown Menu for what do you like most from fcc-->
+      <label for="liking-range">What do you like most in FCC:</label>
+      <select name="liking-range" id="liking-range" class="inputField">
+        <option value="" disabled> Select an option </option>
+        <option value="Challenges">Challenges</option>
+        <option value="Projects">Projects</option>
+        <option value="Community">Community</option>
+        <option value="Open Source">Open Source</option>
+
+      </select>
+
 
 
     </form>
