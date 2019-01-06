@@ -96,3 +96,71 @@ textarea {
   display: block;
   margin: 20px auto;
 }
+
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .survey-form-wrapper {
+    width: 95%;
+    margin-bottom: 80px;
+    padding: 4% 1%;
+    border-radius: 0%;
+  }
+
+
+  input[type=text],
+  input[type=number],
+  input[type=email] {
+    height: 15px;
+    width: 170px;
+  }
+
+  input[type=text],
+  input[type=number],
+  input[type=email],
+  textarea {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  input[type=text]:focus,
+  input[type=number]:focus,
+  input[type=email]:focus,
+  textarea:focus {
+    padding: 5px;
+  }
+
+  select {
+    margin: 2% auto;
+    display: block;
+    height: 20px;
+    font-size: 14px;
+  }
+
+  fieldset {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .button {
+    background-color: #f88944;
+    font-size: 14px;
+    width: 60%;
+    height: 40px;
+  }
+
+  .button:hover {
+    background-color: #f88944;
+  }
+
+  .radio-buttons,
+  .checkboxes {
+    margin-top: 1%;
+    margin-left: 20%;
+    text-align: left;
+    display: block;
+  }
+}
