@@ -1,4 +1,3 @@
-
 body {
   background-color: #edf8fd;
   text-align: center;
@@ -61,7 +60,24 @@ fieldset {
 }
 
 .button {
-  background-color: #eba87d;
+  background-color: #f88944;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  width: 30%;
+  margin: 5% auto;
+  padding: 10px;
+  height: 50px;
+  border-radius: 5px;
+  /*Extra properties for dimension*/
+  border: 1px solid #f88944;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset
+}
+
+.button:hover {
+  background-color: #f57627;
+  cursor: pointer;
 }
 
 .radio-buttons,
