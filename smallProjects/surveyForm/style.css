@@ -19,7 +19,7 @@ input[type=text],
 input[type=number],
 input[type=email] {
   height: 30px;
-  width: 300px;
+  width: 40%;
   border-radius: 25px;
 }
 
@@ -85,6 +85,10 @@ fieldset {
   margin-left: 32%;
   text-align: justify;
   display: block;
+}
+
+textarea {
+  width: 70%;
 }
 
 .textarea-Label,
