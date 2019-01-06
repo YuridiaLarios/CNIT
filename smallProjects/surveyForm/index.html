@@ -15,10 +15,10 @@
 </head>
 
 <body>
-  <h1>Survey Form</h1>
+  <h1 id="title">Survey Form</h1>
   <div class="survey-form-wrapper">
     <p>Let us know how we can improve freeCodeCamp</p>
-    <form id="surveyForm">
+    <form id="survey-form">
       <label for="name">* Name: </label>
       <input type="text" id="name" class="inputField" value="" required>
       <br>
@@ -44,14 +44,14 @@
       <fieldset>
         <legend for="recommend-fcc">* How likely is that you would recommend freeCodeCamp to a friend?</legend>
 
-        <input type="radio" id="recommendChoice1" name="recommend" value="Definitely" required>
-        <label class="radio-buttons" for="recommendChoice1">Definitely</label>
+        <label class="radio-buttons" for="recommendChoice1"><input type="radio" id="recommendChoice1" name="recommend"
+            value="Definitely" required>Definitely</label>
 
-        <input type="radio" id="recommendChoice2" name="recommend" value="Maybe">
-        <label for="recommendChoice2">Maybe</label>
+        <label class="radio-buttons" for="recommendChoice2"><input type="radio" id="recommendChoice2" name="recommend"
+            value="Maybe">Maybe</label>
 
-        <input type="radio" id="recommendChoice3" name="recommend" value="Not Sure">
-        <label for="recommendChoice3">Not Sure</label>
+        <label class="radio-buttons" for="recommendChoice3"><input type="radio" id="recommendChoice3" name="recommend"
+            value="Not Sure">Not Sure</label>
       </fieldset>
 
       <!-- Dropdown Menu for what do you like most from fcc-->
