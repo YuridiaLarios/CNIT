@@ -2,15 +2,16 @@
 GENERAL
 **************************/
 @import url(https://fonts.googleapis.com/css?family=Questrial);
+
 body {
   margin: 0;
   font-family: "Questrial", serif;
   text-align: center;
 }
+
 p {
   margin-bottom: 8%;
 }
-
 
 .content-descriptive-div {
   width: 80%;
@@ -28,16 +29,10 @@ p {
 }
 
 
+
 /**************************
 HEADER
 **************************/
-.main-header {
-  position: relative;
-  height: 600px;
-  background: url(../img/coding.jpg) #78a7bb;
-  padding: 0;
-}
-
 .header-name {
   font-size: 3em;
   letter-spacing: 0.2em;
@@ -45,23 +40,6 @@ HEADER
 }
 
 
-
-@media screen and (max-width: 600px){
-  .main-header {
-    height: 0px;
-    background: none;
-  }
-
-  .inner-header {
-    width: 250px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .header-name {
-    margin: 0 auto;
-    font-size: 2.3em;
-  }
-}
 
 /**************************
 PROJECTS SECTION
@@ -85,13 +63,16 @@ PROJECTS SECTION
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .project-container {
-  border-radius: 3%;
   text-align: center;
   display: flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #742f23;
   padding: 15px;
   color: white;
@@ -101,7 +82,6 @@ PROJECTS SECTION
   opacity: .7;
 }
 
-
 .project-container a{
   color: white;
   text-decoration: none;
@@ -109,10 +89,17 @@ PROJECTS SECTION
 }
 
 
+
 /**************************
 FOOTER
 **************************/
-
+footer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  overflow: hidden;
+}
 
 .footer-content {
   position: absolute;
@@ -120,12 +107,6 @@ FOOTER
   right: 50%;
   transform: translate(50%, -1%);
   color: gray;
-}
-
-footer {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  background-color: #000;
-  overflow: hidden;
+  font-size: 16px;
+  font-weight: bold;
 }
