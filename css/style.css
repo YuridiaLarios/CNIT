@@ -167,7 +167,7 @@ a.social-links {
 
   ul {
     padding: 0;
-    list-style-type: none;a
+    list-style-type: none;
   }
   .hobbies-list li {
     margin: 25px 0;
@@ -200,7 +200,7 @@ a.social-links {
     float: none;
     width: 95%;
     text-align: center;
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 
