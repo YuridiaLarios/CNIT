@@ -3,7 +3,6 @@
 /**************************
 GENERAL
 **************************/
-
 body {
   margin: 0;
   font-family: 'Special Elite', cursive;
@@ -31,9 +30,47 @@ h1 {
   font-size: 3em;
   margin-top: 50px;
 }
+
 h2 {
   font-size: 18px;
 }
+
+/*************************
+NAV
+**************************/
+nav {
+  height: 70px;
+  background:#82b336;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 26px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+nav .active {
+  border: 2px solid #f0b027;
+}
+
 
 
 /**************************
@@ -190,6 +227,13 @@ Mobile responsive up to 500px width
 
   h1{
     font-size: 2em;
+  }
+
+  /*************************
+NAV
+**************************/
+  nav {
+    display: none;
   }
 
   /**************************

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
 html{
-  background-image: -webkit-linear-gradient(180deg, #1f222b 52%, #e55d51 53%);
+  background-image: -webkit-linear-gradient(180deg, #1f222b 85%, #e55d51 53%);
 }
 
 body{
@@ -9,6 +9,47 @@ body{
   color: white;
   font-size: 2em;
 }
+
+
+/*************************
+NAV
+**************************/
+nav {
+  height: 100px;
+  background-color: none;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+nav .active {
+  border: 2px solid #e55d51;
+  background-color: #111;
+}
+
 
 .right{
   width: 45%;
@@ -36,6 +77,13 @@ body{
   body{
     margin: 0px;
     padding: 0px;
+  }
+
+  /*************************
+  NAV
+  **************************/
+  nav {
+    display: none;
   }
 
   .right{
