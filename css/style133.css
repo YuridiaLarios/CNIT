@@ -11,8 +11,8 @@ body {
 }
 
 .right{
-  width: 35%;
-  height: 100vh;
+  width: 30%;
+  height: 90vh;
   display: block;
   text-align: center;
   float:left;
@@ -20,7 +20,7 @@ body {
 }
 
 .left{
-  width: 65%;
+  width: 70%;
   float: right;
   background: white;
   margin-top: 150px;
@@ -63,7 +63,7 @@ PROJECTS SECTION
   }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 500px){
   .grid{
     grid-template-columns: 1fr;
   }
@@ -86,6 +86,7 @@ a {
   background-color: #f0b027;
   padding: 15px;
   color: black;
+  height: 30px;
 }
 
 .project-container:hover {
@@ -121,7 +122,10 @@ footer {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 500px) {
+/***************************************
+Ipad responsive up to 1440px width
+*****************************************/
+@media only screen and (max-width: 1440px) {
 
   /**************************
   GENERAL
@@ -150,16 +154,122 @@ footer {
   }
 
   /**************************
+  MAIN IMAGE
+  **************************/
+  #mainImage {
+    width: 25%;
+  }
+
+  /**************************
   PROJECTS SECTION
   **************************/
   .grid {
+    margin: 0 10%;
     padding: 8px;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
+    margin: 1%;
   }
 
+  .project-container {
+    height: 40px;
+  }
+}
+
+
+/***************************************
+Mobile responsive up to 500px width
+*****************************************/
+@media only screen and (max-width: 500px) {
+
+  /**************************
+  GENERAL
+  **************************/
+
+  .left {
+    margin-top: 20px;
+  }
+
+  h1{
+    font-size: 2em;
+  }
+
+  /**************************
+  MAIN IMAGE
+  **************************/
+  #mainImage {
+    width: 50%;
+  }
+
+  /**************************
+  PROJECTS SECTION
+  **************************/
   .project-container {
     height: 50px;
   }
 }
 
+
+
+/***************************************
+UI responsive for more than 1441px width
+*****************************************/
+
+@media only screen and (min-width: 1441px) {
+  /**************************
+  GENERAL
+  **************************/
+  .right {
+    width: 100%;
+    height: 50vh;
+    float: none;
+    padding-top: 20px;
+  }
+
+  .left {
+    float: none;
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin-top: 50px;
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+
+  /**************************
+  MAIN IMAGE
+  **************************/
+  #mainImage {
+    width: 17%;
+  }
+
+
+  /**************************
+  PROJECTS SECTION
+  **************************/
+  .grid {
+    padding: 0px;
+    margin: 0 20%;
+  }
+
+  .project-container {
+    padding: 15px;
+    height: 50px;
+  }
+
+  /**************************
+  FOOTER
+  **************************/
+  footer {
+    height: 150px;
+  }
+
+  .footer-content {
+    font-size: 20px;
+  }
+}
