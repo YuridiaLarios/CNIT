@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+/*************************
+GENERAL
+**************************/
+body {
+  font-family: 'Special Elite', cursive;
+  color: black;
+  font-size: 1em;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+
+/*************************
+NAV
+**************************/
+nav {
+  height: 100px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 25px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+  color: white;
+}
+
+nav .active {
+  border: 2px solid grey;
+  background-color: rgba(109, 109, 109, 0.164);
+}
+
+
+
+/*************************
+SUBMENU
+**************************/
+.subMenu {
+  margin: 10px auto;
+  text-align: center;
+  border: none;
+}
+
+.showSingle {
+  padding: 12px;
+}
+
+.activeSubMenuButton {
+  background-color: aliceblue;
+}
+
+
+
+/*************************
+WRAPPER
+**************************/
+.wrapper {
+  width: 55%;
+  background-color: #4c93d0;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 20px;
+  box-shadow: 0 2px 4px 0 gray, 0 2px 10px 0 gray;
+}
+
+
+/*************************
+INNER-WRAPPER
+**************************/
+.inner-wrapper {
+  background-color: white;
+  color: #4c93d0;
+  padding: 20px;
+}
+
+.inner-wrapper ol li {
+  list-style-type: none;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  margin: 30px;
+}
+
+
+/*************************
+PART1
+**************************/
+#part1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.red {
+  color: red;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.blue {
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.green {
+  color: green;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+}
+
+
+
+@media screen and (max-width: 780px) {
+
+  /*************************
+  NAV
+  **************************/
+  nav {
+    display: none;
+  }
+
+
+  /*************************
+  WRAPPER
+  **************************/
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 10px;
+  }
+
+  /*************************
+  INNER-WRAPPER
+  **************************/
+  .inner-wrapper {
+    padding: 10px;
+  }
+
+  .inner-wrapper ol li {
+    list-style-type: none;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
