@@ -55,7 +55,32 @@
                                                                  <span class="green">${num2}</span></strong></p>`);
             </script>
         </div>
-        <div id="part2" class="hwParts">Content 2</div>
+        <div id="part2" class="hwParts">
+            <form name="integersAndInputsForm">
+                <p>
+                    <label>
+                        First Number:
+                        <input type="number" name="num1" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Second Number:
+                        <input type="number" name="num2" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Third Number:
+                        <input type="number" name="num3" required size="10">
+                    </label>
+                </p>
+                <br>
+                <button type="button" onclick="calculate()" id="submitButton">Submit</button>
+                <button id="resetButton" type="reset">Reset</button>
+            </form>
+            <div id="part2FormResults"></div>
+        </div>
         <div id="part3" class="hwParts">Content 3</div>
         <div id="part4" class="hwParts">Content 4</div>
         <div id="extraCredit" class="hwParts">Content 4</div>
@@ -63,6 +88,7 @@
 </div>
 <script>
     jQuery(function () {
+        // Script for part1:
         jQuery('.hwParts').hide();
         jQuery('#overview').show();
         jQuery('#overviewButton').addClass('activeSubMenuButton');
@@ -74,6 +100,50 @@
             jQuery($(this)).addClass('activeSubMenuButton');
         });
     });
+
+    // Script for part2:
+    function calculate() {
+        document.getElementById("part2FormResults").innerHTML = "";
+
+        let num1, num2, num3, n1, n2, n3, sum, average, product, minNum, maxNum;
+        number1 = document.forms["integersAndInputsForm"].elements["num1"].value;
+        number2 = document.forms["integersAndInputsForm"].elements["num2"].value;
+        number3 = document.forms["integersAndInputsForm"].elements["num3"].value;
+
+        if ((number1 !== "" && typeof parseInt(number1) === "number") &&
+            (number2 !== "" && typeof parseInt(number1) === "number") &&
+            (number3 !== "" && typeof parseInt(number1) === "number")) {
+            n1 = parseInt(number1);
+            n2 = parseInt(number2);
+            n3 = parseInt(number3);
+            sum = n1 + n2 + n3;
+            average = parseInt(sum / 3);
+            product = n1 * n2 * n3;
+            minNum = Math.min(n1, n2, n3);
+            maxNum = Math.max(n1, n2, n3);
+
+            document.getElementById("part2FormResults").innerHTML +=
+                `<p><br>Sum = ${sum}
+                                                            <br>Average = ${average}
+                                                            <br>Product = ${product}
+                                                            <br>Largest number = ${maxNum}
+                                                            <br>Smallest number = ${minNum}</p>`;
+
+        } else {
+            document.getElementById("part2FormResults").innerHTML +=
+                `<p class="red">Please enter integer numbers into the 3 input fields</p>`;
+        }
+
+        jQuery(function () {
+            $("#part2FormResults").fadeIn('slow');
+        })
+    }
+
+    jQuery(function () {
+        $("#resetButton").click(function () {
+            $("#part2FormResults").fadeOut('slow');
+        })
+    })
 </script>
 </body>
 
