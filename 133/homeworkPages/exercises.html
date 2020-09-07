@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Javascript exercises for practicing">
+  <title>Module 1 exercises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+  <style>
+    html {
+      font-style: italic;
+      color: orange;
+      font-weight: bold;
+    }
+
+    h1,
+    h2 {
+      color: black;
+    }
+
+    body {
+      margin-top: 5%;
+      margin-left: 32%;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      color: black;
+    }
+
+    button {
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+  </style>
+  <script>
+    function separate() {
+      document.write("<br><br><br>")
+    }
+
+    function exercise1() {
+      document.write("<h2>Exersize1</h2>")
+      document.write("a, ");
+      document.write("b, ");
+      document.write("c");
+    }
+
+    function calculateTableValues() {
+      let salary1 = parseFloat(document.forms["annualSalaryForm"].elements['salary1'].value);
+      let salary2 = parseFloat(document.forms["annualSalaryForm"].elements['salary2'].value);
+      let salary3 = parseFloat(document.forms["annualSalaryForm"].elements['salary3'].value);
+
+      totalAnnualSalary = salary1 + salary2 + salary3;
+      document.forms["annualSalaryForm"].elements['annualSalaryTotal'].value = totalAnnualSalary.toFixed(2);
+
+
+      let salary1WithBonus = salary1 + 100;
+      let salary2WithBonus = salary2 + 100;
+      let salary3WithBonus = salary3 + 100;
+
+      document.forms["annualSalaryForm"].elements['withBonus1'].value = salary1WithBonus.toFixed(2);
+      document.forms["annualSalaryForm"].elements['withBonus2'].value = salary2WithBonus.toFixed(2);
+      document.forms["annualSalaryForm"].elements['withBonus3'].value = salary1WithBonus.toFixed(2);
+
+      document.forms["annualSalaryForm"].elements['withBonusTotal'].value = (salary1WithBonus + salary2WithBonus +
+        salary3WithBonus).toFixed(2);
+    }
+
+
+    function exercise1b() {
+      document.write("<h2>Exersize1b</h2>")
+      let htmlTable = "";
+      htmlTable +=
+        "<form name='annualSalaryForm' onsubmit='return false'><table> <tr><th colspan=3> The ABC company </th></tr> " +
+        "<tr> <th>Employee Name</th> <th>Annual salary</th> <th>With $100 Bonus</th></tr> " +
+        "<tr> <th> <input type='text' value='name1' size='20'/></th> <th><input type='number' name='salary1' required/></th> <th><input type='text' name='withBonus1' disabled/></th></tr>" +
+        "<tr> <th> <input type='text' value='name2' size='20'/></th> <th><input type='number' name='salary2' required/></th> <th><input type='number' name='withBonus2' disabled/></th></tr>" +
+        "<tr> <th> <input type='text' value='name3' size='20'/></th> <th><input type='number' name='salary3' required/></th> <th><input type='number' name='withBonus3' disabled/></th></tr>" +
+        "<tr> <th> Totals </th> <th><input type='number' name='annualSalaryTotal' disabled/></th> <th><input type='number' name='withBonusTotal' disabled/></th></tr>" +
+        "</table>" +
+        "<button onClick='calculateTableValues()'>Calculate</button>" +
+        "<button type='reset'>Reset</button></form>"
+
+      document.write(htmlTable);
+
+    }
+    exercise1();
+    separate();
+    exercise1b();
+  </script>
+</head>
+
+</html>
