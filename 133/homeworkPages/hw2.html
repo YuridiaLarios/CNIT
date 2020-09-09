@@ -30,7 +30,6 @@
         <button class="showSingle" target="hwPart1">Part 1</button>
         <button class="showSingle" target="hwPart2">Part 2</button>
         <button class="showSingle" target="hwPart3">Part 3</button>
-        <button class="showSingle" target="hwPart4">Part 4</button>
         <button class="showSingle" target="extraCredit">Extra credit</button>
     </div>
     <div class="inner-wrapper">
@@ -45,7 +44,7 @@
         </div>
         <div id="hwPart1" class="hwParts">
             <script>
-                var a = "x",
+                let a = "x",
                     b = "y",
                     num1 = 12,
                     num2 = 89
@@ -116,6 +115,16 @@
                 <button id="part3ResetButton" type="reset">Reset</button>
             </form>
             <div id="part3FormResults"></div>
+        </div>
+        <div id="extraCredit" class="hwParts">
+            <div class="panel">
+                <p>Input an amount in U.S. dollars and press enter. <br>Table will display its equivalent in each of the foreign currencies</p>
+                <p>Refresh page to try a different U.S dollar amount.</p>
+            </div>
+            <p class="flip">Click to Show/Hide Instructions</p>
+            <div class="pannelInnerWrapper">
+            </div>
+            <button type="button" onclick="extraCreditCalculate()" id="extraCreditCalculateSubmitButton">Calculate Exchange</button>
         </div>
     </div>
 </div>
@@ -226,6 +235,97 @@
             $("#part3FormResults").fadeOut('slow');
         })
     })
+
+    // Script for extra credit
+    let textfieldInput, britishPound, canadianDollar, euro, japaneseYen, mexicanPeso;
+
+    function drawTable(){
+        let table = '';
+        table += '<caption>' + "Monetary Exchange Rates" + '</caption>';
+
+        table += '<thead>';
+        table += '<tr><th scope="col">Currency</th>';
+        table += '<th scope="col">Rate</th>';
+        table += '<th scope="col">Value</th>';
+        table += '</tr></thead>';
+
+        table += '<tbody>';
+
+        table += '<tr><th scope="row">'+ "British Pound" + '</th>';
+        table += '<td>'+ "0.77" +'</td>';
+        table += '<td class="conversion">';
+        if(britishPound){
+            table += britishPound;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Canadian Dollar" + '</th>';
+        table += '<td>'+ "1.31" +'</td>';
+        table += '<td class="conversion">';
+        if(canadianDollar){
+            table += canadianDollar;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Euro" + '</th>';
+        table += '<td>'+ "0.89" +'</td></td>';
+        table += '<td class="conversion">';
+        if(euro){
+            table += euro;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Japanese Yen" + '</th>';
+        table += '<td>'+ "108.38" +'</td></td>';
+        table += '<td class="conversion">';
+        if(japaneseYen){
+            table += japaneseYen;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row">'+ "Mexican Peso" + '</th>';
+        table += '<td>'+ "19.11" +'</td></td>';
+        table += '<td class="conversion">';
+        if(mexicanPeso){
+            table += mexicanPeso;
+        }
+        table += '</td></tr>'
+
+        table += '<tr><th scope="row" colspan="2" id="dollars">'+ "Enter Amount of U.S Dollars: " + '</th>';
+        if(textfieldInput){
+            table += '<td><input name="textfield" id="textfield" type="number" placeholder="'+ textfieldInput +'"/>';
+        } else {
+            table += '<td><input name="textfield" id="textfield" type="number"/>';
+        }
+        table += '</td></tr>'
+
+        table += '</tbody>';
+        $(".pannelInnerWrapper").html('<table id="monetaryExchange"' + table + '</table>');
+    }
+
+    drawTable();
+
+    $(".flip").click(function(){
+        $(".panel").slideToggle("slow");
+    });
+
+    $("#textfield").click(function(){
+        $(this).css("background-color","yellow");
+    });
+
+    function extraCreditCalculate() {
+        textfieldInput = $("#textfield").val();
+        if ($.isNumeric(textfieldInput)) {
+            britishPound = (0.77 * textfieldInput).toFixed(2);
+            canadianDollar = (1.31 * textfieldInput).toFixed(2);
+            euro = (0.89 * textfieldInput).toFixed(2);
+            japaneseYen = (108.38 * textfieldInput).toFixed(2);
+            mexicanPeso = (19.11 * textfieldInput).toFixed(2);
+            drawTable();
+        } else {
+            $("#textfield").css("background-color", "red")
+        }
+    }
 
 </script>
 </body>

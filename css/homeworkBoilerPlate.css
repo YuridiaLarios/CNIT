@@ -133,10 +133,84 @@ COLORS
 /*************************
 hwPARTS
 **************************/
-#hwPart1, #hwPart2, #hwPart3 {
+#hwPart1, #hwPart2, #hwPart3, #extraCredit, .panelInnerWrapper {
   margin: 0 auto;
   text-align: center;
 }
+
+/*****************************************************
+hw extra credit
+******************************************************/
+.wrapper-monetaryExchange{
+  width: 55%;
+  height: 690px;
+  background-image: -webkit-linear-gradient(90deg, #4c93d0 89%, #2f71ac 12%);
+  margin: 0 auto;
+  margin-bottom: 5%;
+  margin-top: 7%;
+  box-shadow: 0 2px 4px 0 gray,0 2px 10px 0 gray !important;
+}
+
+#monetaryExchange {
+  margin: 0 auto;
+}
+
+#monetaryExchange thead {
+  background-color: black;
+  color: white;
+}
+
+#monetaryExchange td, #monetaryExchange th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#monetaryExchange tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+#dollars{
+  background-color: black;
+  color: white;
+}
+
+#textfield {
+  width: 80%;
+  padding: 10px;
+  margin: 0px;
+  text-align: right;
+}
+
+.conversion {
+  text-align: right;
+  color: black;
+}
+
+
+div.panel,p.flip {
+  margin:0 auto;
+  padding:5px;
+  text-align:center;
+  background:gray;
+  color: white;
+  width: 91%;
+  border:solid 1px #c3c3c3;
+}
+
+p.flip {
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+p.flip:hover {
+  cursor: pointer;
+}
+
+div.panel{
+  height:100px;
+  display:none;
+}
+
 
 
 @media screen and (max-width: 780px) {
