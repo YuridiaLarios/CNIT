@@ -27,10 +27,10 @@
     <h1>CNIT 133 Homework 2 Basic Operations</h1>
     <div class="subMenu">
         <button id="overviewButton" class="showSingle" target="overview">Overview</button>
-        <button class="showSingle" target="part1">Part 1</button>
-        <button class="showSingle" target="part2">Part 2</button>
-        <button class="showSingle" target="part3">Part 3</button>
-        <button class="showSingle" target="part4">Part 4</button>
+        <button class="showSingle" target="hwPart1">Part 1</button>
+        <button class="showSingle" target="hwPart2">Part 2</button>
+        <button class="showSingle" target="hwPart3">Part 3</button>
+        <button class="showSingle" target="hwPart4">Part 4</button>
         <button class="showSingle" target="extraCredit">Extra credit</button>
     </div>
     <div class="inner-wrapper">
@@ -43,19 +43,17 @@
                 <li>Extra Credit - Exchanges Rates</li>
             </ol>
         </div>
-        <div id="part1" class="hwParts">
+        <div id="hwPart1" class="hwParts">
             <script>
                 var a = "x",
                     b = "y",
                     num1 = 12,
                     num2 = 89
                 document.write(
-                    `<p><strong><span class="red">${a}${b}</span>
-                                                                 <span class="blue">${num1}</span>
-                                                                 <span class="green">${num2}</span></strong></p>`);
+                    `<p><strong><span class="red">${a}${b} </span><span class="blue">${num1} </span><span class="green">${num2}</span></strong></p>`);
             </script>
         </div>
-        <div id="part2" class="hwParts">
+        <div id="hwPart2" class="hwParts">
             <form name="integersAndInputsForm">
                 <p>
                     <label>
@@ -81,23 +79,58 @@
             </form>
             <div id="part2FormResults"></div>
         </div>
-        <div id="part3" class="hwParts">Content 3</div>
-        <div id="part4" class="hwParts">Content 4</div>
-        <div id="extraCredit" class="hwParts">Content 4</div>
+        <div id="hwPart3" class="hwParts">
+            <form name="numbersAndInputsForm">
+                <p>
+                    <label>
+                        First Number:
+                        <input type="number" name="num1" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Second Number:
+                        <input type="number" name="num2" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Third Number:
+                        <input type="number" name="num3" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Fourth Number:
+                        <input type="number" name="num4" required size="10">
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Fifth Number:
+                        <input type="number" name="num5" required size="10">
+                    </label>
+                </p>
+                <br>
+                <button type="button" onclick="part3Calculate()" id="part3SubmitButton">Submit</button>
+                <button id="part3ResetButton" type="reset">Reset</button>
+            </form>
+            <div id="part3FormResults"></div>
+        </div>
     </div>
 </div>
 <script>
-    jQuery(function () {
+    $(function () {
         // Script for part1:
-        jQuery('.hwParts').hide();
-        jQuery('#overview').show();
-        jQuery('#overviewButton').addClass('activeSubMenuButton');
+        $('.hwParts').hide();
+        $('#overview').show();
+        $('#overviewButton').addClass('activeSubMenuButton');
 
-        jQuery('.showSingle').click(function () {
-            jQuery('.hwParts').hide();
-            jQuery('.showSingle').removeClass('activeSubMenuButton');
-            jQuery('#' + $(this).attr('target')).show();
-            jQuery($(this)).addClass('activeSubMenuButton');
+        $('.showSingle').click(function () {
+            $('.hwParts').hide();
+            $('.showSingle').removeClass('activeSubMenuButton');
+            $('#' + $(this).attr('target')).show();
+            $($(this)).addClass('activeSubMenuButton');
         });
     });
 
@@ -105,14 +138,14 @@
     function calculate() {
         document.getElementById("part2FormResults").innerHTML = "";
 
-        let num1, num2, num3, n1, n2, n3, sum, average, product, minNum, maxNum;
+        let number1, number2, number3, n1, n2, n3, sum, average, product, minNum, maxNum;
         number1 = document.forms["integersAndInputsForm"].elements["num1"].value;
         number2 = document.forms["integersAndInputsForm"].elements["num2"].value;
         number3 = document.forms["integersAndInputsForm"].elements["num3"].value;
 
         if ((number1 !== "" && typeof parseInt(number1) === "number") &&
-            (number2 !== "" && typeof parseInt(number1) === "number") &&
-            (number3 !== "" && typeof parseInt(number1) === "number")) {
+            (number2 !== "" && typeof parseInt(number2) === "number") &&
+            (number3 !== "" && typeof parseInt(number3) === "number")) {
             n1 = parseInt(number1);
             n2 = parseInt(number2);
             n3 = parseInt(number3);
@@ -123,27 +156,77 @@
             maxNum = Math.max(n1, n2, n3);
 
             document.getElementById("part2FormResults").innerHTML +=
-                `<p><br>Sum = ${sum}
-                                                            <br>Average = ${average}
-                                                            <br>Product = ${product}
-                                                            <br>Largest number = ${maxNum}
-                                                            <br>Smallest number = ${minNum}</p>`;
+                `<p><br>Sum = ${sum}<br>Average = ${average}<br>Product = ${product}<br>Largest number = ${maxNum}<br>Smallest number = ${minNum}</p>`;
 
         } else {
             document.getElementById("part2FormResults").innerHTML +=
-                `<p class="red">Please enter integer numbers into the 3 input fields</p>`;
+                `<p class="red">Please enter integer numbers only into all the input fields</p>`;
         }
 
-        jQuery(function () {
+        $(function () {
             $("#part2FormResults").fadeIn('slow');
         })
     }
 
-    jQuery(function () {
+    $(function () {
         $("#resetButton").click(function () {
             $("#part2FormResults").fadeOut('slow');
         })
     })
+
+    // Script for part3:
+    function part3Calculate() {
+        document.getElementById("part3FormResults").innerHTML = "";
+
+        let number1, number2, number3, number4, number5, n1, n2, n3, n4, n5, negativeNumSum = 0, positiveNumSum = 0, zeroNumSum = 0;
+        number1 = document.forms["numbersAndInputsForm"].elements["num1"].value;
+        number2 = document.forms["numbersAndInputsForm"].elements["num2"].value;
+        number3 = document.forms["numbersAndInputsForm"].elements["num3"].value;
+        number4 = document.forms["numbersAndInputsForm"].elements["num4"].value;
+        number5 = document.forms["numbersAndInputsForm"].elements["num5"].value;
+
+        if ((number1 !== "" && typeof parseFloat(number1) === "number") &&
+            (number2 !== "" && typeof parseFloat(number1) === "number") &&
+            (number3 !== "" && typeof parseFloat(number1) === "number") &&
+            (number4 !== "" && typeof parseFloat(number1) === "number") &&
+            (number5 !== "" && typeof parseFloat(number1) === "number")) {
+
+            n1 = parseFloat(number1);
+            n2 = parseFloat(number2);
+            n3 = parseFloat(number3);
+            n4 = parseFloat(number4);
+            n5 = parseFloat(number5);
+
+            let numbers = [n1, n2, n3, n4, n5];
+            for(let i = 0; i < numbers.length; i++) {
+                if (numbers[i] === 0) {
+                    zeroNumSum++;
+                } else if (numbers[i] < 0) {
+                    negativeNumSum += numbers[i];
+                } else {
+                    positiveNumSum += numbers[i];
+                }
+            }
+
+            document.getElementById("part3FormResults").innerHTML +=
+                `<p><br>Sum of positive numbers = ${positiveNumSum} <br>Sum of negative numbers = ${negativeNumSum} <br>Number of zeros = ${zeroNumSum}</p>`
+
+        } else {
+            document.getElementById("part3FormResults").innerHTML +=
+                `<p class="red">Please enter numbers into all the input fields</p>`;
+        }
+
+        $(function () {
+            $("#part3FormResults").fadeIn('slow');
+        })
+    }
+
+    $(function () {
+        $("#part3ResetButton").click(function () {
+            $("#part3FormResults").fadeOut('slow');
+        })
+    })
+
 </script>
 </body>
 
