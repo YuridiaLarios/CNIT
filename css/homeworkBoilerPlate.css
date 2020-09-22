@@ -13,6 +13,11 @@ body {
 h1 {
   text-align: center;
   font-size: 32px;
+  color: white;
+}
+
+button:hover, .btn:hover {
+  cursor: pointer;
 }
 
 
@@ -86,6 +91,7 @@ WRAPPER
 .wrapper {
   width: 55%;
   background-color: #4c93d0;
+  color: #4c93d0;
   margin: 0 auto;
   margin-top: 5%;
   padding: 20px;
@@ -98,7 +104,6 @@ INNER-WRAPPER
 **************************/
 .inner-wrapper {
   background-color: white;
-  color: #4c93d0;
   padding: 20px;
 }
 
@@ -130,12 +135,23 @@ COLORS
   font-style: italic;
 }
 
+.orange {
+  background-color: #D47500;
+  color: #D47500;
+}
+
 /*************************
 hwPARTS
 **************************/
 #hwPart1, #hwPart2, #hwPart3, #extraCredit, .panelInnerWrapper {
   margin: 0 auto;
   text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 
 /*****************************************************

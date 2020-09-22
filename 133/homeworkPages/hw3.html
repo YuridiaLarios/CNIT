@@ -5,7 +5,8 @@
     <meta name="description" content="homework #3 Javascript CNIT133">
     <title>Hw#3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../../css/comingSoon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
     <nav>
@@ -20,12 +21,63 @@
             <li style="float:right"><a href="../index.html">Home</a></li>
         </ul>
     </nav>
-    <div class="right">
-        <img class="coding-img" src="../../img/codingNow.jpg" alt="conding now laptop computer vector">
-        <h1>Hw #3</h1>
+    <div class="wrapper orange">
+        <h1>CNIT 133 Homework 3 - Writing functions</h1>
+        <div class="subMenu">
+            <button id="overviewButton" class="showSingle" target="overview">Overview</button>
+            <button class="showSingle" target="hwPart1">Part 1</button>
+            <button class="showSingle" target="hwPart2">Part 2</button>
+            <button class="showSingle" target="hwPart3">Part 3</button>
+            <button class="showSingle" target="extraCredit">Extra credit</button>
+        </div>
+        <div class="inner-wrapper">
+            <div id="overview" class="hwParts">
+                <ol>
+                    <li>Part 1 - Final average</li>
+                    <li>Part 2 - Sales and Earnings</li>
+                    <li>Part 3 - Celsius to Farenheit</li>
+                    <li>Extra Credit -  Multiplication</li>
+                </ol>
+            </div>
+            <div id="hwPart1" class="hwParts">
+                <h2>Student Grades</h2>
+                <form>
+                    <table id="gradesTable">
+                        <tr>
+                            <td><label for="hwAverage">Homework Average: </label></td>
+                            <td><input type="number" id="hwAverage" class="numField" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="midtermExam">Midterm Exam: </label></td>
+                            <td><input type="number" id="midtermExam" class="numField" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="finalExam">Final Exam: </label></td>
+                            <td><input type="number" id="finalExam" class="numField" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label for="participation">Participation: </label></td>
+                            <td><input type="number" id="participation" class="numField" value=""></td>
+                        </tr>
+                    </table>
+                    <input type="button" value="SUBMIT" class="btn" id="part1SubmitButton">
+                    <input type="reset" value="RESET" class="btn" id="part1ResetButton">
+                </form>
+                <div id="messageOutput">
+                </div>
+            </div>
+            <div id="hwPart2" class="hwParts">
+                part2
+            </div>
+            <div id="hwPart3" class="hwParts">
+                part3
+            </div>
+            <div id="extraCredit" class="hwParts">
+                extraCredit
+            </div>
+        </div>
     </div>
-    <div class="left">
-        <h2>Stay tuned <br> we're<br> launching<br> soon.</h2>
-    </div>
+    <script src="../scripts/submenu.js"></script>
+    <script src="../scripts/hw3part1.js"></script>
 </body>
 </html>
