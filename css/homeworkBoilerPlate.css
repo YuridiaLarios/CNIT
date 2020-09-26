@@ -20,6 +20,10 @@ button:hover, .btn:hover {
   cursor: pointer;
 }
 
+input {
+  margin: 2px;
+}
+
 
 /*************************
 NAV
@@ -117,7 +121,7 @@ INNER-WRAPPER
 
 
 /*************************
-COLORS
+COLORS / STYLES
 **************************/
 .red {
   color: red;
@@ -140,6 +144,12 @@ COLORS
   color: #D47500;
 }
 
+.blackBold {
+  font-weight: bolder;
+  font-size: 18px;
+  color: black;
+}
+
 /*************************
 hwPARTS
 **************************/
@@ -152,6 +162,10 @@ table {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+
+.outputTable {
+  margin-top: 40px;
 }
 
 /*****************************************************

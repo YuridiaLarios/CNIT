@@ -67,7 +67,67 @@
                 </div>
             </div>
             <div id="hwPart2" class="hwParts">
-                part2
+                <h2>Sales Commissions</h2>
+                <form id="salesForm">
+                    <label for="salesperson">Salesperson: </label>
+                    <input type="text" id="salesperson" class="nameinputField" title="Please make sure that the salesperson's name is spelled correctly." value="">
+                    <br>
+                    <h4>Input the number of each item sold:</h4>
+                    <label for="item1">Item 1: </label>
+                    <input type="number" id="item1" class="inputField" value="">
+                    <br>
+                    <label for="item2">Item 2: </label>
+                    <input type="number" id="item2" class="inputField" value="">
+                    <br>
+                    <label for="item3">Item 3: </label>
+                    <input type="number" id="item3" class="inputField" value="">
+                    <br>
+                    <label for="item4">Item 4: </label>
+                    <input type="number" id="item4" class="inputField" value="">
+                    <br>
+                    <br>
+                    <input type="button" value="SUBMIT" id="part2SubmitButton">
+                    <input type="reset" value="RESET" id="part2ResetButton">
+                    <div id="messages"></div>
+
+                    <table id="outputTable" class="outputTable">
+                        <tr>
+                            <td class="blackBold">Item #:</td>
+                            <td class="blackBold">Price:</td>
+                            <td class="blackBold">Number Sold:</td>
+                            <td class="blackBold">Total:</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>$239.99</td>
+                            <td><input type="number" id="numSold1" value=""></td>
+                            <td><input type="number" id="total1" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>$129.75</td>
+                            <td><input type="number" id="numSold2" value=""></td>
+                            <td><input type="number" id="total2" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>$99.95</td>
+                            <td><input type="number" id="numSold3" value=""></td>
+                            <td><input type="number" id="total3" value=""></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>$350.89</td>
+                            <td><input type="number" id="numSold4" value=""></td>
+                            <td><input type="number" id="total4"  value=""></td>
+                        </tr>
+                    </table>
+                    <label for="totalAmountSold">Total Amount Sold: </label>
+                    <input type="number" id="totalAmountSold" class="inputField" value="">
+                    <br>
+                    <label for="totalWeekEarns">Total Weekly Earnings: </label>
+                    <input type="number" id="totalWeekEarns" class="inputField" value="">
+                </form>
             </div>
             <div id="hwPart3" class="hwParts">
                 part3
