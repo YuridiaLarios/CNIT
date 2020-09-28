@@ -91,6 +91,16 @@
 
 
 
+  // Tooltip for salesperson input 
+  $("#salesperson").tooltip({
+    tooltipClass: "tooltip",
+    position: {
+      at: "right center"
+    }
+  });
+
+
+
 
   // Main Program
   $("#part2SubmitButton").click(function () {

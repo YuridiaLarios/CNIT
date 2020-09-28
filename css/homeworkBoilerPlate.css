@@ -173,7 +173,16 @@ table {
   margin-top: 40px;
 }
 
+.ui-helper-hidden-accessible {
+  display: none;
+}
 
+.tooltip {
+  color: white;
+  background-color: black;
+  width: 160px;
+  padding: 8px;
+}
 
 /*****************************************************
 hw extra credit
