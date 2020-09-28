@@ -7,7 +7,7 @@ $(function () {
     $('.showSingle').click(function () {
         $('.hwParts').hide();
         $('.showSingle').removeClass('activeSubMenuButton');
-        $('#' + $(this).attr('target')).show();
+        $('#' + $(this).attr('data-target')).show();
         $($(this)).addClass('activeSubMenuButton');
     });
 });
