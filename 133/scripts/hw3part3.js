@@ -26,7 +26,7 @@ $(document).ready(function () {
 function celcius() {
   if ($("#temperatureForm").valid()) {
     var temperature = $("#temperature").val();
-    $("#output").val(((5 / 9 * (temperature - 32)).toFixed(1) + " Celsius"));
+    $("#output").val((Math.round((5 / 9 * (temperature - 32))) + " Celsius"));
   }
 }
 
@@ -34,6 +34,6 @@ function celcius() {
 function farenheit() {
   if ($("#temperatureForm").valid()) {
     var temperature = $("#temperature").val();
-    $("#output").val(((((9 / 5 * temperature) + 32).toFixed(1) + " Farenheit")));
+    $("#output").val(((Math.round((9 / 5 * temperature) + 32) + " Farenheit")));
   }
 }
