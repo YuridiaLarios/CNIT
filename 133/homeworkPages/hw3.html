@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="homework #3 Javascript CNIT133">
     <title>Hw#3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
+
 <body>
     <nav>
         <ul>
@@ -36,7 +39,7 @@
                     <li>Part 1 - Final average</li>
                     <li>Part 2 - Sales and Earnings</li>
                     <li>Part 3 - Celsius to Farenheit</li>
-                    <li>Extra Credit -  Multiplication</li>
+                    <li>Extra Credit - Multiplication</li>
                 </ol>
             </div>
             <div id="hwPart1" class="hwParts">
@@ -70,7 +73,8 @@
                 <h2>Sales Commissions</h2>
                 <form id="salesForm">
                     <label for="salesperson">Salesperson: </label>
-                    <input type="text" id="salesperson" class="nameinputField" title="Please make sure that the salesperson's name is spelled correctly." value="">
+                    <input type="text" id="salesperson" class="nameinputField"
+                        title="Please make sure that the salesperson's name is spelled correctly." value="">
                     <br>
                     <h4>Input the number of each item sold:</h4>
                     <label for="item1">Item 1: </label>
@@ -100,33 +104,33 @@
                         <tr>
                             <td>1</td>
                             <td>$239.99</td>
-                            <td><input type="number" id="numSold1" value=""></td>
-                            <td><input type="number" id="total1" value=""></td>
+                            <td><input type="number" id="numSold1" disabled></td>
+                            <td><input type="number" id="total1" disabled></td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>$129.75</td>
-                            <td><input type="number" id="numSold2" value=""></td>
-                            <td><input type="number" id="total2" value=""></td>
+                            <td><input type="number" id="numSold2" disabled></td>
+                            <td><input type="number" id="total2" disabled></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>$99.95</td>
-                            <td><input type="number" id="numSold3" value=""></td>
-                            <td><input type="number" id="total3" value=""></td>
+                            <td><input type="number" id="numSold3" disabled></td>
+                            <td><input type="number" id="total3" disabled></td>
                         </tr>
                         <tr>
                             <td>4</td>
                             <td>$350.89</td>
-                            <td><input type="number" id="numSold4" value=""></td>
-                            <td><input type="number" id="total4"  value=""></td>
+                            <td><input type="number" id="numSold4" disabled></td>
+                            <td><input type="number" id="total4" disabled></td>
                         </tr>
                     </table>
                     <label for="totalAmountSold">Total Amount Sold: </label>
-                    <input type="number" id="totalAmountSold" class="inputField" value="">
+                    <input type="number" id="totalAmountSold" class="inputField" disabled>
                     <br>
                     <label for="totalWeekEarns">Total Weekly Earnings: </label>
-                    <input type="number" id="totalWeekEarns" class="inputField" value="">
+                    <input type="number" id="totalWeekEarns" class="inputField" disabled>
                 </form>
             </div>
             <div id="hwPart3" class="hwParts">
@@ -139,5 +143,8 @@
     </div>
     <script src="../scripts/submenu.js"></script>
     <script src="../scripts/hw3part1.js"></script>
+    <script src="../scripts/hw3part2.js"></script>
+
 </body>
+
 </html>

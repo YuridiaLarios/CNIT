@@ -16,7 +16,8 @@ h1 {
   color: white;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   cursor: pointer;
 }
 
@@ -153,7 +154,11 @@ COLORS / STYLES
 /*************************
 hwPARTS
 **************************/
-#hwPart1, #hwPart2, #hwPart3, #extraCredit, .panelInnerWrapper {
+#hwPart1,
+#hwPart2,
+#hwPart3,
+#extraCredit,
+.panelInnerWrapper {
   margin: 0 auto;
   text-align: center;
 }
@@ -168,17 +173,19 @@ table {
   margin-top: 40px;
 }
 
+
+
 /*****************************************************
 hw extra credit
 ******************************************************/
-.wrapper-monetaryExchange{
+.wrapper-monetaryExchange {
   width: 55%;
   height: 690px;
   background-image: -webkit-linear-gradient(90deg, #4c93d0 89%, #2f71ac 12%);
   margin: 0 auto;
   margin-bottom: 5%;
   margin-top: 7%;
-  box-shadow: 0 2px 4px 0 gray,0 2px 10px 0 gray !important;
+  box-shadow: 0 2px 4px 0 gray, 0 2px 10px 0 gray !important;
 }
 
 #monetaryExchange {
@@ -190,16 +197,17 @@ hw extra credit
   color: white;
 }
 
-#monetaryExchange td, #monetaryExchange th {
+#monetaryExchange td,
+#monetaryExchange th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#monetaryExchange tr:nth-child(even){
+#monetaryExchange tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#dollars{
+#dollars {
   background-color: black;
   color: white;
 }
@@ -217,14 +225,15 @@ hw extra credit
 }
 
 
-div.panel,p.flip {
-  margin:0 auto;
-  padding:5px;
-  text-align:center;
-  background:gray;
+div.panel,
+p.flip {
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+  background: gray;
   color: white;
   width: 91%;
-  border:solid 1px #c3c3c3;
+  border: solid 1px #c3c3c3;
 }
 
 p.flip {
@@ -236,9 +245,9 @@ p.flip:hover {
   cursor: pointer;
 }
 
-div.panel{
-  height:100px;
-  display:none;
+div.panel {
+  height: 100px;
+  display: none;
 }
 
 #extraCreditCalculateSubmitButton {
