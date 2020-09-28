@@ -163,10 +163,15 @@ hwPARTS
   text-align: center;
 }
 
-table {
+table,
+#gradesTableResults {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+
+#gradesTableResults {
+  width: 320px;
 }
 
 .outputTable {
