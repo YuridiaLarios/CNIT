@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--jquery validation plugin  -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 </head>
 
 <body>
@@ -134,7 +136,18 @@
                 </form>
             </div>
             <div id="hwPart3" class="hwParts">
-                part3
+                <h2>Temperature Conversions</h2>
+                <form id="temperatureForm" name="temperatureForm">
+                    <label for="temperature">Temperature: </label>
+                    <input type="text" id="temperature" name="temperature" size="10" autofocus>
+                    <br><br>
+                    <input type="button" onclick="celcius()" value="Farenheit To Celcius">
+                    <input type="button" onclick="farenheit()" value="Celcius To Farenheit">
+                    <br><br>
+                    <input type="text" name="output" id="output" readonly disabled>
+                    <br><br>
+                    <input type="reset" value="RESET"><br><br>
+                </form>
             </div>
             <div id="extraCredit" class="hwParts">
                 extraCredit
@@ -144,6 +157,7 @@
     <script src="../scripts/submenu.js"></script>
     <script src="../scripts/hw3part1.js"></script>
     <script src="../scripts/hw3part2.js"></script>
+    <script src="../scripts/hw3part3.js"></script>
 
 </body>
 
