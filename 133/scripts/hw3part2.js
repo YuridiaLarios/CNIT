@@ -4,6 +4,7 @@
   let totalAmountSold = 0;
   let totalRevenue = 0;
   let totalWeeklyEarnings = 0;
+  let validInput = true;
 
 
 
@@ -21,24 +22,25 @@
 
 
 
-  // Checking to see that the sales person field is not empty or fill with whitespace.
-  function evaluateName() {
-    let salesperson = $("#salesperson").val();
-    return (salesperson.length !== 0 && salesperson.trim() !== '');
-  }
-
-
-
-
-
   // Getting the items numbers and checking for positive numbers.
   function setItemObjects() {
+    item = [];
     for (let i = 1; i <= 4; i++) {
-      let tempItem = ($("#item" + i).val());
-      if (tempItem >= 0) {
-        item[i - 1] = new Item(i, prices[i - 1], parseFloat(tempItem));
+      let tempItem = $("#item" + i).val();
+      if (tempItem === '') {
+        $("#messages").html("<p class='invalidInput'>Empty input field, please fill all inputs</p>");
+        validInput = false;
+        break;
+      } else if (isNaN(parseFloat(tempItem))) {
+        $("#messages").html("<p class='invalidInput'>Invalid input, please enter numbers only</p>");
+        validInput = false;
+        break;
+      } else if ((parseFloat(tempItem)) < 0) {
+        $("#messages").html("<p class='invalidInput'># of items sold must be greater or equal to zero!</p>");
+        validInput = false;
+        break;
       } else {
-        $("#messages").html("<p class='invalidInput'># of items sold must be greater than zero!</p>");
+        item[i - 1] = new Item(i, prices[i - 1], parseFloat(tempItem));
       }
     }
   }
@@ -72,20 +74,9 @@
 
 
 
-  // Reset variables to zeros.
-  function clear() {
-    $("#messages").html("");
-    totalAmountSold = 0;
-    totalRevenue = 0;
-    totalWeeklyEarnings = 0;
-  }
-
-
-
-
   // Reset variables when resetButton is clicked.
   $("#part2ResetButton").click(function () {
-    clear();
+    $("#messages").html('');
   });
 
 
@@ -104,12 +95,20 @@
 
   // Main Program
   $("#part2SubmitButton").click(function () {
-    clear();
-    if (evaluateName()) {
+    $("#messages").html('');
+    totalAmountSold = 0;
+    totalRevenue = 0;
+    totalWeeklyEarnings = 0;
+    validInput = true;
+    let salesperson = $("#salesperson").val();
+    if (salesperson.length !== 0 && salesperson.trim() !== '') {
       setItemObjects();
-      outputTable();
-      displayFinalResults();
+      if (validInput) {
+        outputTable();
+        displayFinalResults();
+      }
     } else {
       $("#messages").html("<p class='invalidInput'>Empty name input, salesperson's name required!</p>");
     }
+
   });
