@@ -23,7 +23,7 @@
             <li style="float:right"><a href="../index.html">Home</a></li>
         </ul>
     </nav>
-    <div class="wrapper purple">
+    <div class="wrapper wrapper-purple ">
         <h1>CNIT 133 Homework 4 - Looping statements</h1>
         <div class="subMenu">
             <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
@@ -35,11 +35,9 @@
             <div id="overview" class="hwParts">
                 <ol>
                     <li class="blackBold">Part 1:</li>
-                    <li><span class="blackBold">a)</span> Product and sum of every fourth integer from 5 to 21 inclusive
-                        using the for statement.
+                    <li><span class="blackBold">a)</span> Calculations using for statement
                     </li>
-                    <li><span class="blackBold">b)</span> Product and sum of every third integer from 3 to 21 inclusive
-                        using while or do while
+                    <li><span class="blackBold">b)</span> Calculations using while or do while
                     </li>
                     <li><span class="blackBold">Part 2 -</span> Compound interest</li>
                     <li><span class="blackBold"> Extra Credit - </span>Hollow square of asterisks</li>
@@ -54,7 +52,33 @@
                 </div>
             </div>
             <div id="hwPart2" class="hwParts">
-                part2
+                <h2>Part 2: Compound Interest</h2>
+                <div class="inner-wrapper part2Wrapper">
+                    <script>
+                        let initialAmount = 1000;
+                        let interestRate = 0.05;
+
+                        for( let numOfTables = 0; numOfTables <= 2; numOfTables++) {
+                            let table = '';
+                            table += '<thead>';
+                            table += '<tr><th scope="col">Year</th>';
+                            table += '<th scope="col">Amount on Deposit</th>';
+                            table += '<th scope="col">Interest Rate</th>';
+                            table += '</tr></thead>';
+                            table += '<tbody>';
+                            for(let year = 1; year <= 10; year++) {
+                                let totalMoneyWithInterest = (initialAmount*Math.pow(1 + interestRate, year)).toFixed(2);
+                                table += '<tr class="number">';
+                                table += '<td>' + year + '</td>';
+                                table += '<td>' + totalMoneyWithInterest + '</td>';
+                                table += '<td>' + interestRate.toFixed(2) + '</td>';
+                                table += '</tr>';
+                            }
+                            table += '</tbody>';
+                            document.write(`<table class="compoundInterestTable">  ${table} </table>`);
+                            interestRate += 0.01;
+                        }
+                    </script>
             </div>
             <div id="extraCredit" class="hwParts">
                 extra credit

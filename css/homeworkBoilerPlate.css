@@ -140,9 +140,14 @@ COLORS / STYLES
   font-style: italic;
 }
 
-.purple {
+.wrapper-purple {
   background-color: #5600e2;
   color: #5600e2;
+}
+
+.wrapper-orange {
+  background-color: #D47500;
+  color: #D47500;
 }
 
 .blackBold {
@@ -187,6 +192,37 @@ table,
   background-color: black;
   width: 160px;
   padding: 8px;
+}
+
+/*****************************************************
+hw #4 Par2 styling:
+******************************************************/
+.part2Wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.compoundInterestTable{
+  margin: 15px 15px 15px 2.5%;
+}
+
+.compoundInterestTable th {
+  background-color: #812215;
+  color: white;
+}
+
+.compoundInterestTable td, th {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+.compoundInterestTable tr{
+  color: black;
+  background-color: #f17c4e;
+}
+
+.compoundInterestTable  tr:nth-child(even){
+  background-color: #fdf734;
 }
 
 /*****************************************************
