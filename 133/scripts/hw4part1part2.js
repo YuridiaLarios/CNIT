@@ -43,3 +43,29 @@ if (containerPart1b != null) {
   containerPart1b.append(productTextParagraph2);
   containerPart1b.append(sumTextParagraph2);
 }
+
+//Part 4: Hollow square:
+let squareResults = document.getElementById("squareResults");
+document.getElementById("extraCreditSubmitButton").onclick = function() { myFunction() };
+
+function myFunction() {
+  let squareSize = document.getElementById("squareSize").value;
+  let draw = '';
+  if (squareSize < 2 || squareSize > 10 ) {
+    squareResults.innerHTML = "Error, please enter numbers between 2 and 10 inclusive only.";
+  } else if (squareSize !== "" && typeof parseInt(squareSize) === "number") {
+    let size = parseInt(squareSize);
+    for(let i = 0; i < size; i++) {
+      draw += "* ";
+      for(let j = 1; j < size; j++) {
+        if (i === 0 || (i === size - 1) || (j === size - 1)) {
+          draw += "* ";
+        } else {
+          draw += "&nbsp;&nbsp;&nbsp;";
+        }
+      }
+      draw += "<br>";
+    }
+    squareResults.innerHTML = draw;
+  }
+};
