@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="homework #5 Javascript CNIT133">
+    <meta name="description" content="homework #5 Javascript Arrays CNIT133">
     <title>Hw#5</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../../css/comingSoon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
+
 <body>
     <nav>
         <ul>
             <li style="float:right"><a href="hw8.html">Hw#8</a></li>
             <li style="float:right"><a href="hw7.html">Hw#7</a></li>
             <li style="float:right"><a href="hw6.html">Hw#6</a></li>
-            <li class="active" style="float:right"><a href="hw5.html">Hw#5</a></li>
+            <li class="active " style="float:right"><a href="hw5.html">Hw#5</a></li>
             <li style="float:right"><a href="hw4.html">Hw#4</a></li>
             <li style="float:right"><a href="hw3.html">Hw#3</a></li>
             <li style="float:right"><a href="hw2.html">Hw#2</a></li>
             <li style="float:right"><a href="../index.html">Home</a></li>
         </ul>
     </nav>
-    <div class="right">
-        <img class="coding-img" src="../../img/codingNow.jpg" alt="conding now laptop computer vector">
-        <h1>Hw #5</h1>
-    </div>
-    <div class="left">
-        <h2>Stay tuned <br> we're<br> launching<br> soon.</h2>
-    </div>
+    <div class="wrapper wrapper-green ">
+        <h1>CNIT 133 Homework 5 - Arrays</h1>
+        <div class="subMenu">
+            <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
+            <button class="showSingle" data-target="hwPart1">Part 1</button>
+            <button class="showSingle" data-target="hwPart2">Part 2</button>
+            <button class="showSingle" data-target="hwPart3">Part 3</button>
+        </div>
+        <div class="inner-wrapper">
+            <div id="overview" class="hwParts">
+                <ol>
+                    <li><span class="blackBold">Part 1 -</span> Form validation and submission
+                    </li>
+                    <li><span class="blackBold">Part 2 -</span> Pulldown menus, onchange and onclick event handlers</li>
+                    <li><span class="blackBold"> Part 3 -</span> Multidimensional array: data retrieving from table</li>
+                </ol>
+            </div>
+            <div id="hwPart1" class="hwParts">
+                <div id="hwPart1">
+                    <h2>Part 1: Form validation and submission</h2>
+                </div>
+            </div>
+            <div id="hwPart2" class="hwParts">
+                <h2>Part 2: Pulldown menus, onchange and onclick event handlers</h2>
+                <div class="inner-wrapper part2Wrapper">
+                </div>
+            </div>
+            <div id="hwPart3" class="hwParts">
+                <h2>Part 3: Multidimensional array, data retrieving from table</h2>
+            </div>
+        </div>
+        <script src="../scripts/submenu.js"></script>
+        <script src="../scripts/hw5Part1.js"></script>
 </body>
+
 </html>

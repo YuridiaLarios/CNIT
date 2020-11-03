@@ -150,6 +150,11 @@ COLORS / STYLES
   color: #D47500;
 }
 
+.wrapper-green {
+  background-color: #388e3c;
+  color: #388e3c;
+}
+
 .blackBold {
   font-weight: bolder;
   font-size: 18px;
