@@ -7,6 +7,7 @@
     <title>Hw#5</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
+    <link rel="stylesheet" type="text/css" href="../../css/homework5.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 
@@ -41,8 +42,67 @@
                 </ol>
             </div>
             <div id="hwPart1" class="hwParts">
-                <div id="hwPart1">
+                <div id="hwPart1" class="formContainer">
                     <h2>Part 1: Form validation and submission</h2>
+                    <form class="interestsForm" method="post">
+                        <h2 class="formHeader">Sign up</h2>
+                        <fieldset>
+                            <legend class="infoLabels"><span class="number">1</span>Your basic info:</legend>
+
+                            <label class="fieldsLabels" for="name">Name:</label>
+                            <input type="text" id="name" name="userName">
+
+                            <label class="fieldsLabels" for="email">e-mail: </label>
+                            <input type="email" id="email">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="infoLabels"><span class="number">2</span>Your interests:<legend>
+
+                                    <label class="fieldsLabels interestSelector" for="job">Job role:</label>
+                                    <!--SELECT creates a list with different options to choose from-->
+                                    <select id="job" name="user_job">
+                                        <!--OUTGROUP creates the categories labels-->
+                                        <option>Choose role:</option>
+                                        <optgroup label="Web">
+                                            <option value="ux_developer">UX Developer</option>
+                                            <option value="backend_developer">Backend Developer</option>
+                                            <option value="full_developer">Full-stack Developer</option>
+                                        </optgroup>
+                                        <optgroup label="Mobile">
+                                            <option value="ios_developer">IOS Developer</option>
+                                            <option value="android_developer">Android Developer</option>
+                                        </optgroup>
+                                        <optgroup label="Business">
+                                            <option value="startup_owner"> StartUp owner</option>
+                                            <option value="freelancer">Freelancer</option>
+                                        </optgroup>
+                                    </select>
+
+                                    <label class="fieldsLabels">Salary:</label>
+                                    <input type="radio" id="under" value="under" name="salary"><label for="under"
+                                        class="light">under 100K</label><br>
+                                    <input type="radio" id="over" value="over" name="salary"><label for="over"
+                                        class="light">over 100k</label>
+
+
+                                    <label class="fieldsLabels">Technologies:</label>
+                                    <input type="checkbox" id="htmlCss" value="htmlCss" name="user_interest"><label
+                                        for="htmlCss" class="light">html/css</label><br>
+                                    <input type="checkbox" id="javascript" value="javascript"
+                                        name="user_interest"><label for="javascript"
+                                        class="light">Javascript/JQuery/React</label><br>
+                                    <input type="checkbox" id="javaKotlin" value="javaKotlin"
+                                        name="user_interest"><label for="javaKotlin" class="light">Java/Kotlin</label>
+                                    <br>
+                                    <input type="checkbox" id="swiftObjectiveC" value="swiftObjectiveC"
+                                        name="user_interest"><label for="swiftObjectiveC" class="light">Objective
+                                        C/Swift
+                                    </label>
+
+                                    <button class="submitPart1Form" type="submit">Sign Up</button>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <div id="hwPart2" class="hwParts">

@@ -1,0 +1,131 @@
+.formContainer {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.formHeader {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.interestsForm {
+  text-align: center;
+  max-width: 350px;
+  margin: 30px auto;
+  /*centers whole box*/
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+.submitPart1Form {
+  text-align: center;
+  background-color: #4bc970;
+  /* green color  */
+  color: white;
+  /* text color */
+  font-size: 18px;
+  width: 100%;
+  /* long button*/
+  padding: 20px 40px;
+  margin-top: 20px;
+
+  /* extra properties */
+  border-radius: 5px;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+  width: 93%;
+  background-color: #e8eeef;
+  margin-bottom: 15px;
+}
+
+select {
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  margin-bottom: 15px;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+.infoLabels {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+.fieldsLabels {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.interestSelector {
+  margin-top: 20px;
+}
+
+.number {
+  background-color: #5fcf80;
+  /*green color in number*/
+  color: white;
+  /*text color*/
+  border-radius: 100%;
+  /*creates a nice circle*/
+  height: 30px;
+  /*creates a nice circle*/
+  width: 30px;
+  /*creates a nice circle*/
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 20px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+label.light {
+  font-size: 18px;
+  font-weight: 300;
+  display: inline;
+}
+
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
