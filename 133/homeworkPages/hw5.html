@@ -44,16 +44,16 @@
             <div id="hwPart1" class="hwParts">
                 <div id="hwPart1" class="formContainer">
                     <h2>Part 1: Form validation and submission</h2>
-                    <form class="interestsForm" method="post">
+                    <form class="interestsForm">
                         <h2 class="formHeader">Sign up</h2>
                         <fieldset>
                             <legend class="infoLabels"><span class="number">1</span>Your basic info:</legend>
 
                             <label class="fieldsLabels" for="name">Name:</label>
-                            <input type="text" id="name" name="userName">
+                            <input id="userName" type="text" required>
 
                             <label class="fieldsLabels" for="email">e-mail: </label>
-                            <input type="email" id="email">
+                            <input id="userEmail" type="email" required>
                         </fieldset>
 
                         <fieldset>
@@ -61,7 +61,7 @@
 
                                     <label class="fieldsLabels interestSelector" for="job">Job role:</label>
                                     <!--SELECT creates a list with different options to choose from-->
-                                    <select id="job" name="user_job">
+                                    <select id="job" name="userJob">
                                         <!--OUTGROUP creates the categories labels-->
                                         <option>Choose role:</option>
                                         <optgroup label="Web">
@@ -100,7 +100,8 @@
                                         C/Swift
                                     </label>
 
-                                    <button class="submitPart1Form" type="submit">Sign Up</button>
+                                    <button type="button" id="submitButtonPart1" class="submitButtonPart1" onClick="validateForm(this.form)">Sign
+                                        Up</button>
                         </fieldset>
                     </form>
                 </div>
