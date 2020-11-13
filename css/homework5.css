@@ -1,3 +1,19 @@
+/*********************************
+GENERAL
+**********************************/
+.errorContainer {
+  color: red;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.successFormSubmitted {
+  color: black;
+}
+
+/*********************************
+PART 1: FORM VALIDATION
+**********************************/
 .formContainer {
   text-align: center;
   margin: 0 auto;
@@ -54,12 +70,15 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: none;
   font-size: 16px;
   padding: 15px;
   width: 93%;
   background-color: #e8eeef;
   margin-bottom: 15px;
+}
+
+.errorRedStage {
+  border: 2px solid red;
 }
 
 select {

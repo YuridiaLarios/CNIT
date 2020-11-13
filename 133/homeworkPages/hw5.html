@@ -42,17 +42,17 @@
                 </ol>
             </div>
             <div id="hwPart1" class="hwParts">
-                <div id="hwPart1" class="formContainer">
+                <div class="formContainer">
                     <h2>Part 1: Form validation and submission</h2>
-                    <form class="interestsForm">
+                    <form id="interestForm" class="interestsForm">
                         <h2 class="formHeader">Sign up</h2>
                         <fieldset>
                             <legend class="infoLabels"><span class="number">1</span>Your basic info:</legend>
 
-                            <label class="fieldsLabels" for="name">Name:</label>
-                            <input id="userName" type="text" required>
+                            <label class="fieldsLabels" for="userName">Name:</label>
+                            <input class="" id="userName" type="text" required>
 
-                            <label class="fieldsLabels" for="email">e-mail: </label>
+                            <label class="fieldsLabels" for="userEmail">e-mail: </label>
                             <input id="userEmail" type="email" required>
                         </fieldset>
 
@@ -79,31 +79,34 @@
                                         </optgroup>
                                     </select>
 
-                                    <label class="fieldsLabels">Salary:</label>
-                                    <input type="radio" id="under" value="under" name="salary"><label for="under"
-                                        class="light">under 100K</label><br>
-                                    <input type="radio" id="over" value="over" name="salary"><label for="over"
-                                        class="light">over 100k</label>
-
-
-                                    <label class="fieldsLabels">Technologies:</label>
-                                    <input type="checkbox" id="htmlCss" value="htmlCss" name="user_interest"><label
-                                        for="htmlCss" class="light">html/css</label><br>
-                                    <input type="checkbox" id="javascript" value="javascript"
-                                        name="user_interest"><label for="javascript"
-                                        class="light">Javascript/JQuery/React</label><br>
-                                    <input type="checkbox" id="javaKotlin" value="javaKotlin"
-                                        name="user_interest"><label for="javaKotlin" class="light">Java/Kotlin</label>
-                                    <br>
-                                    <input type="checkbox" id="swiftObjectiveC" value="swiftObjectiveC"
-                                        name="user_interest"><label for="swiftObjectiveC" class="light">Objective
-                                        C/Swift
-                                    </label>
+                                    <div id="radioInputFields">
+                                        <label class="fieldsLabels">Salary:</label>
+                                        <input type="radio" id="under" value="under" name="salary"><label for="under"
+                                            class="light">under 100K</label><br>
+                                        <input type="radio" id="over" value="over" name="salary"><label for="over"
+                                            class="light">over 100k</label>
+                                    </div>
+                                    <div id="part1CheckboxesDiv">
+                                        <label class="fieldsLabels">Technologies:</label>
+                                        <input type="checkbox" id="htmlCss" value="HTML/CSS" name="user_interest"><label
+                                            for="htmlCss" class="light">html/css</label><br>
+                                        <input type="checkbox" id="javascript" value="Javascript"
+                                            name="user_interest"><label for="javascript"
+                                            class="light">Javascript/JQuery/React</label><br>
+                                        <input type="checkbox" id="javaKotlin" value="Java/Kotlin"
+                                            name="user_interest"><label for="javaKotlin" class="light">Java/Kotlin</label>
+                                        <br>
+                                        <input type="checkbox" id="swiftObjectiveC" value="swift/ObjectiveC"
+                                            name="user_interest"><label for="swiftObjectiveC" class="light">Objective
+                                            C/Swift
+                                        </label>
+                                    </div>
 
                                     <button type="button" id="submitButtonPart1" class="submitButtonPart1" onClick="validateForm(this.form)">Sign
                                         Up</button>
                         </fieldset>
                     </form>
+                    <div id="successFormSubmitted" class="successFormSubmitted"></div>
                 </div>
             </div>
             <div id="hwPart2" class="hwParts">
