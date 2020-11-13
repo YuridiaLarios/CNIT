@@ -146,3 +146,38 @@ label.light {
   }
 
 }
+
+/*********************************
+PART 2: pulldown menus
+**********************************/
+.part2Wrapper {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.onChangeForm, .onClickForm {
+  color: black;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.submitButtonPart2 {
+  background-color: #4bc970;
+  /* green color  */
+  color: white;
+  /* text color */
+  font-size: 18px;
+  width: 25%;
+  /* long button*/
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  /* extra properties */
+  border-radius: 5px;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+

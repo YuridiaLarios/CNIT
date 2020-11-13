@@ -111,7 +111,47 @@
             </div>
             <div id="hwPart2" class="hwParts">
                 <h2>Part 2: Pulldown menus, onchange and onclick event handlers</h2>
+                <script>
+                    function goToNewPage1() {
+                        let myDestination1 = onChangeForm.destinationList1.options[onChangeForm.destinationList1.selectedIndex].value;
+                        if (myDestination1 !== "Choose Destination:") {
+                            window.open(myDestination1);
+                        }
+                    }
+
+                    function goToNewPage2() {
+                        let myDestination2 = onClickForm.destinationList2.options[onClickForm.destinationList2.selectedIndex].value;
+                        if (myDestination2 !== "Choose Destination:") {
+                            window.open(myDestination2);
+                        }
+                    }
+                </script>
                 <div class="inner-wrapper part2Wrapper">
+                    <form class="onChangeForm" name="onChangeForm">
+                        <h3>Choose your code cheatsheet destination (using onchange event handler)</h3>
+
+                        <select name="destinationList1" onChange="goToNewPage1();">
+                            <option>Choose Destination:</option>
+                            <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
+                            <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
+                            <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet</option>
+                            <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">Vanilla Javascript</option>
+                        </select>
+                    </form>
+
+                    <form class="onClickForm" name="onClickForm">
+                        <h3>Choose your code cheatsheet destination (using onclick event handler)</h3>
+
+                        <select name="destinationList2">
+                            <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
+                            <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
+                            <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet</option>
+                            <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">Vanilla Javascript</option>
+                        </select>
+
+                        <input class="submitButtonPart2" type="button" value="Go" onClick="goToNewPage2();">
+
+                    </form>
                 </div>
             </div>
             <div id="hwPart3" class="hwParts">
