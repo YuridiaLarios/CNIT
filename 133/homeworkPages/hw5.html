@@ -12,161 +12,173 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li style="float:right"><a href="hw8.html">Hw#8</a></li>
-            <li style="float:right"><a href="hw7.html">Hw#7</a></li>
-            <li style="float:right"><a href="hw6.html">Hw#6</a></li>
-            <li class="active " style="float:right"><a href="hw5.html">Hw#5</a></li>
-            <li style="float:right"><a href="hw4.html">Hw#4</a></li>
-            <li style="float:right"><a href="hw3.html">Hw#3</a></li>
-            <li style="float:right"><a href="hw2.html">Hw#2</a></li>
-            <li style="float:right"><a href="../index.html">Home</a></li>
-        </ul>
-    </nav>
-    <div class="wrapper wrapper-green ">
-        <h1>CNIT 133 Homework 5 - Arrays</h1>
-        <div class="subMenu">
-            <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
-            <button class="showSingle" data-target="hwPart1">Part 1</button>
-            <button class="showSingle" data-target="hwPart2">Part 2</button>
-            <button class="showSingle" data-target="hwPart3">Part 3</button>
+<nav>
+    <ul>
+        <li style="float:right"><a href="hw8.html">Hw#8</a></li>
+        <li style="float:right"><a href="hw7.html">Hw#7</a></li>
+        <li style="float:right"><a href="hw6.html">Hw#6</a></li>
+        <li class="active " style="float:right"><a href="hw5.html">Hw#5</a></li>
+        <li style="float:right"><a href="hw4.html">Hw#4</a></li>
+        <li style="float:right"><a href="hw3.html">Hw#3</a></li>
+        <li style="float:right"><a href="hw2.html">Hw#2</a></li>
+        <li style="float:right"><a href="../index.html">Home</a></li>
+    </ul>
+</nav>
+<div class="wrapper wrapper-green ">
+    <h1>CNIT 133 Homework 5 - Arrays</h1>
+    <div class="subMenu">
+        <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
+        <button class="showSingle" data-target="hwPart1">Part 1</button>
+        <button class="showSingle" data-target="hwPart2">Part 2</button>
+        <button class="showSingle" data-target="hwPart3">Part 3</button>
+    </div>
+    <div class="inner-wrapper">
+        <div id="overview" class="hwParts">
+            <ol>
+                <li><span class="blackBold">Part 1 -</span> Form validation and submission
+                </li>
+                <li><span class="blackBold">Part 2 -</span> Pulldown menus, onchange and onclick event handlers</li>
+                <li><span class="blackBold"> Part 3 -</span> Multidimensional array: data retrieving from table</li>
+            </ol>
         </div>
-        <div class="inner-wrapper">
-            <div id="overview" class="hwParts">
-                <ol>
-                    <li><span class="blackBold">Part 1 -</span> Form validation and submission
-                    </li>
-                    <li><span class="blackBold">Part 2 -</span> Pulldown menus, onchange and onclick event handlers</li>
-                    <li><span class="blackBold"> Part 3 -</span> Multidimensional array: data retrieving from table</li>
-                </ol>
-            </div>
-            <div id="hwPart1" class="hwParts">
-                <div class="formContainer">
-                    <h2>Part 1: Form validation and submission</h2>
-                    <form id="interestForm" class="interestsForm">
-                        <h2 class="formHeader">Sign up</h2>
-                        <fieldset>
-                            <legend class="infoLabels"><span class="number">1</span>Your basic info:</legend>
+        <div id="hwPart1" class="hwParts">
+            <div class="formContainer">
+                <h2>Part 1: Form validation and submission</h2>
+                <form id="interestForm" class="interestsForm">
+                    <h2 class="formHeader">Sign up</h2>
+                    <fieldset>
+                        <legend class="infoLabels"><span class="number">1</span>Your basic info:</legend>
 
-                            <label class="fieldsLabels" for="userName">Name:</label>
-                            <input class="" id="userName" type="text" required>
+                        <label class="fieldsLabels" for="userName">Name:</label>
+                        <input class="" id="userName" type="text" required>
 
-                            <label class="fieldsLabels" for="userEmail">e-mail: </label>
-                            <input id="userEmail" type="email" required>
-                        </fieldset>
+                        <label class="fieldsLabels" for="userEmail">e-mail: </label>
+                        <input id="userEmail" type="email" required>
+                    </fieldset>
 
-                        <fieldset>
-                            <legend class="infoLabels"><span class="number">2</span>Your interests:</legend>
+                    <fieldset>
+                        <legend class="infoLabels"><span class="number">2</span>Your interests:</legend>
 
-                                    <label class="fieldsLabels interestSelector" for="job">Job role:</label>
-                                    <!--SELECT creates a list with different options to choose from-->
-                                    <select id="job" name="userJob">
-                                        <!--OUTGROUP creates the categories labels-->
-                                        <option>Choose role:</option>
-                                        <optgroup label="Web">
-                                            <option value="ux_developer">UX Developer</option>
-                                            <option value="backend_developer">Backend Developer</option>
-                                            <option value="full_developer">Full-stack Developer</option>
-                                        </optgroup>
-                                        <optgroup label="Mobile">
-                                            <option value="ios_developer">IOS Developer</option>
-                                            <option value="android_developer">Android Developer</option>
-                                        </optgroup>
-                                        <optgroup label="Business">
-                                            <option value="startup_owner"> StartUp owner</option>
-                                            <option value="freelancer">Freelancer</option>
-                                        </optgroup>
-                                    </select>
-
-                                    <div id="radioInputFields">
-                                        <label class="fieldsLabels">Salary:</label>
-                                        <input type="radio" id="under" value="under" name="salary"><label for="under"
-                                            class="light">under 100K</label><br>
-                                        <input type="radio" id="over" value="over" name="salary"><label for="over"
-                                            class="light">over 100k</label>
-                                    </div>
-                                    <div id="part1CheckboxesDiv">
-                                        <label class="fieldsLabels">Technologies:</label>
-                                        <input type="checkbox" id="htmlCss" value="HTML/CSS" name="user_interest"><label
-                                            for="htmlCss" class="light">html/css</label><br>
-                                        <input type="checkbox" id="javascript" value="Javascript"
-                                            name="user_interest"><label for="javascript"
-                                            class="light">Javascript/JQuery/React</label><br>
-                                        <input type="checkbox" id="javaKotlin" value="Java/Kotlin"
-                                            name="user_interest"><label for="javaKotlin" class="light">Java/Kotlin</label>
-                                        <br>
-                                        <input type="checkbox" id="swiftObjectiveC" value="swift/ObjectiveC"
-                                            name="user_interest"><label for="swiftObjectiveC" class="light">Objective
-                                            C/Swift
-                                        </label>
-                                    </div>
-
-                                    <button type="button" id="submitButtonPart1" class="submitButtonPart1" onClick="validateForm(this.form)">Sign
-                                        Up</button>
-                        </fieldset>
-                    </form>
-                    <div id="successFormSubmitted" class="successFormSubmitted"></div>
-                </div>
-            </div>
-            <div id="hwPart2" class="hwParts">
-                <h2>Part 2: Pulldown menus, onchange and onclick event handlers</h2>
-                <script>
-                    function goToCheatSheet1() {
-                        let myDestination1 = onChangeForm.destinationList1.options[onChangeForm.destinationList1.selectedIndex].value;
-                        if (myDestination1 !== "Choose Destination:") {
-                            window.open(myDestination1);
-                        }
-                    }
-
-                    function goToCheatSheet2() {
-                        let myDestination2 = onClickForm.destinationList2.options[onClickForm.destinationList2.selectedIndex].value;
-                        if (myDestination2 !== "Choose Destination:") {
-                            window.open(myDestination2);
-                        }
-                    }
-                </script>
-                <div class="inner-wrapper part2Wrapper">
-                    <form class="onChangeForm" name="onChangeForm">
-                        <h3>Choose your code cheatsheet destination (using onchange event handler)</h3>
-
-                        <select name="destinationList1" onChange="goToCheatSheet1();">
-                            <option>Choose Destination:</option>
-                            <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
-                            <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
-                            <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet</option>
-                            <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">Vanilla Javascript</option>
-                        </select>
-                    </form>
-
-                    <form class="onClickForm" name="onClickForm">
-                        <h3>Choose your code cheatsheet destination (using onclick event handler)</h3>
-
-                        <select name="destinationList2">
-                            <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
-                            <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
-                            <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet</option>
-                            <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">Vanilla Javascript</option>
+                        <label class="fieldsLabels interestSelector" for="job">Job role:</label>
+                        <!--SELECT creates a list with different options to choose from-->
+                        <select id="job" name="userJob">
+                            <!--OUTGROUP creates the categories labels-->
+                            <option>Choose role:</option>
+                            <optgroup label="Web">
+                                <option value="ux_developer">UX Developer</option>
+                                <option value="backend_developer">Backend Developer</option>
+                                <option value="full_developer">Full-stack Developer</option>
+                            </optgroup>
+                            <optgroup label="Mobile">
+                                <option value="ios_developer">IOS Developer</option>
+                                <option value="android_developer">Android Developer</option>
+                            </optgroup>
+                            <optgroup label="Business">
+                                <option value="startup_owner"> StartUp owner</option>
+                                <option value="freelancer">Freelancer</option>
+                            </optgroup>
                         </select>
 
-                        <input class="submitButtonPart2" type="button" value="Go" onClick="goToCheatSheet2();">
+                        <div id="radioInputFields">
+                            <label class="fieldsLabels">Salary:</label>
+                            <input type="radio" id="under" value="under" name="salary"><label for="under"
+                                                                                              class="light">under
+                            100K</label><br>
+                            <input type="radio" id="over" value="over" name="salary"><label for="over"
+                                                                                            class="light">over
+                            100k</label>
+                        </div>
+                        <div id="part1CheckboxesDiv">
+                            <label class="fieldsLabels">Technologies:</label>
+                            <input type="checkbox" id="htmlCss" value="HTML/CSS" name="user_interest"><label
+                                for="htmlCss" class="light">html/css</label><br>
+                            <input type="checkbox" id="javascript" value="Javascript"
+                                   name="user_interest"><label for="javascript"
+                                                               class="light">Javascript/JQuery/React</label><br>
+                            <input type="checkbox" id="javaKotlin" value="Java/Kotlin"
+                                   name="user_interest"><label for="javaKotlin" class="light">Java/Kotlin</label>
+                            <br>
+                            <input type="checkbox" id="swiftObjectiveC" value="swift/ObjectiveC"
+                                   name="user_interest"><label for="swiftObjectiveC" class="light">Objective
+                            C/Swift
+                        </label>
+                        </div>
 
-                    </form>
-                </div>
-            </div>
-            <div id="hwPart3" class="hwParts">
-                <h2>Part 3: Multidimensional array, data retrieving from table</h2>
-                <form id="stateInfoForm" class="stateInfoForm">
-                    <label class="stateInputFieldLabel" for="stateInputField">Enter either full state name or abbreviation:</label>
-                    <input class="" id="stateInputField" type="text" required>
-                    <input class="submitButtonPart3" type="button" value="Get state info" onClick="getStateInfo();">
+                        <button type="button" id="submitButtonPart1" class="submitButtonPart1"
+                                onClick="validateForm(this.form)">Sign
+                            Up
+                        </button>
+                    </fieldset>
                 </form>
-                <div id="stateInfoResults"></div>
+                <div id="successFormSubmitted" class="successFormSubmitted"></div>
             </div>
         </div>
-        <script src="../scripts/submenu.js"></script>
-        <script src="../scripts/hw5Part1.js"></script>
-        <script src="../scripts/hw5Part3.js"></script>
+        <div id="hwPart2" class="hwParts">
+            <h2>Part 2: Pulldown menus, onchange and onclick event handlers</h2>
+            <script>
+                function goToCheatSheet1() {
+                    let myDestination1 = onChangeForm.destinationList1.options[onChangeForm.destinationList1.selectedIndex].value;
+                    if (myDestination1 !== "Choose Destination:") {
+                        window.open(myDestination1);
+                    }
+                }
+
+                function goToCheatSheet2() {
+                    let myDestination2 = onClickForm.destinationList2.options[onClickForm.destinationList2.selectedIndex].value;
+                    if (myDestination2 !== "Choose Destination:") {
+                        window.open(myDestination2);
+                    }
+                }
+            </script>
+            <div class="inner-wrapper part2Wrapper">
+                <form class="onChangeForm" name="onChangeForm">
+                    <h3>Choose your code cheatsheet destination (using onchange event handler)</h3>
+
+                    <select name="destinationList1" onChange="goToCheatSheet1();">
+                        <option>Choose Destination:</option>
+                        <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
+                        <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
+                        <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet
+                        </option>
+                        <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">
+                            Vanilla Javascript
+                        </option>
+                    </select>
+                </form>
+
+                <form class="onClickForm" name="onClickForm">
+                    <h3>Choose your code cheatsheet destination (using onclick event handler)</h3>
+
+                    <select name="destinationList2">
+                        <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
+                        <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
+                        <option value="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox cheatsheet
+                        </option>
+                        <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">
+                            Vanilla Javascript
+                        </option>
+                    </select>
+
+                    <input class="submitButtonPart2" type="button" value="Go" onClick="goToCheatSheet2();">
+
+                </form>
+            </div>
+        </div>
+        <div id="hwPart3" class="hwParts">
+            <h2>Part 3: Multidimensional array, data retrieving from table</h2>
+            <form id="stateInfoForm" class="stateInfoForm">
+                <label class="stateInputFieldLabel" for="stateInputField">Enter either full state name or
+                    abbreviation:</label>
+                <input class="" id="stateInputField" type="text" required>
+                <input class="submitButtonPart3" type="button" value="Get state info" onClick="getStateInfo();">
+            </form>
+            <div id="stateInfoResults"></div>
+        </div>
+    </div>
+</div>
+    <script src="../scripts/submenu.js"></script>
+    <script src="../scripts/hw5Part1.js"></script>
+    <script src="../scripts/hw5Part3.js"></script>
 </body>
 
 </html>
