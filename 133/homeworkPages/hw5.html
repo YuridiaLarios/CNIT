@@ -112,14 +112,14 @@
             <div id="hwPart2" class="hwParts">
                 <h2>Part 2: Pulldown menus, onchange and onclick event handlers</h2>
                 <script>
-                    function goToNewPage1() {
+                    function goToCheatSheet1() {
                         let myDestination1 = onChangeForm.destinationList1.options[onChangeForm.destinationList1.selectedIndex].value;
                         if (myDestination1 !== "Choose Destination:") {
                             window.open(myDestination1);
                         }
                     }
 
-                    function goToNewPage2() {
+                    function goToCheatSheet2() {
                         let myDestination2 = onClickForm.destinationList2.options[onClickForm.destinationList2.selectedIndex].value;
                         if (myDestination2 !== "Choose Destination:") {
                             window.open(myDestination2);
@@ -130,7 +130,7 @@
                     <form class="onChangeForm" name="onChangeForm">
                         <h3>Choose your code cheatsheet destination (using onchange event handler)</h3>
 
-                        <select name="destinationList1" onChange="goToNewPage1();">
+                        <select name="destinationList1" onChange="goToCheatSheet1();">
                             <option>Choose Destination:</option>
                             <option value="https://devhints.io/enzyme">Enzyme cheatsheet</option>
                             <option value="https://sass-lang.com/documentation/style-rules">Sass cheatsheet</option>
@@ -149,17 +149,24 @@
                             <option value="https://www.ma-no.org/en/programming/javascript/vanilla-javascript-equivalent-commands-to-jquery?fbclid=IwAR07B_FKgIN1WDtSE5-wi-26BCCAIcug05M2StuUhOcfrqdUyeew6zPMZJQ">Vanilla Javascript</option>
                         </select>
 
-                        <input class="submitButtonPart2" type="button" value="Go" onClick="goToNewPage2();">
+                        <input class="submitButtonPart2" type="button" value="Go" onClick="goToCheatSheet2();">
 
                     </form>
                 </div>
             </div>
             <div id="hwPart3" class="hwParts">
                 <h2>Part 3: Multidimensional array, data retrieving from table</h2>
+                <form id="stateInfoForm" class="stateInfoForm">
+                    <label class="stateInputFieldLabel" for="stateInputField">Enter either full state name or abbreviation:</label>
+                    <input class="" id="stateInputField" type="text" required>
+                    <input class="submitButtonPart3" type="button" value="Get state info" onClick="getStateInfo();">
+                </form>
+                <div id="stateInfoResults"></div>
             </div>
         </div>
         <script src="../scripts/submenu.js"></script>
         <script src="../scripts/hw5Part1.js"></script>
+        <script src="../scripts/hw5Part3.js"></script>
 </body>
 
 </html>
