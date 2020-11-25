@@ -155,6 +155,11 @@ COLORS / STYLES
   color: #388e3c;
 }
 
+.wrapper-darkBlue {
+  background-color: #1C304A;
+  color: #1C304A;
+}
+
 .blackBold {
   font-weight: bolder;
   font-size: 18px;
@@ -208,7 +213,7 @@ hw #4 Par2 styling:
   flex-wrap: wrap;
 }
 
-.compoundInterestTable{
+.compoundInterestTable {
   margin: 15px 15px 15px 2.5%;
 }
 
@@ -217,16 +222,18 @@ hw #4 Par2 styling:
   color: white;
 }
 
-.compoundInterestTable td, th {
+.compoundInterestTable td,
+th {
   border: 1px solid #ddd;
   padding: 3px;
 }
-.compoundInterestTable tr{
+
+.compoundInterestTable tr {
   color: black;
   background-color: #f17c4e;
 }
 
-.compoundInterestTable  tr:nth-child(even){
+.compoundInterestTable tr:nth-child(even) {
   background-color: #fdf734;
 }
 
