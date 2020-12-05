@@ -142,18 +142,4 @@ function validateForm(myForm) {
     document.getElementById("successFormSubmitted").innerText = `Hi ${part1NameValue}! we will use ${part1EmailValue} to send you updates on 
     your role of interest: ${selectedDropdownRole} with a salary ${selectedRadioValue} and technologies related to: ${checkboxesChecked.join(', ').toString()}`;
   }
-
-
-
-
-  // alert("name: " + part1nameField);
-  // alert("email: " + part1emailField);
-  // alert(part1RoleDropdownoption);
-  // for (const part1RadioButton of part1RadioButtons) {
-  //   if (part1RadioButton.checked) {
-  //     selectedValue = part1RadioButton.value;
-  //     break;
-  //   }
-  // }
-  // alert(selectedValue);
 }
