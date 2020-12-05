@@ -1,5 +1,25 @@
+.errorContainer {
+  color: red;
+}
+
+
 #userInputPart1 {
   display: block;
   margin: 10px auto;
   padding: 8px;
+}
+
+.hw6Part1ResultsContainer {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+.hw6Part1ResultsContainer li {
+  list-style: none;
+  color: green;
+}
+
+.liText {
+  color: black;
+  font-weight: bolder;
 }
