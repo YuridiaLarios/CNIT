@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
   <link rel="stylesheet" type="text/css" href="../../css/homework6.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
           <li><span class="blackBold">Part 1 - </span>Function using Math.round, Math.sqrt, Math.floor, toFixed()</li>
           <li><span class="blackBold">Part 2 - </span>String method charAt to determine the number of occurrences of the
             search</li>
-          <li><span class="blackBold">Part 3 - </span>>String method split to extract numbers as tokens </li>
+          <li><span class="blackBold">Part 3 - </span>String method split to extract numbers as tokens and jQuery mask</li>
         </ol>
       </div>
       <div id="hwPart1" class="hwParts">
@@ -62,11 +63,37 @@
           Enter a character to search for:
         </label>
         <input id="userCharacterInputPart2" type="text" maxlength="1" required>
+        <br><br>
         <input type="button" value="submit" id="submitButtonPart2" onClick="findOccurrences()" />
-        <input type="reset" value="Reset" onClick="resetPart2()">
+        <input type="reset" value="Reset" onClick="resetPart2()" />
         <div id="part2Results"></div>
       </div>
       <div id="hwPart3" class="hwParts">
+        <h2>String method split to extract numbers as tokens and jQuery mask</h2>
+        <p>
+          <label>Enter Phone Number:
+            <input id="phoneInputField" type="text" name="phone-number" />
+          </label>
+        </p>
+        <input type="button" value="submit" onClick="splitPhoneNumber()" />
+        <input type="button" value="reset" onClick="resetPart3()" />
+        <script>$('input[name="phone-number"]').mask('(000) 000-0000');</script>
+        <br>
+        <br>
+        <table>
+          <tr>
+            <td>Area code: </td>
+            <td id="areaCode"></td>
+          </tr>
+          <tr>
+            <td>First 3 digits: </td>
+            <td id="first3Digits"></td>
+          </tr>
+          <tr>
+            <td>Last 4 digits: </td>
+            <td id="last4Digits"></td>
+          </tr>
+        </table>
       </div>
     </div>
     <script src="../scripts/submenu.js"></script>

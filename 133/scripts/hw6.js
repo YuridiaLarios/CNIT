@@ -131,3 +131,46 @@ function findOccurrences() {
     createErrorDiv("Error: Please fill all empty fields.", userCharacterInputFieldPart2);
   }
 }
+
+// for part 3:
+function clearPart3Results() {
+  document.getElementById("areaCode").innerHTML = "";
+  document.getElementById("first3Digits").innerHTML = "";
+  document.getElementById("last4Digits").innerHTML = "";
+}
+
+// for part 3:
+
+function resetPart3() {
+  document.getElementById("phoneInputField").value = "";
+  clearPart3Results();
+  removeCurrentErrorState();
+}
+
+// for part 3:
+let part3Submitted = false;
+function splitPhoneNumber() {
+  if(part3Submitted) {
+    removeCurrentErrorState();
+    clearPart3Results();
+  }
+  part3Submitted = true;
+  let phoneInputFieldPart3 = document.getElementById("phoneInputField");
+  let phoneNumberValue = phoneInputFieldPart3.value;
+  if (phoneNumberValue === "") {
+    createErrorDiv("Error: Empty phone number field", phoneInputFieldPart3);
+    clearPart3Results();
+  } else if(phoneNumberValue.length < 14){
+    createErrorDiv("Error: Enter a valid phone number with area code", phoneInputFieldPart3);
+    clearPart3Results();
+  } else {
+    const regex = /(\D)/g;
+    const splitIntoArray = phoneNumberValue.split(regex);
+    let onlyDigitsArray = splitIntoArray.filter(function(el) {
+      return el.length && el==+el;
+    });
+    document.getElementById("areaCode").innerHTML = onlyDigitsArray[0];
+    document.getElementById("first3Digits").innerHTML = onlyDigitsArray[2];
+    document.getElementById("last4Digits").innerHTML = onlyDigitsArray[3];
+  }
+}
