@@ -23,3 +23,9 @@
   color: black;
   font-weight: bolder;
 }
+
+.boldText {
+  color: black;
+  font-weight: bolder;
+  font-size: 22px;
+}

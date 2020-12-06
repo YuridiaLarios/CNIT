@@ -42,15 +42,29 @@
         </ol>
       </div>
       <div id="hwPart1" class="hwParts">
+        <h2>Part 1 - Function using Math.round, Math.sqrt, Math.floor, toFixed()</h2>
         <div id="part1Prompt">
           <label for="userInputPart1">Please enter a positive floating number (with AT LEAST 4 decimal positions):
           </label>
-          <input id="userInputPart1" type="text" />
-          <input type="button" value="submit" id="submitButtonPart1" onClick="makeCalculations()" />
+          <input id="userInputPart1" type="number" />
+          <input type="button" value="submit" onClick="makeCalculations()" />
         </div>
         <div id="part1Results" class="hw6Part1ResultsContainer"></div>
       </div>
-      <div id=" hwPart2" class="hwParts">
+      <div id="hwPart2" class="hwParts">
+        <h2>Part 2 - String method charAt to determine the number of occurrences of the search</h2>
+        <label for="userTextInputPart2">
+          Please enter some lines of text: 
+        </label>
+        <input id="userTextInputPart2" type="text" maxlength="500" required/>
+        <br>
+        <label for="userCharacterInputPart2">
+          Enter a character to search for:
+        </label>
+        <input id="userCharacterInputPart2" type="text" maxlength="1" required>
+        <input type="button" value="submit" id="submitButtonPart2" onClick="findOccurrences()" />
+        <input type="reset" value="Reset" onClick="resetPart2()">
+        <div id="part2Results"></div>
       </div>
       <div id="hwPart3" class="hwParts">
       </div>
