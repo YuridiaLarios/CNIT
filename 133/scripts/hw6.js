@@ -80,7 +80,7 @@ function makeCalculations() {
     submited = true;
     let regex = /^(\d{0,99}?)(\.\d{4,99})$/;
     if (!regex.test(inputFieldValue)) {
-      createErrorDiv("Error: AT LEAST 4 decimal positions", inputField);
+      createErrorDiv("Error: AT LEAST 4 decimal positions required", inputField);
     } else {
       calculate(parsedInputFieldValue);
     }
