@@ -78,7 +78,7 @@ function makeCalculations() {
   if (inputFieldValue !== "" && !isNaN(inputFieldValue) && typeof (parseFloat(inputFieldValue) === "number")) {
     parsedInputFieldValue = parseFloat(inputFieldValue);
     submited = true;
-    let regex = /^(\d{0,99}?)(.\d{4,99})$/;
+    let regex = /^(\d{0,99}?)(\.\d{4,99})$/;
     if (!regex.test(inputFieldValue)) {
       createErrorDiv("Error: AT LEAST 4 decimal positions", inputField);
     } else {
