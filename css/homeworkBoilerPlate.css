@@ -160,6 +160,11 @@ COLORS / STYLES
   color: #1C304A;
 }
 
+.wrapper-yellow {
+  background-color: #FEDC2A;
+  color: black;
+}
+
 .blackBold {
   font-weight: bolder;
   font-size: 18px;

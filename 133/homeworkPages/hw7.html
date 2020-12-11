@@ -5,7 +5,10 @@
     <meta name="description" content="homework #7 Javascript CNIT133">
     <title>Hw#7</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../../css/comingSoon.css">
+    <link rel="stylesheet" type="text/css" href="../../css/homeworkBoilerPlate.css">
+    <link rel="stylesheet" type="text/css" href="../../css/homework7.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>    
 </head>
 <body>
     <nav>
@@ -20,12 +23,35 @@
             <li style="float:right"><a href="../index.html">Home</a></li>
         </ul>
     </nav>
-  <div class="right">
-    <img class="coding-img" src="../../img/codingNow.jpg" alt="conding now laptop computer vector">
-    <h1>Hw #7</h1>
-  </div>
-  <div class="left">
-    <h2>Stay tuned <br> we're<br> launching<br> soon.</h2>
-  </div>
+    <div class="wrapper wrapper-yellow">
+      <h1>CNIT 133 Homework 7 - Object Model and Miscellaneous jQuery</h1>
+      <div class="subMenu">
+        <button id="overviewButton" class="showSingle" data-target="overview">Overview</button>
+      </div>
+      <div class="inner-wrapper">
+        <div id="overview" class="hwParts">
+          <ol>
+            <li><span class="overviewPart1 blackBold"><span class="addIcon addIconPart1" data-text="➕" id="h1-display-char">➕</span><span class="minusIcon minusIconPart1" data-text="➖" id="h1-display-char">
+              ➖
+              </span>
+              Part 1</span><br><div class="answer answerPart1">A webpage in which users are allowed to select a page layout and formatting, such as change background color, font size, and font style<br><button class="showSingle" data-target="hwPart1">Part 1</button>
+            </div></li>
+            <li><span class="overviewPart2 blackBold"><span class="addIcon addIconPart2" data-text="➕" id="h1-display-char">➕</span><span class="minusIcon minusIconPart2" data-text="➖" id="h1-display-char">
+              ➖
+              </span> Part 2</span><br><div class="answer answerPart2">Top navigation bar with  dropdown menu to other homework parts<br><button class="showSingle" data-target="hwPart2">Part 2</button>
+            </div></li>
+          </ol>
+        </div>
+        <div id="hwPart1" class="hwParts">
+          <h2>Part 1 - Function using Math.round, Math.sqrt, Math.floor, toFixed()</h2>
+          
+        </div>
+        <div id="hwPart2" class="hwParts">
+          <h2>Part 2 - String method charAt to determine the number of occurrences of the search</h2>
+        </div>
+      </div>
+      <script src="../scripts/submenu.js"></script>
+      <script src="../scripts/hw7.js"></script>
+    </div>
 </body>
 </html>
