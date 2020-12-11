@@ -1,0 +1,47 @@
+.answer {
+  background: rgb(253, 243, 209);
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.blackBold {
+  cursor: pointer;
+  margin: 20px;
+}
+
+.blackBold:hover {
+  background-color: yellow;
+}
+
+html {
+  background-color: white;
+}
+
+.canvasContainer {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+#colorPalette {
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.textEditor {
+  padding: 80px;
+}
+
+.colorSquares {
+  cursor: pointer;
+  padding: 40px;
+}
+
+h1, h2 {
+  font-weight: 100;
+}
+
+body {
+  font-size: 18px;
+}

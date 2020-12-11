@@ -43,11 +43,27 @@
           </ol>
         </div>
         <div id="hwPart1" class="hwParts">
-          <h2>Part 1 - Function using Math.round, Math.sqrt, Math.floor, toFixed()</h2>
-          
+          <h2>Part 1 - Select different options to change background color, font size, and/or font style</h2>
+          <div id="colorPalette">
+          </div>
+          <div class="textEditor">
+            <input onClick="toggleUnderline()" type="checkbox" name="underlineTitle" id="underlineTitle" />
+            <label for="underlineTitle">underline text</label><br>
+            <input onClick="toggleItalic()" type="checkbox" id="italicTitle" name="italicTitle" value="italicTitle">
+            <label for="italicTitle">italic text</label><br>
+            <input onClick="toggleBold()" type="checkbox" id="boldTitle" name="boldTitle" value="boldTitle">
+            <label for="boldTitle">bold text</label><br>
+            </br>
+            <input onClick="changeFontSize()" type="radio" id="small" name="fontSize" value="small">
+            <label for="small">12 px</label><br>
+            <input onClick="changeFontSize()" type="radio" id="medium" name="fontSize" value="medium" checked>
+            <label for="medium">18 px (default)</label><br>
+            <input onClick="changeFontSize()" type="radio" id="large" name="fontSize" value="large">
+            <label for="large">24 px</label>
+          </div>
         </div>
         <div id="hwPart2" class="hwParts">
-          <h2>Part 2 - String method charAt to determine the number of occurrences of the search</h2>
+          <h2>Part 2 - Top navigation bar with  dropdown menu to other homework parts</h2>
         </div>
       </div>
       <script src="../scripts/submenu.js"></script>
